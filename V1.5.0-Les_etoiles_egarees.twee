@@ -1,0 +1,3313 @@
+:: StoryTitle
+V1.5.0-Les_etoiles_egarees
+
+
+:: StoryData
+{
+  "ifid": "e36a2ea8-d862-4bd4-b7c2-a15616663be3",
+  "format": "SugarCube",
+  "format-version": "2.36.1",
+  "start": "Page de garde",
+  "tag-colors": {
+    "Titre": "yellow",
+    "Terminé": "green",
+    "A-retravailler": "red",
+    "Mise-en-page+code-a-faire": "yellow",
+    "En-attente": "orange",
+    "Fin-de-partie": "purple",
+    "Bon-choix": "green",
+    "Choix-neutre": "purple",
+    "Mauvais-choix": "red",
+    "Tactique": "blue",
+    "Dégats": "orange",
+    "Ok": "green",
+    "Non": "red",
+    "Peut-être": "blue",
+    "Butin": "yellow",
+    "Random": "purple",
+    "Plateau-rotatif": "orange",
+    "Code-mécanique-porte": "red",
+    "data": "blue",
+    "Music": "blue",
+    "Bruitage": "yellow",
+    "Objet-clef": "red",
+    "contient-media": "orange"
+  },
+  "zoom": 0.6
+}
+
+
+:: \ lancer une diversion [Random] {"position":"5175,6725","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "AttaqueRetardee")
+](else:)[
+    (go-to: "PasDupeMonstre")
+]
+
+
+:: 1-Les habitants [A-retravailler En-attente] {"position":"2125,1925","size":"100,100"}
+<<if $soir1 is true>>
+Vous décidez d'aller vers la petite place du marché, là ou se trouve probablement la plupart des villageois.
+
+La place est plutôt calme en cette fin de journée. Cependant, plusieurs personnes attirent votre regard :
+
+1. [[Elinor Perenelle->Elinor Perenelle : partie 1]]
+2. 
+3.
+4.
+5.
+<<else>>
+Vous décidez d'aller vers la petite place du marché, là ou se trouve probablement la plupart des villageois.
+
+La place est plutôt calme en cette journée. Cependant, plusieurs personnes attirent votre regard :
+
+1.
+2.
+3.
+4.
+5.
+<</if>>
+
+
+:: 3ARoutePrincipale [contient-media] {"position":"2700,725","size":"100,100"}
+<<audio "fire"  volume 0.5 stop>>\
+<<audio "marcher"  play>>\
+<<audio "combat" stop>>\
+<<audio "bgm0" stop>>\
+<!--Musique, ambiance et images-->
+
+<<if $ourson is true>>
+Après un temps, votre ourson ne semble plus connaître la peur. Il gambade joyeusement à la poursuite des papillons, s'émerveillant du monde qui l'entoure. À chaque fois que vous sifflez, il tourne la tête avec surprise, puis revient vers vous.
+
+<img src="img/ourson2.png">
+
+En suivant la route principale, vous tombez sur une scène de désarroi : une caravane de marchands en détresse, leur chariot renversé. Les marchandises sont éparpillées sur le chemin, témoignant d'une hâte confuse. Non loin, un cratère récent - la marque d'une météorite - explique peut-être ce chaos.
+
+[[ Aller voir les marchands.->les-marchands]] 
+[[Continuer vers Blancheforêt.->arrivee-blancheforet]]
+<<else>>
+En suivant la route principale, vous tombez sur une scène de désarroi : une caravane de marchands en détresse, leur chariot renversé. Les marchandises sont éparpillées sur le chemin, témoignant d'une hâte confuse. Non loin, un cratère récent - la marque d'une météorite - explique peut-être ce chaos.
+
+[[ Aller voir les marchands.->les-marchands]] 
+[[Continuer vers Blancheforêt.->arrivee-blancheforet]]
+<</if>>
+
+
+
+:: 3ARoutePrincipalePrelude {"position":"2500,900","size":"100,100"}
+Vous avez réussir à fuir de justesse. Vous entendez au loin les grognements de la bête. 
+Vous décidez finalement de poursuivre votre route, en espérant qu'elle sera plus sûr par la suite.
+
+[[Continuer.->3ARoutePrincipale]]
+
+
+:: AccepteCadeau [Ok] {"position":"2075,6525","size":"100,100"}
+AccepteCadeau
+
+La créature, intriguée par la lueur du cristal, se calme et laisse le groupe passer, ouvrant un chemin à travers la caverne.
+
+[[GolemEsquivé]]
+
+
+:: Alaric Brumecoeur {"position":"6950,1850","size":"100,100"}
+### La Quête de l'Arbre Cœur: Alaric Brumecoeur 
+
+---
+
+**Narration:**
+
+Les héros, après avoir reçu les conseils du maire, retrouvent Alaric Brumecoeur, un horloger renommé mais surtout, un homme dont les yeux pétillent de malice et de savoirs antiques. Sa boutique est un mélange envoûtant de tictacs incessants et de l'odeur boisée et douce des différents types de bois avec lesquels il travaille. Des horloges de toutes formes et tailles ornent les murs, certaines aux mécanismes exposés, révélant un enchevêtrement délicat de rouages et de pignons.
+
+---
+
+**Dialogue:**
+
+**Alaric:** "Ah, les amis, je me doutais que nos chemins se croiseraient. Vous cherchez du bois de l’Arbre Cœur, n’est-ce pas ? Un matériau aussi rare que mystique, essentiel à la restauration de l'observatoire."
+
+**Le Mage d’Aria:** "C’est exact, Alaric. On nous a dit que tu pourrais nous guider pour trouver cet arbre, et comment extraire son bois sans lui causer de tort."
+
+**Alaric:** "L'Arbre Cœur... un être aussi vieux que le temps lui-même. Vous savez, extraire son bois n'est pas une tâche anodine. Cet arbre est lié à l'équilibre même de la forêt. Prendre son bois sans respecter les antiques rituels peut engendrer le chaos dans ces terres."
+
+**Le Guerrier:** "Nous n’avons pas l'intention de perturber cet équilibre, vieux sage. Guide-nous afin que nous puissions accomplir cette tâche dans le respect et l’honneur des traditions de ces terres."
+
+---
+
+**Narration:**
+
+Alaric, avec un soupir de connaissance pesante, acquiesce et partage le secret des anciens rituels permettant de communiquer avec l’Arbre Cœur. Il parle de murmures antiques dans le vent, de la mélodie de la forêt et des pas qu'ils doivent suivre pour trouver ce gardien ancestral.
+
+---
+
+- **[[Choix : Suivre les conseils d'Alaric et entamer le rituel.->L'arbrecoeur : 1A]]**
+  Les héros, armés de la sagesse d'Alaric, se rendent dans la profondeur de la forêt, où les arbres semblent susurrer des secrets anciens et où la lumière danse mystérieusement entre les feuilles, guidant leur chemin.
+  
+- **[Choix : Ignorer les conseils d'Alaric et tenter de trouver une autre solution.]**
+  Les héros, incertains quant à la voie mystique décrite par Alaric, explorent d'autres avenues qui pourraient les conduire au bois de l’Arbre Cœur, risquant peut-être de perturber l'équilibre sacré de la forêt.
+
+
+:: Alden 1 [Terminé] {"position":"3400,3875","size":"100,100"}
+**La demande du maire Alden**
+
+Alden, le maire, vous accueille avec un visage marqué par la fatigue mais dont les yeux reflètent une détermination inébranlable. Il vous guide vers son bureau, où une carte étalée et divers papiers jonchent le robuste bureau en chêne.
+
+---
+
+//**Alden** (les sourcils froncés, la voix teintée d’inquiétude) : "Mes amis, nous sommes loin d’avoir résolu les mystères qui pèsent sur Blancheforêt et les menaces qui planent dans le ciel."//
+
+Les héros s’installent, leurs yeux se fixant sur la carte détaillée de la région, tandis qu'Alden poursuit.
+
+//**Alden** : "L'observatoire est notre meilleur espoir pour comprendre et peut-être prévenir une autre de ces catastrophes célestes. Les instruments de l'observatoire ont été gravement endommagés et doivent être réparés au plus vite."//
+
+Il marque une pause, passant une main fatiguée sur son front.
+
+//**Alden** : "Malheureusement, les matériaux dont nous avons besoin ne sont pas courants dans notre région. C'est pourquoi j'aimerais vous demander d’organiser une expédition. Brendan, notre garde forestier, connaît ces bois comme sa propre âme et peut vous guider vers les ressources potentielles. Le forgeron Arthur et Alaric Brumecoeur, notre horloger, ont les compétences pour fabriquer et réparer les instruments. Isabella Lumenoire, notre alchimiste, pourrait trouver un moyen de protéger le métal contre la corrosion causée par les éléments célestes."//
+
+---
+
+La pièce se charge d'une lourde mais nécessaire responsabilité, les héros acquiesçant, comprenant l'importance de leur quête.
+
+---
+
+(text-colour:blue)[//**$nom :** (le regard ferme et résolu) : "Nous comprenons, Alden. Nous ferons de notre mieux pour rassembler ces personnes et les matériaux nécessaires pour les réparations. Blancheforêt a survécu jusqu'à présent, et nous ferons tout notre possible pour veiller à ce qu'il en soit toujours ainsi."//]
+
+---
+
+Alden hoche la tête, ses yeux révélant un mélange de gratitude et de soulagement face à leur assurance.
+
+//**Alden** : "Je vous suis profondément reconnaissant. Prenez ce que vous avez besoin pour votre voyage, et que les étoiles veillent sur votre chemin."//
+
+[[Quête : Réparer le télescope->Quête P. 1]]
+[[L'observatoire->Observatoire ruine]]
+
+
+:: Alden-A-0 [Terminé] {"position":"2800,1850","size":"100,100"}
+<img src="img/alden0.jpg">
+<<audio "piano"  stop>>\
+<<audio "fire"  stop>>\
+<<audio "wind" stop>>\
+<<audio "bgm1" loop volume 0.5 play>>\
+<!--Musique, ambiance et images-->
+
+La curiosité palpable des villageois est interrompue par une silhouette robuste qui émerge de l'ombre d'une des chaumières. 
+
+L’homme, vêtu d'une tunique usée mais richement brodée, avance avec assurance.
+
+Ses cheveux grisonnants encadrent un visage aux rides douces, sculptées par des années de sourires et de soucis.
+
+1. [[Aller à al rencontre de l'homme.->alden-1]]
+
+
+:: AnticipationMonstre [Peut-être] {"position":"2175,7425","size":"100,100"}
+<!--AnticipationMonstre-->
+
+La créature, bien plus astucieuse qu’elle ne paraît, anticipe l’attaque et réplique violemment.
+
+[[Faire face à l’assaut du monstre->ParerAttaque]]
+[[Tenter une retraite désespérée->Fuite]]
+
+
+:: Arthur : vécu 1 [Terminé] {"position":"2800,3950","size":"100,100"}
+### Arthur, le Forgeron
+
+(text-colour:blue)[//$nom : "Arthur, comment avez-vous fini par vous installer à Blancheforêt et devenir forgeron ici ?"//]
+
+//**Arthur :** "Ah, c'est une histoire que je raconte rarement. Avant d'arriver ici, j'étais apprenti dans une grande forge à Aria. Mais un jour, un incendie s'est déclaré et la forge a été complètement détruite. J'ai perdu tout ce que je possédais... sauf mon marteau. Avec lui à mes côtés, je suis venu à Blancheforêt, attiré par les légendes des ressources rares et précieuses qu'on y trouvait. C'est ici que j'ai pu recommencer à zéro et construire la forge dont je rêvais. Les habitants m'ont accueilli à bras ouverts et m'ont aidé à m'établir."//
+
+(text-colour:orange)[**$nomg :** "Cela a dû être une période très éprouvante pour vous. Comment avez-vous surmonté tout ça ?"]
+
+1. [[Suite->Arthur : vécu 2]]
+
+
+:: Arthur : vécu 2 [Terminé] {"position":"2800,4075","size":"100,100"}
+//**Arthur :** "Il y a eu des jours sombres, je ne vais pas vous mentir. La douleur de tout perdre était presque insupportable. Mais le soutien que j'ai trouvé ici à Blancheforêt m'a redonné espoir. Les habitants m'ont offert une place, une raison de recommencer. Et bien sûr, il y avait mon marteau. C'était le dernier vestige de mon ancienne vie, et chaque fois que je le tenais, je sentais une énergie, une détermination à ne pas abandonner."//
+
+(text-colour:magenta)[**$nommar** : "Il est admirable de voir comment vous avez transformé une tragédie en une nouvelle chance. Et cette forge... elle est impressionnante."]
+
+1. [[Suite->Arthur : vécu 3]]
+
+
+:: Arthur : vécu 3 [Terminé] {"position":"2800,4200","size":"100,100"}
+//**Arthur** : "Merci. Vous savez, il y a quelque chose de thérapeutique à forger. À chaque coup de marteau, c'est comme si je laissais partir une partie de mon passé et embrassais mon nouvel avenir. La forge est devenue plus qu'un lieu de travail pour moi. C'est mon sanctuaire."//
+
+(text-colour:yellow)[//**$nomalc** : "Et l'observatoire ? Avez-vous des liens avec lui ?"//]
+
+1. [[Suite->Arthur : vécu 4]]
+
+
+:: Arthur : vécu 4 [Terminé] {"position":"2800,4325","size":"100,100"}
+//**Arthur** : "Ah, l'observatoire. Un lieu mystérieux. Je n'y ai pas souvent mis les pieds, mais je suis fasciné par les étoiles. En fait, c'est l'une des raisons pour lesquelles je suis resté à Blancheforêt. Il y a quelque chose dans la façon dont le ciel s'ouvre ici la nuit. On dit qu'il y a des secrets là-haut, des histoires anciennes écrites dans les étoiles."//
+
+(text-colour:green)[//**$nommvb** : "Les étoiles ont beaucoup à nous apprendre, c'est certain. Votre histoire est inspirante, Arthur. Elle nous rappelle que même face à l'adversité, on peut toujours trouver une lueur d'espoir."//]
+
+//**Arthur** : "C'est vrai. La vie nous met parfois à l'épreuve, mais c'est à nous de choisir comment nous répondons à ces épreuves. Pour moi, Blancheforêt a été ce phare dans la nuit, ce rappel que même après la tempête, les étoiles continuent de briller."//
+
+1. [[Rejoindre Brendan.->Brendan : la grotte cristalline]]
+2. [[Poser d'autres questions à Arthur.->Arthur, le Forgeron]]
+3. [[Parler de la famille d'Arthur.->Arthur v5]]
+
+
+:: Arthur V7 [Terminé] {"position":"2800,4700","size":"100,100"}
+//**Arthur** : "C'est ma raison de vivre. Chaque fois que je frappe le métal à la forge, je le fais pour eux. Elara m'a soutenu dans les moments les plus sombres. Elle a cette force tranquille en elle. Elle m'a appris à voir la beauté dans les petites choses, à apprécier chaque moment. Et mes enfants... ils me rappellent chaque jour pourquoi je continue à lutter."//
+
+(text-colour:blue)[//**$nom** : "Il est essentiel de se souvenir des raisons pour lesquelles nous nous battons, de ce qui nous rend forts. Votre histoire est une source d'inspiration pour nous tous, Arthur."//]
+
+1. [[Suite.->Arthur v8]]
+
+
+:: Arthur v5 [Terminé] {"position":"2800,4450","size":"100,100"}
+(text-colour:magenta)[**$nommar** : "Votre détermination et votre force de caractère sont impressionnantes, Arthur. Vous avez sûrement une famille ici qui vous soutient dans ces moments difficiles ?"]
+
+//**Arthur** : "Ah, ma famille... Ils sont ma véritable force. Ma femme, Elara, est l'épine dorsale de notre famille. Nous avons deux enfants, Lorian, notre aîné, et la petite Lysa."//
+
+(text-colour:yellow)[//**$nomalc** : "Vos enfants suivent-ils vos traces à la forge ?"//]
+
+1. [[Suite.->Arthur v6]]
+
+
+:: Arthur v6 [Terminé] {"position":"2800,4575","size":"100,100"}
+//**Arthur** : "Lorian, oui. Il a toujours été fasciné par la forge, passant des heures à mes côtés, apprenant les tenants et aboutissants du métier. Je crois qu'il a même un meilleur coup de marteau que moi à son âge ! Lysa, quant à elle, est l'opposée. Elle passe son temps avec sa mère dans les jardins, cultivant des fleurs et des herbes. Elle a un don pour ça."//
+
+(text-colour:green)[//**$nommvb** : "Cela doit être réconfortant de rentrer à la maison après une longue journée de travail et de retrouver une famille aimante."//]
+
+1. [[Suite.->Arthur V7]]
+
+
+:: Arthur v8 [Terminé] {"position":"2800,4825","size":"100,100"}
+**Arthur** : "Je vous remercie. Ma famille est tout pour moi. Ils sont la raison pour laquelle je me suis relevé après avoir tout perdu, et ils sont la raison pour laquelle je continue à me battre chaque jour. Si vous passez par là un jour, arrêtez-vous à la maison. Elara prépare le meilleur ragoût de lapin que vous ayez jamais goûté et je suis sûr que Lysa adorerait vous montrer ses jardins."
+
+(text-colour:orange)[//**$nomg** : "Ce serait un plaisir. Vos histoires ont allumé une flamme d'espoir en nous, et nous serions honorés de rencontrer votre famille."//]
+
+1. [[Rejoindre Brendan.->Brendan : la grotte cristalline]]
+2. [[Poser d'autres questions à Arthur.->Arthur, le Forgeron]]
+
+
+:: Arthur, le Forgeron [Terminé] {"position":"2925,3800","size":"100,100"}
+### Les cristaux de la grotte cristaline - Arthur, le forgeron.
+
+---
+
+Les héros, inspirés par la lourde responsabilité confiée par Alden, approchent l'atelier d'Arthur, le forgeron. La chaleur de la forge enveloppe le lieu, les éclats du métal en fusion dansant à travers l'espace, pendant qu'Arthur, un homme massif aux bras musclés, martèle consciencieusement une pièce de métal sur l'enclume.
+
+---
+
+//**Arthur** (essuyant la sueur de son front avec l’avant-bras, chaleureux) : "Bienvenue, les amis. J'ai entendu dire que vous êtes là pour aider face à la menace céleste. Comment puis-je vous assister aujourd’hui?"//
+
+Les héros expliquent la situation concernant l'observatoire et la nécessité de cristaux pour créer de nouvelles lentilles pour le télescope.
+
+---
+
+//**Arthur** (frottant pensivement sa barbe) : "Ces cristaux... Ils ne se trouvent pas simplement dans les cavernes autour d'ici. Nous aurons besoin de quelque chose de spécial pour réparer ces instruments délicats. Les cristaux de la grotte cristalline auraient pu faire l'affaire, mais cette caverne est perdue depuis des générations..."//
+
+Le visage d'Arthur se crispe brièvement en pensant à la difficulté de la tâche, mais il est rapidement remplacé par une résolution inébranlable.
+
+---
+
+//**Arthur** : "Cependant, Brendan, notre garde forestier, pourrait bien être la clé pour localiser la grotte cristalline. Il connaît ces bois mieux que quiconque et si cette caverne est quelque part, il sera l'homme capable de vous y mener."//
+
+Arthur prend une pause, ses yeux se fixant sur les héros, évaluant leur détermination.
+
+---
+
+//**Arthur** : "Mais je vous préviens, même si nous trouvons ces cristaux, extraire ces derniers sans les endommager sera un défi en soi. Cela demandera du doigté et une attention méticuleuse. Les anciens récits parlent de créatures qui protègent ces lieux sacrés... Alors, soyez sur vos gardes."//
+
+---
+
+Les héros, prenant compte de ses conseils, remercient Arthur pour son aide et ses avertissements. En dépit des dangers potentiels, ils sont déterminés à trouver ces cristaux pour réparer l'observatoire et dévoiler les mystères des cieux.
+
+La tâche devant eux est ardue, mais ils sont résolus à se battre non seulement contre les menaces physiques mais aussi pour percer les secrets des étoiles. Ce qui les attend dans les profondeurs de la grotte cristalline et si cette dernière détient les réponses qu'ils cherchent, seul l'avenir le dira.
+
+[[Aller voir Brendan.->Brendan : la grotte cristalline]]
+[[Poser des questions sur son vécu.->Arthur : vécu 1]]
+
+
+:: AttaqueCoordonnee [Mise-en-page+code-a-faire] {"position":"2375,6625","size":"100,100"}
+AttaqueCoordonnee
+
+Le groupe, protégé derrière le cercle, coordonne une attaque puissante, espérant utiliser cet avantage pour vaincre la créature.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[coordonne une attaque puissante]]
+
+
+:: AttaqueDistraction [Mise-en-page+code-a-faire] {"position":"3100,6925","size":"100,100"}
+AttaqueDistraction
+
+(text-colour:orange)[$nommar] tente d'attirer l'attention du monstre d'un côté tout en attaquant de l'autre.
+
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Attirer l'attention du monstre]]
+
+
+:: AttaqueFlanc [Mise-en-page+code-a-faire] {"position":"2075,7525","size":"100,100"}
+<!--AttaqueFlanc-->
+
+Le groupe se divisent et tentent de prendre le monstre en tenaille.
+
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Prendre le monstre en tenaille]]
+
+
+:: AttaqueFurieuse [Plateau-rotatif] {"position":"5025,6375","size":"100,100"}
+AttaqueFurieuse
+
+Avec un hurlement sauvage, la créature, blessée mais pas battue, lance une attaque déchaînée, ses membres cristallins balayant violemment vers le groupe.
+
+[[Tenter de parer l’attaque->DefenseBouclier]]
+[[Essayer d’esquiver l’assaut->Esquiver]]
+
+
+:: AttaqueMonstre [Plateau-rotatif] {"position":"3700,6400","size":"100,100"}
+<!--AttaqueMonstre-->
+
+L’énorme créature, maintenant suralimentée par la magie, déchaîne une violente attaque contre (text-colour:magenta)[$nommar], qui se prépare du mieux qu'ils peuvent pour y faire face.
+
+[[Défendre avec le bouclier magique->DefenseBouclier]]
+[[Esquiver l’attaque->Esquiver]]
+
+
+:: AttaqueRetardee [Plateau-rotatif] {"position":"5175,6625","size":"100,100"}
+AttaqueRetardee
+
+La diversion fonctionne momentanément. La créature, déroutée, rate son attaque initiale, donnant au groupe un moment de répit et une opportunité.
+
+[[Exploiter ce moment pour attaquer->NouvelleAttaque]]->Attaquer]]
+[[Utiliser ce temps pour s'échapper->Fuite]]
+
+
+:: AttaqueSurprise [Plateau-rotatif] {"position":"2175,7125","size":"100,100"}
+AttaqueSurprise
+
+Le groupe décide de tirer avantage du recul momentané pour préparer une attaque surprise contre le monstre.
+
+[[Lancer une attaque de flanc->AttaqueFlanc]]
+[[Lancer une attaque de distraction->AttaqueDistraction]]
+
+
+:: AttaquerCristaux [Mise-en-page+code-a-faire] {"position":"2375,6875","size":"100,100"}
+AttaquerCristaux
+
+Le groupe, maintenant avec un avantage, continue d'attaquer les cristaux, essayant de vaincre le monstre.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Continuer d'attaquer les cristaux]]
+
+
+:: Attirer l'attention du monstre [Random] {"position":"3200,6925","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "DupeMonstre")
+](else:)[
+    (go-to: "PasDupeMonstre")
+]
+
+
+:: Blancheforêt : la place 1 [Terminé] {"position":"2800,2975","size":"100,100"}
+**La Place de Blancheforêt**
+
+La place de Blancheforêt est le cœur battant du village, une mosaique vibrante de vie et d'échanges, entourée par l'étreinte délicate des bois anciens. Le pavage en pierres, patiné par le passage des années et le balai incessant des pieds va-et-vient, s’étend dans une rondeur accueillante, encerclant une fontaine majestueuse au centre.
+
+La *Fontaine de la Comète*, un célèbre point de repère, danse doucement sous les caresses du vent. Sculptée avec amour et précision, une comète d’argent fait une arc en plein ciel de pierre, l'eau s'écoulant en cascades scintillantes de ses ailes et sa queue. Les légendes disent qu'y faire un vœu sous une nuit étoilée pourrait peut-être attirer les faveurs des astres.
+
+Autour de la place, les *boutiques et étals* variés se dressent comme une palette de couleurs et de saveurs. Les marchands, avec leurs voix mélodieuses et persuasives, vantent des produits allant des tissus soyeux et des perles d’Aqabah aux herbes curatives de Kniga. Des bouquets de senteurs – pain frais, cuirs travaillés, et fleurs du matin – dansent dans l'air, tissant un tapis invisible et pourtant indélébile dans les mémoires des voyageurs.
+
+Les *villageois* naviguent avec aisance à travers la mosaïque de vie, leurs voix créant une mélodie de rires, de conversations et d'histoires partagées. Des enfants avec des joues rougissantes et des yeux pétillants de malice courent avec une joie insouciante, leurs jeux et éclats de rire apportant une légèreté même aux jours les plus sombres.
+
+À l'est de la place, *la Taverne de la comète* offre un refuge avec sa devanture en bois ornementé et ses fenêtres accueillantes, tandis qu'à l’opposé, la *Mairie*, robuste et ornée du blason de Blancheforêt, se dresse avec une dignité calme. De part et d'autre, des ruelles sinueuses mènent à divers quartiers du village, invitant les âmes curieuses à explorer davantage.
+
+Que faire ?
+
+[[Discuter avec le maire du village->Alden 1]]
+[[Discuter avec les habitants->1-Les habitants]]
+
+
+:: Blancheforêt : la place 2 [A-retravailler] {"position":"3575,3875","size":"100,100"}
+### La Place de Blancheforêt
+
+
+Que faire ?
+
+1. [[Discuter avec les habitants->1-Les habitants]]
+2. [[Poursuivre sa quête des matériaux.->Quête P. 2]]
+
+
+:: Blancheforêt : la place 3 [A-retravailler] {"position":"3725,3875","size":"100,100"}
+### La Place de Blancheforêt
+
+Que faire ?
+
+1. [[Discuter avec les habitants->1-Les habitants]]
+2. [[Poursuivre sa quête des matériaux.->Quête P. 3]]
+
+
+:: Blancheforêt : la place 4 [A-retravailler] {"position":"3875,3875","size":"100,100"}
+### La Place de Blancheforêt
+
+Que faire ?
+
+1. [[Discuter avec les habitants->1-Les habitants]]
+2. [[Poursuivre sa quête des matériaux.->Quête P. 4]]
+
+
+:: BlesseMonstre [Peut-être] {"position":"2175,7625","size":"100,100"}
+<!--BlesseMonstre-->
+
+La créature rugit de douleur sous l'assaut inattendu, offrant un avantage au groupe dans la bataille qui s'ensuit.
+
+[[Réfléchir vite à une nouvelle stratégie->NouvelleStrategie]]
+[[Tenter à nouveau de communiquer->Communiquer]]
+
+
+:: BombeAlchimique [Mise-en-page+code-a-faire] {"position":"2575,7325","size":"100,100"}
+<!--BombeAlchimique-->
+
+(text-colour:yellow)[$nomalc] prépare une bombe magique puissante et la lance vers la créature, espérant que l’explosion sera suffisante pour l’arrêter.
+
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Que va-t-il se passer ?]]
+
+
+:: BouclierAnticipation [Mise-en-page+code-a-faire] {"position":"4150,7050","size":"100,100"}
+BouclierAnticipation
+
+(text-colour:green)[$nommvb] commence à murmurer un incantation, tissant une barrière éthérée devant le groupe. La tension est palpable alors que la créature déclenche son assaut violent contre le bouclier protecteur.
+
+[[Le bouclier tiendra-t-il ?]]
+
+
+:: BouclierBrise1 [Non] {"position":"3900,6850","size":"100,100"}
+BouclierBrise
+
+Le bouclier est réduit en morceaux sous l'impact de l'attaque puissante du monstre. (text-colour:orange)[$nomg] est projeté en arrière, et l'équipe se retrouve dans une situation désespérée, blessée et désorganisée.
+
+[[Se battre jusqu'à la fin->CombatFinal]]
+
+
+:: BouclierBrise2 [Non] {"position":"4000,6850","size":"100,100"}
+BouclierBrise2
+
+Le bouclier est réduit en morceaux sous l'impact de l'attaque puissante du monstre. (text-colour:orange)[$nomg] est projeté en arrière, et l'équipe se retrouve dans une situation désespérée, blessée et désorganisée.
+
+[[Se battre jusqu'à la fin->CombatFinal]]
+
+
+:: BouclierResiste1 [Plateau-rotatif] {"position":"3900,6650","size":"100,100"}
+BouclierResiste
+
+Le bouclier absorbe l'impact avec un son sourd, et (text-colour:green)[$nommvb,] bien que secoué, reste debout. Le groupe prend un moment pour retrouver son souffle avant de décider de leur prochaine action. Ils peuvent affronter le monstre avec une nouvelle stratégie, ou contre-attaquer.
+
+1. [[Chercher une nouvelle stratégie->PreparerCombat]]
+2. [[Affronter à nouveau le monstre->ContreAttaque]]
+
+
+:: BouclierResiste2 [Plateau-rotatif] {"position":"4000,6650","size":"100,100"}
+BouclierResiste
+
+Le bouclier absorbe l'impact avec un son sourd, et (text-colour:green)[$nomg,] bien que secoué, reste debout. Le groupe prend un moment pour retrouver son souffle avant de décider de leur prochaine action. Ils peuvent affronter le monstre avec une nouvelle stratégie, ou contre-attaquer.
+
+1. [[Chercher une nouvelle stratégie->PreparerCombat]]
+2. [[Affronter à nouveau le monstre->ContreAttaque]]
+
+
+:: BouclierTient [Peut-être] {"position":"3950,7050","size":"100,100"}
+BouclierTient
+
+Le bouclier magique crépite et oscille sous l’impact de l’énorme décharge d'énergie, mais il tient bon. Les héros respirent un soupir de soulagement, mais savent que le prochain pas doit être méticuleusement pensé.
+
+[[Reculer et réfléchir à un plan->ReculerPlan]]
+[[Charger en avant malgré le danger->ChargerAvant]]
+
+
+:: Brendan 1 [Terminé] {"position":"3500,4350","size":"100,100"}
+Après que les héros lui expliquent la situation et la requête d'Arthur concernant la grotte cristalline, Brendan se frotte le menton, réfléchissant profondément.
+
+---
+
+//**Brendan** : "La grotte cristalline... Ce n'est pas un endroit où les gens vont léger de cœur. Les cristaux y sont d'une pureté inégalée, certes, mais les légendes racontent que la caverne elle-même ne se révèle qu'à ceux qu'elle juge dignes."//
+
+1. [[Supplier Brendan de vous aider.->Brendan 2a]]
+2. [[Expliquer l'urgence de la situation.->Brendan 2b]]
+
+
+:: Brendan 2a [Terminé] {"position":"3450,4475","size":"100,100"}
+(text-colour:magenta)[//**$nommar :** "Brendan, je comprends vos réserves. Les légendes sont souvent empreintes de vérité, mais nous sommes dans une situation désespérée. Ces cristaux ne sont pas pour la gloire ou la richesse, mais pour le salut de Blancheforêt, peut-être même du monde. Je vous en prie, aidez-nous. Montrez-nous le chemin de la grotte. Nous sommes prêts à affronter tout défi, à prouver notre dignité à la caverne si c'est ce qu'il faut."//]
+
+1. [[Suite.->Brendan 3]]
+
+
+:: Brendan 2b [Terminé] {"position":"3575,4475","size":"100,100"}
+(text-colour:blue)[//**$nom :** "Brendan, je respecte les légendes autant que n'importe qui, mais nous sommes confrontés à une situation sans précédent. La destruction de l'observatoire, les météorites, cette étrange étoile filante... Tout est connecté, et si nous n'agissons pas rapidement, les conséquences pourraient être désastreuses non seulement pour Blancheforêt, mais pour tout le monde d'Aria. La grotte cristalline pourrait détenir une clé essentielle pour comprendre, voire inverser, ce qui est en train de se passer. Je comprends les dangers, mais l'enjeu est trop important. Nous devons agir rapidement."//]
+
+1. [[Suite.->Brendan 3]]
+
+
+:: Brendan 3 [Terminé] {"position":"3500,4600","size":"100,100"}
+Brendan, après un moment de silence, hoche finalement la tête avec résolution.
+---
+
+//**Brendan** : "Très bien. Je vois la détermination dans vos yeux et si ce que vous dites est vrai, nous ne pouvons pas nous permettre de rester inactifs. Préparez-vous, car le chemin ne sera pas facile, et les secrets de la grotte sont aussi tranchants que les cristaux qu'elle recèle."//
+
+1. [[Partir en voyage.->Brendan 4]]
+
+
+:: Brendan 4 [Terminé] {"position":"3500,4725","size":"100,100"}
+### A la recherche de la grotte cristalline
+
+Le voyage à travers la forêt est une aventure en soi. Brendan les guide à travers des sentiers tortueux, des sous-bois denses et des passages secrets que seul un connaisseur de la forêt pourrait connaître. Les héros sont impressionnés par sa capacité à naviguer avec tant d'aisance à travers ce labyrinthe naturel.
+
+Finalement, après avoir traversé un ruisseau étincelant et escaladé une pente rocheuse, ils arrivent devant une falaise imposante. Brendan s'approche, prononçant des mots doux et respectueux envers la nature environnante. Subitement, la falaise semble frémir et un passage s'ouvre, révélant l'entrée de la grotte cristalline.
+
+//**Brendan** (d'une voix basse) : "C’est aussi loin que je peux vous amener. La grotte choisira si vous êtes dignes d'entrer dans ses profondeurs. Respectez ce lieu et peut-être qu'il vous offrira les réponses que vous cherchez."//
+
+---
+
+Les héros, maintenant face à la mystérieuse grotte cristalline, savent que le chemin devant eux sera semé d'embûches. Mais avec l’espoir de sauver l'observatoire et potentiellement de déjouer la catastrophe, ils entrent, prêts à faire face aux épreuves qui les attendent.
+
+1. [[Entrer dans la grotte cristalline.->Entrée de la Grotte Cristalline]]
+2. [[Tout vas bien Brendan ?->Brendan 5]]
+
+
+:: Brendan 5 [Terminé] {"position":"3500,4850","size":"100,100"}
+### Jet de Psychologie
+
+<button id="rollD100Button" class="d100Button">Lancer 1D100</button>
+<p id="d100Result">Résultat D100 : </p>
+
+1. [[Echec.->Brendan 6a]]
+2. [[ Réussite->Brendan 6b]]
+
+
+:: Brendan 6a [Terminé] {"position":"3450,5050","size":"100,100"}
+### Si le jet échoue
+
+(text-colour:blue)[//$nom : "Brendan, tout va bien ? Vous semblez troublé."//]
+
+//Brendan (évitant le regard) : "Ce n'est rien. Juste de vieux souvenirs qui ressurgissent. La grotte a ses mystères, ses légendes... et certaines histoires personnelles que je préférerais garder pour moi. S'il vous plaît, continuez votre chemin et soyez prudents."//
+
+1. [[Entrer dans la grotte cristalline.->Entrée de la Grotte Cristalline]]
+
+
+:: Brendan 6b [Terminé] {"position":"3575,5050","size":"100,100"}
+### Si le jet réussit
+
+$nom : "Brendan, votre hésitation ne m'a pas échappé. Quelque chose s'est-il passé dans cette grotte ?"
+
+//Brendan (hésitant) : "Il y a de nombreuses années, mon frère jumeau, Dermot, et moi sommes venus ici, attirés par les légendes de la grotte cristalline. Nous étions jeunes, curieux et, pour être honnête, assez insouciants. La grotte semblait nous appeler, avec son éclat mystérieux et ses cristaux étincelants."//
+
+//(text-colour:yellow)[$nomalc : "Qu'est-il arrivé ?"]//
+
+Brendan (avec une lueur de tristesse dans les yeux) : "Nous sommes entrés avec confiance, mais la grotte s'est avérée être un labyrinthe de passages et de chambres éclatantes. Après ce qui m'a semblé être des heures, j'ai trouvé la sortie, mais Dermot... il était introuvable. J'ai attendu des jours à l'entrée, espérant qu'il sorte, mais il n'est jamais revenu. J'ai tenté à plusieurs reprises de le retrouver, mais la grotte semblait différente à chaque fois, comme si elle changeait intentionnellement."
+
+(text-colour:yellow)[//$nomalc : "Je suis vraiment désolé, Brendan. Cela explique votre réticence."//]
+
+//Brendan : "Je vous en prie, soyez prudents. La grotte n'est pas seulement un endroit pour trouver des cristaux. C'est un endroit vivant, avec une volonté propre. Ne prenez pas à la légère la décision d'y entrer."//
+
+1. [[Entrer dans la grotte cristalline.->Entrée de la Grotte Cristalline]]
+
+
+:: Brendan : la grotte cristalline [Terminé] {"position":"3500,4225","size":"100,100"}
+### Le Chemin vers la Grotte Cristalline - Brendan, le Garde Forestier
+
+---
+
+Les héros, guidés par les informations d'Arthur, se rendent à la cabane de Brendan. Enveloppée par les arbres de la forêt, la modeste demeure semble faire partie intégrante du paysage environnant. Ils approchent prudemment, frappant doucement à la porte en bois.
+
+---
+
+//**Brendan** (ouvrant la porte, intrigué) : "Que faites-vous donc ici ? Ce n'est pas souvent que des visiteurs trouvent leur chemin jusqu'à ma cabane."//
+
+1. [[Nous avons besoin de votre aide pour accéder à la grotte cristalline.->Brendan 1]]
+
+
+:: CercleProtection [Plateau-rotatif] {"position":"2925,7075","size":"100,100"}
+CercleProtection
+
+L'érudit dessine un cercle protecteur autour du groupe. Le monstre, furieux, attaque mais est repoussé par le bouclier magique du cercle.
+
+[[Utiliser le temps pour préparer une attaque coordonnée->AttaqueCoordonnee]]
+[[Négocier avec le monstre pendant qu’il est bloqué->Negocier]]
+
+
+:: ChargerAvant [Mise-en-page+code-a-faire] {"position":"2875,6525","size":"100,100"}
+ChargerAvant
+
+Avec détermination, le groupe charge, sachant que ce pourrait être leur dernier combat. Ils visent les cristaux sur le dos de la créature, espérant briser sa source de pouvoir.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter de briser le cristal]]
+
+
+:: Combat Contre les Reflets [Terminé] {"position":"3775,5425","size":"100,100"}
+''(text-colour:red)+(bg:black)[**Combat**]''
+**Reflets : x5**
+Points de vie : 15
+Corps à corps : 60%
+Dégâts : 1d6
+
+(b4r:"solid")+(b4r-colour:white)[<button id="rollD100Button" class="d100Button">Lancer dés corps à corps</button>
+<p id="d100Result">Résultat D100 : </p>
+]
+(b4r:"solid")+(b4r-colour:white)[<button id="rollD6Button" class="d6Button">Lancer dés de dégâts</button>
+<p id="d6Result">Résultat D6 : </p>]
+
+1. [[Vous avez vaincu les reflets.->Reflet vaincus]]
+2. [[ Vous avez été vaincu par les reflets.->Reflet vainqueur]]
+
+
+:: Combat1-4a {"position":"1925,1200","size":"100,100"}
+Au moment ou la créature s'est mise debout, vous apercevez un fragment de métal noir enfoncé dans sa chair.
+
+[[Baisser les yeux et appocher la créature en tendant la main.->combat1-5a]]
+[[C'est trop dangereux, changer d'approche.->combat1-1]]
+
+
+:: CombatFinal [Non] {"position":"2675,6725","size":"100,100"}
+GroupeAnanti
+
+Les cris de désespoir résonnent dans la caverne alors que le monstre, sans aucune pitié, anéantit l’équipe un par un, mettant fin à leur quête et à leurs vies. Dans le noir de la caverne, seuls restent les échos de leur combat perdu.
+
+[[(Fin tragique - Groupe meurt)->Fin]]
+
+
+:: Communiquer {"position":"1900,6425","size":"100,100"}
+<!--Communiquer-->
+
+(text-colour:yellow)[$nomalc ]avance prudemment, émettant des paroles apaisantes dans une tentative de communiquer avec la créature. Celle-ci réagit, mais pas de la manière escomptée.
+
+[[Continuer de parler->ParlerPlus]]
+[[Reculer et penser à une autre stratégie->Reculer]]
+
+
+:: Confronter ses peurs {"position":"6850,2250","size":"100,100"}
+### Confronter Leurs Propres Peurs
+
+---
+
+**Narration:**
+
+En faisant le choix audacieux de se confronter à leurs propres peurs, les héros, les yeux fixés sur les miroirs de l'eau, s’immergent dans un monde de reflets internes, où chaque regret et chaque peur passée sont ramenés à la surface avec une puissance douloureuse mais éclairante. Les images des miroirs, bien que troublantes, commencent à se dissoudre, se mêlant à des souvenirs de joie, d'amour et de succès qu’ils avaient temporairement oubliés dans la douleur. Une réalisation s'installe : leurs peurs ne les définissent pas plus que leurs succès. Tout fait partie du voyage du soi.
+
+Chaque héros, à travers ces révélations, découvre quelque chose d'essentiel sur soi-même, une clé pour déverrouiller une partie d’eux qui était restée cachée ou inhibée.
+
+**Dialogue:**
+
+//**Entité de l'Arbre Cœur:** "Braves voyageurs, vous avez osé faire face à ce que beaucoup fuient. En regardant dans le miroir de votre propre âme, vous avez vu toutes vos facettes, bonnes et mauvaises, et vous vous êtes acceptés. En cela réside une force véritable."//
+
+//**Héroïne/Héros:** "L’écho de nos peurs et joies nous rappelle que chaque larme et chaque rire sont des fils tissés dans le tapis de notre existence. Nous sommes plus complets maintenant, ayant vu et accepté nos ombres et nos lumières."//
+
+//**Entité de l'Arbre Cœur:** "C’est vrai. Et avec cette acceptation vient une paix qui transcende les conflictualités internes, permettant une croissance et une compréhension plus profondes. J’offre ceci non pas comme un don, mais comme une reconnaissance de votre courage."//
+
+---
+
+**Narration:**
+
+Une branche de l'Arbre Cœur se courbe doucement vers eux, son écorce s’ouvrant délicatement pour révéler un morceau de son cœur étincelant. Les héros, avec un respect et une gratitude renouvelés, acceptent le fragment et se préparent à revenir à Blancheforêt. Les notes de la mélodie ancestrale s'adoucissent, exprimant une approbation silencieuse alors qu'ils quittent la clairière avec quelque chose de bien plus précieux que le bois ; ils portent désormais une compréhension plus profonde d’eux-mêmes.
+
+Ils ont réussi non seulement à gagner le respect de l'Arbre Cœur, mais aussi à se confronter à leurs propres complexités internes, un exploit qui, sans aucun doute, les fortifiera dans les épreuves à venir.
+
+[[Quête : Réparer le télescope->Taverne 3]]
+
+
+:: Continuer d'attaquer les cristaux [Random] {"position":"2375,6775","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "MonstreVaincu")
+](else:)[
+    (go-to: "MonstreDernierEffort")
+]
+
+
+:: ContinuerAventure [Peut-être] {"position":"3700,6050","size":"100,100"}
+ContinuerAventure
+
+Les héros, continuent leur périple, emportant avec eux les cicatrices de ce combat titanesque.
+
+[[Revenir à l'entrée de la grotte.->->Passage Bleu]]
+
+
+:: ContournerMonstre [Mise-en-page+code-a-faire] {"position":"1775,7625","size":"100,100"}
+<!--ContournerMonstre-->
+
+Le groupe tente de se faufiler discrètement le long des parois de la caverne, espérant ne pas attirer l'attention du monstre.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter de se faufiler]]
+
+
+:: ContreAttaque [Mise-en-page+code-a-faire] {"position":"3475,6825","size":"100,100"}
+ContreAttaque
+
+Les héros rassemblent leurs forces pour une ultime contre-attaque.
+
+Quelle sera la conclusion de cet évènement ?
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Ultime contre-attaque]]
+
+
+:: ContreAttaquerEsquive [Mise-en-page+code-a-faire] {"position":"2575,6825","size":"100,100"}
+ContreAttaquer
+
+Profitant de la paralysie temporaire du monstre, le groupe lance une offensive audacieuse, frappant avec tout ce qu'ils ont dans l’espoir de renverser la situation.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter une offensive audacieuse]]
+
+
+:: CreatueApaisee [Peut-être] {"position":"3200,6625","size":"100,100"}
+CreatueApaisee
+
+(text-colour:blue)[$nom], avec des mots doux et un langage corporel apaisant, réussit à calmer la créature. Elle recule, s'asseyant calmement, sa lueur malveillante maintenant éteinte. (text-colour:blue)[$nom], avec une prudence respectueuse, se retire lentement de la caverne, laissant la créature en paix.
+
+[[Continuer l'aventure->ContinuerAventure]]
+
+
+:: CristalDetruit [Peut-être] {"position":"2775,6425","size":"100,100"}
+CristalDetruit
+
+Le groupe réussit à détruire un des cristaux, affaiblissant le monstre et lui faisant pousser un hurlement terrifiant. Cette victoire leur donne un instant de répit et peut-être un avantage dans le combat.
+
+[[Continuer à attaquer les cristaux->AttaquerCristaux]]
+[[Utiliser cet instant pour fuir->Fuite]]
+
+
+:: DefenseBouclier [Mise-en-page+code-a-faire] {"position":"3800,6750","size":"100,100"}
+DefenseBouclier
+
+(text-colour:green)[$nommvb ]créer un bouclier magique juste à temps, et l'attaque du monstre s'écrase contre lui dans une explosion d'étincelles éblouissantes. Cependant, l'impact est bien plus fort que prévu.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Le bouclier résistera-t-il ?]]
+
+
+:: DupeMonstre [Plateau-rotatif] {"position":"1950,6900","size":"100,100"}
+<!--DupeMonstre-->
+
+Le monstre tombe dans le piège, se retournant pour faire face à la fausse menace et laissant son dos exposé à une attaque.
+
+[[Exécuter une attaque puissante->ExécuterAttaque]]
+[[Tenter de passer pendant qu'il est distrait->PasserDistract]]
+
+
+:: EchapperReussi [Peut-être] {"position":"4275,6675","size":"100,100"}
+EchapperReussi
+
+Avec leurs dernières forces, les héros parviennent à s'échapper du monstre furieux, trouvant refuge dans un passage secret de la grotte.
+
+1. [[Suivre le passage secret->Fuite]]
+
+
+:: EchecFaufiler [Peut-être] {"position":"1875,7725","size":"100,100"}
+<!--EchecFaufiler-->
+
+Le monstre remarque (text-colour:magenta)[ $nommar ]en train de se faufiler et rugit, se lançant vers le groupe avec une rage renouvelée.
+
+[[Se défendre contre le monstre->PreparerCombat]]
+[[Courir aussi vite que possible->Fuite]]
+
+
+:: Ecouter [Ok] {"position":"1725,7150","size":"100,100"}
+<!--Ecouter-->
+
+Le monstre partage une histoire triste, révélant que c'est une malédiction qui le maintient sous cette forme hostile. Il donne à $nomalc une quête pour le libérer.
+
+[[Fin du combat.->GolemPacifié]]
+
+
+:: EffetAttaqueFissure [Plateau-rotatif] {"position":"4600,7075","size":"100,100"}
+EffetAttaqueFissure
+
+Leurs attaques coordonnées semblent porter leurs fruits. La fissure dans le cristal commence à s'élargir, et la créature pousse un hurlement guttural de douleur, sa lueur intérieure pulsant d'une lumière instable. Cependant, en réaction, elle se prépare à libérer une onde de choc dévastatrice.
+
+[[Se préparer à éviter l'onde de choc->EviterOnde]]
+[[Tenter une ultime attaque pour finir le combat->UltimeAttaque]] 
+[[Utiliser un sort protecteur pour encaisser l'onde de choc->SortProtecteur]]
+
+
+:: Elinor Perenelle : partie 1 [Terminé] {"position":"1925,1975","size":"100,100"}
+Elinor Perenelle
+<img src="img/elinor1.jpg">
+
+Vous vous approchez d'une dame d'un certain âge. Elle est belle et élégante, son regard perçant semble lire au plus profond de votre âme, tandis que son visage doux dégage une aura de sagesse et de bienveillance.
+
+<<if $medaillon is true>>
+Elinor : "Bonjour, voyageur, et bienvenue à Blancheforêt. Je ressens que vous détenez un objet spécial qui me semble familier..."
+
+1. [[Sortir le médaillon de votre poche.->Elinor-B-1]]
+
+<<else>>
+Elinor : "Bonjour, voyageur. Soyez le bienvenu à Blancheforêt. Seriez-vous des nôtres ce soir pour écouter mon histoire ?"
+
+
+1. [[Participer à l'évènement.->Elinor-H-1]]
+<</if>>
+
+
+:: Elinor-B-1 {"position":"1725,1975","size":"100,100"}
+Émue, Elinore fixe le médaillon longuement. Le temps semble suspendu, figeant cet instant chargé d'émotions. Une larme solitaire roule le long de sa joue, reflétant la tristesse et la nostalgie qui l'habitent.
+
+1.[[Lui tendre le médaillon.->Elinor-B-2]]
+
+
+:: Elinor-B-2 {"position":"1725,2100","size":"100,100"}
+La vieille dame tend la main et saisit délicatement le médaillon...
+
+Elinor : "C'est à peine croyable..."
+
+Un sanglot lui échappe, brisant brièvement le calme qui régnait.
+
+1. [[S'asseoir prêt d'elle.->Elinor-B-3]]
+2. [[Partir et la laisser seule.->1-Les habitants]]
+
+
+:: Elinor-B-3 {"position":"1725,2225","size":"100,100"}
+Elinor sort un mouchoir en soie et essuie ses larmes.
+
+Elinor : "Ce médaillon... Je l'ai offert à Gustav, mon défunt époux. Il devait le protéger lors de son long voyage. C'était il y a quatre ans. Il n'est jamais revenu depuis. Où l'avez-vous trouvé ?"
+
+1. [[Tout lui dire sur les marchands et votre étrange rencontre.->Elinor-B-4a]]
+
+
+:: Elinor-B-4a {"position":"1725,2350","size":"100,100"}
+Elinor : "Ainsi, vous me dites qu'un marchand l'a acheté à une personne peu recommandable ? Et que vous avez aperçu un vieil homme parmi eux ?"
+
+Elle met sa main sur son cœur, serrant son mouchoir...
+
+"Cela veut dire que Gustav a fait une mauvaise rencontre... Il n'est donc plus de ce monde..."
+
+De nouvelles larmes coulent le long de son doux visage.
+
+1. [[Suite.->Elinor-B-5a]]
+
+
+:: Elinor-B-5a {"position":"1725,2475","size":"100,100"}
+<<if $rougeot is true>>
+Elle soupire, puis semble reprendre ses esprits.
+
+Elinor : "Je vous remercie du fond du coeur de m'avoir rapporté ce médaillon"
+
+Au dessus de vous, un chant d'oiseau se fait entendre. Vous commencez à bien le connaître...
+
+<<set $rougeot = true>><span style="color: green;">//Ina vous regarde avec bienveillance...//</span>
+<<audio "recompense" play>>\
+<<audio "rougeot" play>>\
+
+1. [[Poursuivre.->Elinor-B-6]]
+<<else>>
+Elle soupire, puis semble reprendre ses esprits.
+
+Elinor : "Je vous remercie du fond du coeur de m'avoir rapporté ce médaillon"
+
+1. [[Poursuivre.->Elinor-B-6]]
+<</if>>
+
+
+:: Elinor-B-6 {"position":"1775,2650","size":"100,100"}
+Elinor : "Accepteriez-vous de venir ce soir écouter l'histoire que je raconte aux petits ? Cela pourrait vous interesser..."
+
+1. [[Participer à l'évènement.->Elinor-H-1]]
+
+
+:: Elinor-H-1 {"position":"1925,2100","size":"100,100"}
+<<audio "marcher"  play>>\
+<!--Musique, ambiance et images-->
+Le soir avance lentement, enveloppant le marché d'une aura dorée alors que vous suivez Elinor à travers ses allées animées. Ensemble, vous remontez un petit chemin bordé de buissons fleuris, laissant derrière vous l'agitation du marché.
+
+Progressivement, le soleil se couche derrière les montagnes, peignant le ciel de teintes chaudes et chatoyantes. Le crépuscule éclaire votre chemin d'une lueur douce et apaisante, tandis que les ombres s'allongent lentement autour de vous, créant un tableau enchanteur de tranquillité et de sérénité.
+
+1. [[Suivre Elinor.->Elinor-H-2]]
+
+
+:: Elinor-H-2 {"position":"1925,2225","size":"100,100"}
+<<audio "bgm1"  stop>>\
+<<audio "fire"  loop volume 0.5 play>>\
+<<audio "piano" loop play>>\
+<!--Musique, ambiance et images-->
+
+Vous arrivez dans une petite clairière où se dresse une ruine ancienne, vestige du passé qui semble figé dans le temps. Au cœur de cet endroit, un feu de camp crépite, illuminant la clairière de ses danses de flammes dansantes. 
+
+Autour du feu, plusieurs enfants et quelques parents sont présents, leurs visages éclairés par la chaleur et l'excitation de l'instant. Tous semblent heureux de voir Elinor, qui prend le temps de saluer chaque enfant avec tendresse et affection.
+
+Elle vous invite à vous joindre à eux et à vous asseoir au bord du feu, où la chaleur bienveillante et la camaraderie créent une atmosphère chaleureuse et accueillante.
+
+1. [[S'asseoir au bord du feu.->Elinor-H-3]]
+
+
+:: Elinor-H-3 {"position":"1925,2350","size":"100,100"}
+<<audio "marcher"  stop>>\
+<<audio "wind" loop play>>\
+<img src="img/elinor.png">
+<!--Musique, ambiance et images-->
+
+Vous prenez place au bord du feu, laissant la chaleur réconfortante envelopper votre être alors que vous observez le spectacle céleste. De nombreuses étoiles scintillent dans le voile bleuté de la nuit, leur éclat semblant révéler les mystères infinis de l'univers. La lune, pleine et resplendissante, se lève majestueusement, éclairant la clairière d'une lueur argentée.
+
+Émerveillé par ce spectacle grandiose, vous baissez votre tête vers Elinor, qui sort alors un livre de son sac. Elle l'ouvre avec précaution et commence à lire d'une voix douce et envoûtante, captivant l'attention de tous les présents. Les mots du livre semblent prendre vie, transportant les auditeurs dans des mondes imaginaires et des histoires fascinantes. Vous vous laissez emporter par la magie de l'instant, bercé par la douce mélodie des mots et la lueur du feu dansant sous les étoiles.
+
+1. [[Ecouter l'histoire.->Elinor-H-4]]
+
+
+:: Elinor-H-4 {"position":"1925,2475","size":"100,100"}
+Les visages des enfants s’illuminent de fascination. Les plus petits se blottissent contre les plus grands, cherchant du réconfort.
+
+//Elinor (avec un doux sourire): "Il était une fois, dans un royaume lointain, un érudit du nom de Theodorus qui avait dédié sa vie à étudier les étoiles. Chaque nuit, il montait dans cet observatoire" – elle pointe du doigt la structure sur la colinne, proche du village – "pour dialoguer avec le cosmos."//
+
+Les enfants lèvent tous la tête, regardant le vieil édifice avec émerveillement, imaginant Theodorus se tenant là, une silhouette solitaire contre le ciel nocturne.
+
+1. [[Ecouter la suite.->Elinor-H-5]]
+
+
+:: Elinor-H-5 {"position":"1925,2600","size":"100,100"}
+//Elinore (sa voix s'abaissant presque à un murmure): "Une nuit, une étoile plus brillante et plus scintillante que toutes les autres traversa le ciel. Elle s’arrêta juste au-dessus de l'observatoire, sa lumière se déversant comme une rivière céleste, illuminant la nuit comme si le jour s'était invité dans le royaume de la lune."//
+
+Un murmure d’excitation parcourt les enfants. Ils se mettent à murmurer entre eux, imaginant l'éclat spectaculaire et magique de cette étoile. Les plus petits serrent leurs petites mains, captivés et à peine capables de contenir leur émerveillement.
+
+1. [[Ecouter la suite.->Elinor-H-6]]
+
+
+:: Elinor-H-6 {"position":"1925,2725","size":"100,100"}
+//Elinore (une pointe de tristesse dans sa voix): "Mais, mes chers, toutes les lumières, même les plus brillantes, cachent des ombres. L'étoile a parlé à Theodorus, lui promettant des connaissances infinies et le pouvoir de façonner le futur."//
+
+Les enfants deviennent soudainement silencieux, la joie initiale se transformant en une tension palpable. Ils s'accrochent à ses paroles, se balançant légèrement sur leurs petits pieds, incertains de ce que l’étoile pourrait demander ensuite.
+
+1. [[Ecouter la suite.->Elinor-H-7]]
+
+
+:: Elinor-H-7 {"position":"1925,2850","size":"100,100"}
+//Elinore (après un silence) : "Theodorus prit la décision d'écouter l'étoile et de se lancer dans ce voyage, malgré les mises en garde de sa femme. Consciente qu'elle ne pourrait le dissuader, elle finit par céder, bien que cela lui coûtât. Son amour pour lui était profond, et elle savait que s'opposer à son désir... l'attristerai pour toujours. Il était passionné par les astres, c'était toute sa vie."//
+
+
+//Elinore (une larme à l'oeil) : "Pour s'assurer que tout aille bien pour lui, sa femme lui fit façonner un médaillon. Un magnifique bijou gravé de leurs deux initiales entrelacées, portant la mention "Ina préserve vos cœurs". C'était son témoignage d'amour."//
+
+<<if $medaillon is true>>
+Elinor vous regarde,  les yeux empli de tristesse, mais de reconnaissance.
+<<else>>
+<</if>>
+
+1. [[Ecouter la suite.->Elinor-H-8]]
+
+
+
+
+:: Elinor-H-8 {"position":"1925,2975","size":"100,100"}
+//Elinore (refermant le livre avec un soupir) : "Theodorus, ne revint jamais à Blancheforêt..."
+
+Un silence pesant s'installe au milieu de l'assemblée. Tous semblent accablés, leurs visages empreints de tristesse. Quelques reniflements étouffés se font entendre parmi les plus petits.
+
+//Elinore : "Il se fait tard, mes petits. Retournons au village avant qu'Alden ne s'inquiète. Voyageur, vous devriez passer voir le maire, je pense qu'il sera curieux de vous rencontrer."
+
+1. [[Rentrer au village avec le groupe.->Alden-A-0]]
+
+
+
+:: Encaisser [Mise-en-page+code-a-faire] {"position":"3850,6950","size":"100,100"}
+Encaisser
+
+Le groupe se resserre, prêt à affronter la charge électrique de la créature. (text-colour:green)[$nommvb] à atténuer autant que possible l’impact de l’attaque imminente, mais ils savent que ce sera une entreprise dangereuse.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Le bouclier tient-il ?]]
+
+
+:: Entrée de la Grotte Cristalline [Terminé] {"position":"3525,5225","size":"100,100"}
+### La Grotte Cristalline
+
+---
+
+**Description Générale:**
+
+La grotte cristalline émane une atmosphère à la fois apaisante et étrange. Des cristaux de toutes tailles et formes émergent du sol, des murs et du plafond, émettant une douce lueur multicolore qui illumine subtilement les environs. Des bruits délicats, semblables à une mélodie lointaine, résonnent à travers les cavités, créant une harmonie hypnotisante.
+
+Les héros pénètrent prudemment dans la grotte, les cristaux sous leurs pieds résonnant à chaque pas, diffusant des vagues d’énergie mystique dans l'air. Les parois scintillent, créant des reflets dansantes qui évoquent des étoiles dans un ciel nocturne. C'est à la fois éthéré et incroyablement apaisant.
+
+Deux passages distincts s'offrent à vous.
+
+1. [[Passage de gauche : Un doux vent bleuté semble s'échapper de ce passage, la mélodie est légèrement plus intense ici.->Passage Bleu]]
+2. [[Passage du milieu : Les cristaux brillent d'un éclat pourpre, le chant des cristaux semble presque joyeux.->Passage Pourpre]]
+
+
+:: EsquiveEchoue [Non] {"position":"4575,6475","size":"100,100"}
+EsquiveEchoue
+
+Malgré leurs efforts, la vélocité de l’attaque surprend le groupe, et ils sont projetés violemment à travers la pièce, gravement blessés.
+
+[[Le groupe est anéanti->Fin]]
+
+
+:: EsquiveReussie [Peut-être] {"position":"4575,6675","size":"100,100"}
+EsquiveReussie
+
+Le groupe roule sur le sol avec agilité, évitant de justesse l'attaque dévastatrice du monstre. Ils se redressent, les coeurs battants mais saufs pour le moment.
+
+[[Utiliser cet instant pour contre-attaquer->ContreAttaquerEsquive]]
+[[Utiliser cet instant pour fuir->Fuite]]
+
+
+:: Esquiver [Mise-en-page+code-a-faire] {"position":"4475,6575","size":"100,100"}
+Esquiver
+
+Le groupe, dans un réflexe éperdu, tentent d'esquiver l'attaque fracassante du monstre, se jetant sur le côté dans un élan désespéré.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter une esquive]]
+
+
+:: EtreRattrape [Non] {"position":"4275,6475","size":"100,100"}
+EtreRattrape
+
+Le monstre, dans sa rage, rattrape (text-colour:blue)[$nom], mettant fin à sa quête de manière tragique.
+
+[[(Fin tragique - Groupe meurt)->Fin]]
+
+
+:: EviterOnde [Plateau-rotatif] {"position":"4525,6925","size":"100,100"}
+EviterOnde
+
+Les héros, prévoyant la réaction explosive de la créature, font un bond de côté, évitant de justesse l'onde de choc qui balaye tout sur son passage.
+
+[[Attaquer pendant qu'elle est affaiblie->ContreAttaque]]
+[[S'enfuir pendant qu'elle est désorientée->Fuite]]
+
+
+:: ExécuterAttaque [Mise-en-page+code-a-faire] {"position":"2375,7050","size":"100,100"}
+Exécuter une attaque puissante
+
+L'équipe frappe avec toutes ses forces le dos du monstre, profitant de cette opportunité inespérée.
+
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Frapper le monstre de toutes ses forces]]
+
+
+:: FaiblesseDecouverte [Plateau-rotatif] {"position":"2475,6375","size":"100,100"}
+<!--FaiblesseDecouverte-->
+
+Grâce à ses études exhaustives,  (text-colour:blue)[$nom] évoque un ancien texte qui parlait de créatures similaires. "Les cristaux sur son dos ! Ils sont la source de son pouvoir !" Indiquant un amas de cristaux luminescents sur le dos du monstre.
+
+1. [[Tenter d’attaquer les cristaux->AttaquerCristaux]]
+2. [[Tenter une négociation avec la créature->Negocier]]
+
+
+:: Faire bloc. [Random] {"position":"3475,6725","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "ContreAttaque")
+](else:)[
+    (go-to: "GroupeDevaste")
+]
+
+
+:: Fin [Non] {"position":"3850,6050","size":"100,100"}
+Fin
+
+La quête se termine ici, dans l'obscurité, loin des yeux du monde. Leur histoire se perd dans le temps, et le monstre continue sa ronde éternelle dans la caverne.
+
+1. [[Recommencer.->Rencontre avec le Monstre]]
+
+
+:: FinBrave [Non] {"position":"3675,6675","size":"100,100"}
+FinBrave
+
+Alors que les héros rassemblent chaque once d'énergie restante, ils foncent, les armes en avant, vers le point faible de la créature. Leur courage, si impressionnant et désespéré, crée un instant de silence presque sacré dans la grotte, où le temps semble s'arrêter.
+
+Puis, l'impact.
+
+Les armes pénètrent le cristal, créant un réseau de fractures qui se propagent rapidement à travers le corps du monstre. Pendant une seconde, la victoire semble à portée de main.
+
+Cependant, l'onde de choc émise par la créature, dans ses derniers moments de désespoir, est libérée avec une force dévastatrice. Les héros, trop proches pour échapper à la détonation, sont projetés violemment en arrière, leur corps frappant le sol de la grotte avec une brutalité insondable.
+
+Dans la quiétude qui suit l'explosion, les héros gisent immobiles, leurs corps éparpillés à travers la caverne. La créature de cristal, également détruite, repose en morceaux, une flaque de son essence lumineuse s'éteignant lentement autour d'elle.
+
+[[Fin de la quête->Fin]]
+
+
+:: Frapper le monstre de toutes ses forces [Random] {"position":"2475,7000","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "MonstreVaincu")
+](else:)[
+    (go-to: "MonstreFurieux")
+]
+
+
+:: Fuite [Mise-en-page+code-a-faire] {"position":"3100,6375","size":"100,100"}
+Fuite
+
+Le groupe, battu et brisé, choisit de sauver ce qui peut encore l’être. Ils s’enfuient dans une crevasse adjacente, où la créature ne peut les atteindre.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[S'enfuir]]
+
+
+:: G.C. Echec [Terminé Fin-de-partie] {"position":"4150,5825","size":"100,100"}
+### Les Héros et l’Écho du Sacrifice Perdu
+
+---
+
+**Narration:**
+
+À la sortie de la grotte, les héros se tiennent, un vide abyssal résonnant à travers leurs yeux autrefois vifs. L’écho de leur sacrifice résonne à travers les bois de Blancheforêt, un murmure sourd qui s’insinue dans chaque branche craquante sous leurs pieds et chaque souffle de vent à travers les feuilles.
+
+---
+
+**Dialogues:**
+
+(text-colour:blue)[//**$nom:** "Nous avons sacrifié ce qui nous était le plus cher, et pourtant le monde n’a pas changé. Nos âmes sont désormais errantes, à jamais déconnectées du tissu de l’humanité."//]
+
+(text-colour:magenta)[//**$nommar:** "Le sacrifice sans compréhension n’est pas héroïsme, c’est un égarement. Nous avons perdu notre chemin dans l'illusion de sauver les autres."//]
+
+//(text-colour:green)[**$nommvb:** "Les arbres, ils pleurent pour nous. Pouvez-vous les entendre ? Notre peur de l'échec nous a conduits à un pire destin : l'existence sans ressentir, sans comprendre."]//
+
+(text-colour:orange)[//**$nomg:** "Nous sommes maintenant moins que des ombres, errant sans but dans une forêt qui autrefois nous faisait sentir vivants et connectés."//]
+
+---
+
+**Narration:**
+
+Les héros, à présent des coquilles vides de leur ancien moi, errent à travers les bois, chaque pas un rappel fantomatique de ce qu’ils étaient autrefois. Les oiseaux qui chantent au-dessus portent une mélodie qui aurait autrefois apaisé leurs âmes, maintenant elle ne résonne que comme un lointain souvenir de joie perdue.
+
+La vie autour d’eux continue, les fleurs fleurissent, les animaux gambadent, le cycle de la vie perpétue sa danse éternelle. Mais pour les héros, le temps est figé dans un moment éternel de perte, une leçon trop tardivement comprise sur la nature du sacrifice et la valeur de l'échec comme passage vers l’apprentissage et la croissance.
+
+---
+
+**Épilogue:**
+
+Des légendes naissent à travers les terres d’Aria sur les âmes perdues qui errent à travers les bois de Blancheforêt, un avertissement tissé à travers les générations sur le coût de la perte de soi dans la poursuite du bien plus grand. Des parents murmurent des contes à leurs enfants, leur enseignant la valeur de l’échec, l'importance de comprendre et de ressentir, et surtout, l'essentielle humanité qui réside dans chaque larme versée et chaque rire partagé.
+
+Les héros, bien que perdus pour eux-mêmes, deviennent un rappel omniprésent que sacrifier ce qui est précieux en nous n'apprend rien, que la peur de l'échec et l'échec lui-même font partie de l'apprentissage et nous rendent meilleurs.
+
+Dans les bois, leurs silhouettes éthérées demeurent, à jamais errantes, à jamais perdues, mais jamais oubliées.
+
+[[Vous êtes mort.->Points de contrôles]]
+
+
+:: G.C. Paix [Terminé] {"position":"4000,5825","size":"100,100"}
+### Le Choix des Héros: L'Abandon de Leur Propre Paix
+
+---
+
+**Narration:**
+
+Les héros, pétrifiés devant la magnificence du cristal vibrant, discernent un éclat de détermination dans leurs regards. Ils choisissent de sacrifier leur propre paix, sans comprendre l'étendue du fardeau qui les attend. L’Érudit serre fermement la pierre d'étoile dans sa main, ressentant une connexion perdue et une tristesse accablante.
+
+---
+
+**Dialogues:**
+
+(text-colour:blue)[//**$nom :** "Nos âmes sont peut-être sacrifiées, mais les espoirs du monde ne seront pas abandonnés. Ce choix... Il est douloureux, mais c’est notre fardeau à porter."//]
+
+(text-colour:magenta)[**$nommar:** "Nous marcherons dans l'obscurité de notre propre abîme si cela signifie apporter la lumière à ce monde. Que nos âmes trouvent le repos dans notre sacrifice."]
+
+(text-colour:green)[**$nommvb:** "Le silence de notre paix sera rompu, mais les chants de la vie continueront pour d'autres. Que nos pas soient lourds, mais nos cœurs légers pour eux."]
+
+(text-colour:orange)[//**$nomg:** "Nous sommes les gardiens du crépuscule, nous marchons où d'autres craignent de s'aventurer, même si cela signifie la fin de notre propre histoire."//]
+
+---
+
+**Narration:**
+
+Les héros, les mains entrelacées, touchent le cristal, leur énergie se fondant en son essence. La grotte tremble légèrement, les voix autrefois si mélodieuses devenant un hurlement torturé qui semble émaner du plus profond de leurs propres âmes. Les cristaux s’assombrissent, absorbant la lumière environnante, tout comme ils absorbent l'éclat intérieur de chaque héros.
+
+Une vague de désespoir les enveloppe, et alors que leurs corps restent debout, leurs esprits semblent se dissoudre, absorbés par le cristal qui à présent palpite d'une énergie sombre et puissante. L’Érudit libère la pierre d'étoile, qui tombe au sol avec un écho sourd, sa lumière vacillante désespérément en cherchant son porteur perdu.
+
+---
+
+[[Sortir de la grotte.->G.C. Echec]]
+
+
+:: G.C. Réussite [Terminé] {"position":"3850,5700","size":"100,100"}
+### Le Choix des Héros: L'Échec de Sauver le Monde
+
+---
+
+**Narration:**
+
+Les héros, chacun immersé dans ses pensées et souvenirs, se figent devant le cristal majestueux. Les murmures éthérés continuent de danser autour d’eux, mais un sentiment de résolution commence à poindre dans leurs cœurs. Ils choisissent la douleur de l'échec de sauver le monde plutôt que de sombrer dans l'égoïsme. 
+
+---
+
+**Dialogues:**
+
+(text-colour:blue)[//**$nom:** "Il est indéniable que le poids de ne pas sauver ce monde serait insupportable pour chacun d'entre nous. Nous portons en nous les espoirs de ceux qui croient en nous."//]
+
+(text-colour:magenta)[//**$nommar:** "Même dans l'échec, il y a une forme de courage. Le courage de se lever, d'essayer, même si le succès n'est pas garanti."//]
+
+(text-colour:green)[//**$nommvb:** "Il y a une paix dans l'acceptation de notre choix, même s'il est teinté de douleur et de regret. Nous serons les gardiens de ces souvenirs et témoins de ces sacrifices."//
+]
+(text-colour:orange)[//**$nomg:** "Nous combattons non pas parce que nous sommes assurés de la victoire, mais parce que c'est ce qu'il faut faire. Parce qu'abandonner serait un échec bien plus grand."//]
+
+---
+
+**Narration:**
+
+Ainsi, avec une détermination nouvellement forgée, ils avancent, le cœur lourd mais résolu, vers le grand cristal. À leur approche, les voix se taisent, comme si elles respectaient leur choix, reconnaissant leur résolution face à la douleur inévitable de l'échec possible.
+
+Lorsqu'ils touchent le cristal, celui-ci résonne d'une lumière éclatante, enveloppant tout l’espace de la grotte dans une aura éthérée. Les voix, autrefois une cacophonie de doutes et de peurs, chantent maintenant une mélodie apaisante et émouvante.
+
+Des larmes sillonnent les joues des héros alors qu'ils extraient prudemment les cristaux, qui sont maintenant imprégnés de leur volonté inébranlable. Ces cristaux, témoins de leur serment silencieux et de leur potentiel sacrifice, seront la clé pour reconstruire l'observatoire, et, espèrent-ils, pour comprendre comment sauver leur monde de la catastrophe imminente.
+
+---
+
+Les héros sortent de la grotte cristalline avec un nouveau fardeau, mais aussi une nouvelle lumière dans leur être. Les cristaux qu'ils portent ne sont pas seulement des matériaux pour réparer l'observatoire, mais aussi un rappel perpétuel de leur choix de porter le poids du monde sur leurs épaules, même face à l'éventualité de l'échec.
+
+La prochaine étape de leur quête les mènera de nouveau à Blancheforêt, où ils doivent non seulement réparer l'observatoire, mais aussi partager les nouvelles de leur quête - des nouvelles qui porteront les graines de l’espoir et de la désolation à parts égales.
+
+---
+1. [[Quête : Réparer le télescope->Quête P. 1]]
+2. [[Se reposer à la Taverne->Taverne 2]]
+
+
+:: GolemEsquivé [Ok] {"position":"3175,6050","size":"100,100"}
+GolemEsquivé
+
+
+:: GolemPacifié [Ok] {"position":"3350,6050","size":"100,100"}
+GolemPacifié
+
+
+:: GolemTuer [Ok] {"position":"3525,6050","size":"100,100"}
+GolemTuer
+
+
+:: GroupeDevaste [Peut-être] {"position":"3475,6625","size":"100,100"}
+GroupeDevaste
+
+La violence de l’assaut du monstre est dévastatrice, laissant (text-colour:orange)[$nomg] en piteux état.
+
+[[Essayer de s’échapper, malgré tout->TenterEchapper]]
+[[Rester et périr avec honneur->PerirAvecHonneur]]
+
+
+:: GroupeEcrase [Non] {"position":"2625,7200","size":"100,100"}
+GroupeEcrase
+
+(text-colour:blue)[$nom], malheureusement, n'est pas de taille face à la violente attaque du monstre et est écrasé sous sa puissance.
+
+[[(Fin tragique - Groupe meurt)->Fin]]
+
+
+:: GroupeResiste [Peut-être] {"position":"2625,7000","size":"100,100"}
+GroupeResiste
+
+(text-colour:blue)[$nom], bien que secoués, tiennent bon et se préparent pour une autre ronde.
+
+[[Organiser une nouvelle stratégie->NouvelleStrategie]]
+
+
+:: HerosDefaits [Non] {"position":"3375,6925","size":"100,100"}
+HerosDefaits
+
+Les héros, bien qu'ayant combattu avec bravoure, sont vaincus par le monstre cristallin, leurs espoirs et leurs rêves se perdant dans les profondeurs sombres de la grotte.
+
+[[(Fin tragique - Groupe meurt)->Fin]]
+
+
+:: HerosTriomphent [Ok] {"position":"3575,6925","size":"100,100"}
+HerosTriomphent
+
+(text-colour:blue)[$nom ]parvient, à travers un effort colossal, à vaincre le monstre, le réduisant en un tas de cristaux étincelants.
+
+[[GolemTuer]]
+
+
+:: Indice des Couleurs [Terminé] {"position":"4075,5175","size":"100,100"}
+### Indice des Couleurs
+
+Les images montrent des personnages choisissant différentes couleurs en séquence pour naviguer dans la grotte. Bleu, Obsidienne, Vert.
+
+[[Mémoriser l'ordre des couleurs.->Passage Pourpre]]
+[[Revenir en arrière.->Entrée de la Grotte Cristalline]]
+
+
+:: Insister {"position":"1750,6900","size":"100,100"}
+<!--Insister-->
+
+Malgré l’intuition du danger imminent,(text-colour:yellow)[$nomalc] insiste et quelque chose d'incroyable se produit. Les yeux de la créature s'adoucissent et elle s’arrête.
+
+[[Ecouter ce qu’elle a à dire->Ecouter]]
+[[Attaquer pendant qu'elle est calme->PreparerCombat]]
+
+
+:: Interlude : l'observatoire {"position":"3875,4175","size":"100,100"}
+**Interlude**
+
+Après des périgrinations dans les contrées les plus énigmatiques de leur monde, nos héros sont revenus, chacun portant en eux quelque chose de plus précieux que les simples matériaux physiques qu’ils ont récoltés.
+
+1. **Les Cristaux de la Grotte Cristalline:**
+   - **Trouvaille:** Des cristaux éthérés, essentiels pour la confection des lentilles du télescope.
+   - **Leçon:** L'importance du sacrifice, même si cette leçon s'est révélée amère et chargée de regret.
+   - **Sentiment:** Un mélange de réussite et de mélancolie. Ils portent en eux une gravité nouvelle, ayant touché aux limites du sacrifice.
+
+2. **Le Bois de l’Arbre Cœur:**
+   - **Trouvaille:** Du bois extrêmement rare et robuste de l’Arbre Cœur, nécessaire pour la structure et la précision mécanique du télescope.
+   - **Leçon:** La force intérieure, le courage de confronter et d’accepter ses peurs et faiblesses.
+   - **Sentiment:** Un sentiment d'évolution et de résilience, ayant bravé leurs peurs intérieures et extérieures.
+
+3. **Les Fragments d'Étoiles:**
+   - **Trouvaille:** Un fragment d’étoile, aux propriétés uniques, capable d’amplifier et de clarifier la vision du télescope.
+   - **Leçon:** La solidarité, l'importance de se protéger mutuellement au lieu de se cacher seul derrière un bouclier.
+   - **Sentiment:** Un renforcement des liens, et une nouvelle compréhension de l'équilibre entre prendre soin de soi et des autres.
+
+**Transition vers la Reconstruction de l'Observatoire:**
+
+**Narration:**
+
+Le vent doux souffle à travers Blancheforêt, accueillant les héros de retour avec leurs trouvailles et leurs nouvelles leçons de vie. Les feuilles frémissent doucement, comme pour applaudir le courage et la persévérance dont ils ont fait preuve tout au long de leur quête.
+
+(text-colour:blue)[//**$nom:** "Nous avons traversé des mers de douleur et d'auto-réflexion, mais maintenant, nous sommes de retour, avec plus que ce que nous sommes allés chercher."//]
+
+(text-colour:orange)[//**$nomg:** "Chaque étape nous a pris quelque chose, mais en retour, nous avons acquis une sagesse qui va au-delà de nos anciennes limites."//]
+
+(text-colour:yellow)[//**$nomalc:** "Et maintenant, avec ces éléments en main, la vraie reconstruction peut commencer. Pas seulement de l'observatoire, mais en nous aussi, et dans ce village."//]
+
+**Narration:**
+
+L'observatoire, jadis un symbole de découverte et de connaissance, se tient devant eux, attendant d'être revitalisé non seulement par les matériaux mais aussi par l'esprit neuf de ceux qui le restaurent.
+
+Les villageois, conduits par le maire et Alden, se rassemblent, accueillant les héros avec des applaudissements et des acclamations. Les visages sont teintés de respect, de reconnaissance et d'anticipation pour le renouveau du symbole de leur village.
+
+//**Alden:** "Vous avez été au-delà de ce que nous aurions pu imaginer. Vous avez apporté non seulement ce que nous avons demandé mais aussi ramené une nouvelle sagesse qui illuminera notre futur. Il est temps de reconstruire, pas seulement avec des pierres et du bois, mais avec des cœurs forts et unis."//
+
+**Narration:**
+
+Les héros, les villageois, et nos personnages principaux se rassemblent, travaillant de concert pour remettre en état l'observatoire. Chaque coup de marteau et chaque cristal positionné est imprégné d'espoirs, de rêves et de la détermination inébranlable que chaque obstacle futur sera surmonté avec la même solidarité et la même force intérieure qu'ils ont montrées jusqu'ici.
+
+Et ainsi, l'observatoire, rebâti non seulement dans sa structure mais aussi dans son essence, se dresse une fois de plus, non seulement scrutant les étoiles mais aussi reflétant la lumière étincelante de l'esprit humain qui ne vacille jamais même dans l'obscurité.
+
+[[Plusieurs jours plus tard...->L'observatoire : réparé]]
+
+
+:: Isabella Lumenoire {"position":"7950,4725","size":"100,100"}
+### Les Fragments d'Étoiles : Isabella Lumenoire
+
+---
+
+**Narration:**
+
+Les héros, avec des épaules fatiguées mais des esprits résolus, parviennent à la demeure d'Isabella Lumenoire, une astronome respectée et la principale experte en astromancie du village de Blancheforêt. Son atelier, jonché de cartes célestes, de globes astronomiques, et de pierres étoilées scintillantes, dégage une aura sereine et mystérieuse. Des voûtes de lumières dansantes caressent doucement le plafond, créant un ciel étoilé artificiel dans la pièce.
+
+**Dialogue:**
+
+**Isabella Lumenoire:** "Ah, braves voyageurs, vous cherchez les fragments d'étoiles, n'est-ce pas ? Un matériau divin, souvent mal compris et pourtant, d'une puissance céleste indicible. Mais les étoiles ne se laissent pas facilement cerner. Il vous faudra démontrer votre compréhension de la véritable essence de la protection pour apprivoiser leur puissance."
+
+---
+
+**Narration:**
+
+Isabella, en douceur, leur révèle une énigme, les mots flottent dans l'air, s'illuminant d'une lueur stellaire :
+
+//**Isabella Lumenoire (énigmatique):** "Dans le ciel nocturne, une étoile veille, protégeant d'autres avec sa lueur et sa force. Pour en apprivoiser un fragment, il faut marcher dans le chemin où la protection n'est pas une armure, mais un acte d'amour et de sacrifice. Saurez-vous choisir la voie de l'étoile ?"//
+
+---
+
+**Narration:**
+
+Les héros sont conduits à une salle aux murs de cristal, où des milliers d'étoiles semblent les envelopper. Deux voies se présentent à eux. L'une est marquée par une étoile solitaire, scintillant avec une lumière puissante mais isolée, l'autre est un amas d'étoiles, chacune partageant et diffusant sa lumière avec les autres, créant un tissage lumineux de solidarité stellaire.
+
+**Choix:**
+- [[Choix : Suivre l'étoile solitaire.->Suivre l'étoile solitaire.]]
+- [[Choix : Marcher vers l'amas d'étoiles.->Marcher vers l'amas d'étoiles.]]
+
+
+:: L'arbrecoeur : 1A {"position":"6950,2000","size":"100,100"}
+### Le Rituel de l'Arbre Cœur
+
+---
+
+**Narration:**
+
+Les héros, armés des conseils d'Alaric et de l’antique mélodie murmurée par la forêt, parviennent dans une clairière où l'Arbre Cœur, ancien et majestueux, règne. Ses branches, tissées en une canopée sacrée, filtrent la lumière, créant un spectacle de teintes douces qui dansent sur le sol. La présence des voyageurs semble éveiller l’arbre, et une énergie mystique embrase la clairière. Une mélodie ancestrale caresse l’air, et deux voies de lumière se tracent devant les héros, bifurquant en deux directions.
+
+---
+
+**Énigme:**
+
+Deux chemins s'illuminent devant eux, chacun marqué par des symboles anciens. L'un arbore le symbole de la Force, une épée puissante ; l'autre celui du Soi, une plume qui flotte doucement au-dessus d’un miroir d’eau tranquille.
+
+Une voix, douce et éthérée, résonne :
+
+//"Voyageurs des temps modernes, choisissez votre voie,
+La force du guerrier, son cœur pur et sa constance,
+Ou le voyage intérieur, où l’on rencontre sa propre existence.
+L'un donne un don, un morceau de mon essence précieuse,
+L’autre une leçon, dans le miroir de l’âme silencieuse."//
+
+---
+
+**Choix:**
+
+- **[[Choix : Emprunter le chemin de la Force.->Le chemin de la force]]**
+  Les héros, honorant la vertu du guerrier, choisissent le chemin de la force, espérant que cette résolution sera respectée par l'Arbre Cœur.
+
+- **[[Choix : Emprunter le chemin du Soi.->Le chemin de soi]]**
+  Les héros, incertains mais curieux, choisissent le chemin du Soi, peut-être y voyant un passage pour une exploration intérieure et un potentiel d’illumination personnelle.
+
+
+:: L'observatoire : réparé {"position":"3875,4325","size":"100,100"}
+**Narration:**
+
+La lumière de la lune baigne l’observatoire rénové, éclipsée par les étoiles qui scintillent avec une intensité particulière cette nuit. L’érudit, le $nomg, le mage d’Aria, l’$nomalc, et le $nommvb marchent solennellement, chacun portant dans leur coeur les épreuves de leurs précédentes quêtes. L’érudit serre la pierre d’étoile dans sa main, la lumière en elle pulsant doucement en harmonie avec les battements de son cœur.
+
+En positionnant la pierre d'étoile sur le piédestal, une douce lumière azure enveloppe la pièce. Des étoiles naissent et dansent au plafond, formant une constellation inconnue, puis dessinant lentement une carte stellaire.
+
+//**$nommar:** "Regardez ! Ces constellations, elles dépeignent une carte ! Mais où cela pourrait-il mener ?"//
+
+//**$nomalc:** "Le désert d'Aqabah. Je le reconnais. C'est un endroit dangereux, où le soleil brûle aussi fort que les anciennes magies qui sommeillent sous le sable."//
+
+**Narration:**
+
+Soudain, le temps semble se cristalliser. Des particules de lumière suspendues dans l'air, tout est immobilisé dans une tranquillité éthérée. $nom, se tenant seul dans ce lacis du temps, ressent une présence autre, une essence à la fois douce et puissamment omniprésente.
+
+**Voix Éthérée:** 
+
+//"$nom de connaissances vastes, porteur de l’ombre et de la clarté,
+Tu as marché par les terres, les cœurs et les cieux, à la quête de vérité.
+Mais les étoiles contiennent plus que des lumières, elles portent le destin aussi,
+Et ton chemin est écrit sur leur voûte, guidé par ce que tu as acquis.
+
+Le sacrifice, une douleur poignante, qui teste l'éclat de l'âme,
+La peur, un voile sombre, à confronter, non à calmer.
+La confiance en d’autres, à tisser des liens plus forts que l'acier,
+Portent en toi ces leçons, elles seront l'ancre dans la mer déchaînée.
+
+Au-delà du sable et du vent, où le soleil embrase la terre,
+Repose un pouvoir ancien, une clé pour préserver ou détruire ce que nous chérissons.
+$nom doit tracer sa voie, où d’autres ont péri dans la quête,
+Car dans tes choix réside le salut ou la chute, l'étoile du matin ou le crépuscule silencieux."//
+
+**Narration:**
+
+Le temps reprend son flot, la lumière revient à la normalité, et $nom se retrouve là, entouré par ses amis, la résonance de la voix encore palpable dans l'air.
+
+//**$nom:** (hésitant) "Je... j’ai entendu une voix. Un message, non, un avertissement, et une prophétie aussi. Nous devons marcher dans le désert d’Aqabah. Un pouvoir ancien y réside, quelque chose que nous devons trouver pour préserver notre monde de la nuit éternelle."//
+
+//**$nomg:** "Quoi qu’il nous faille affronter, nous le ferons ensemble. Nous avons appris, tout comme toi, l'importance de la solidarité et du sacrifice."//
+
+//**$nommvb:** "Et chaque pas que nous faisons, nous le faisons avec foi les uns dans les autres. Ton fardeau est le nôtre aussi, érudit."//
+
+**Narration:**
+
+Avec la carte stellaire illuminant leur chemin, nos héros se préparent pour un autre voyage, armés de plus que de simples armes ou magie. Ils portent avec eux les leçons de leurs précédentes aventures, les échos des sagesses partagées, et la conscience aiguë que le chemin à parcourir sera aussi spirituel qu’il sera physique. Ainsi, ils se dirigent vers le désert d’Aqabah, où les étoiles ont prophétisé leur destin, avec l'espoir de trouver des réponses parmi les dunes éternelles.
+
+Le désert attend, les étoiles scintillent d’une lumière mystérieuse au-dessus, et chaque grain de sable pourrait bien cacher des secrets aussi vieux que le temps lui-même. C'est une quête qui va bien au-delà de la simple recherche d'un fragment d'étoile. Il s'agit maintenant de réaliser la prophétie, de s’armer contre un destin tragique et de prouver que même dans l'obscurité, la lumière de la persévérance, du sacrifice et de l'amitié peut percer et illuminer le chemin.
+
+
+:: Lancer une ultime attaque [Random] {"position":"3575,6775","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "ContreAttaque")
+](else:)[
+    (go-to: "FinBrave")
+]
+
+
+:: Le Défi [Terminé] {"position":"3850,5825","size":"100,100"}
+### Le Défi
+
+Au fur et à mesure qu’ils s’enfoncent dans la grotte, les héros sont saisis par une soudaine sensation de pesanteur, comme si le poids de leurs actions passées, présentes et futures pesait sur eux. Les mélodies qui étaient auparavant douces et apaisantes semblent maintenant plus aiguisées, pénétrant dans leur conscience.
+
+Devant eux, un immense cristal, plus grand et plus lumineux que tous ceux qu'ils ont vus jusque-là, se dresse. C'est à la fois beau et intimidant. Alors qu'ils s'approchent, des voix commencent à murmurer dans l'éther, se faisant l'écho de leurs doutes, de leurs peurs et de leurs regrets.
+
+---
+
+//**Voix Éthérée:** "Pourquoi cherchez-vous les cristaux de l'éternité ? Est-ce pour la gloire, pour le pouvoir, ou est-ce véritablement pour sauver ce qui peut encore l’être ?"//
+
+---
+
+Les héros sont alors confrontés à une vision – des scènes de Blancheforêt, détruit par des météorites, des gens criant et pleurant. Puis, la vision change, montrant le monde sans l’impact des météorites, mais où les héros sont, au contraire, tourmentés par ce qu'ils ont fait ou omis de faire. Les voix continuent de questionner, sondant leur âme.
+
+---
+
+//**Voix Éthérée:** "Qu'est-ce qui pèse le plus ? L'échec de sauver le monde ou l'abandon de votre propre paix ?"//
+
+
+1. [[L'échec de sauver le monde.->G.C. Réussite]]
+2. [[L'abandon de ma propre paix.->G.C. Paix]]
+
+
+:: Le bouclier résistera-t-il ? [Random] {"position":"3900,6750","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "BouclierResiste1")
+](else:)[
+    (go-to: "BouclierBrise1")
+]
+
+
+:: Le bouclier tiendra-t-il ? [Random] {"position":"4050,7050","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "BouclierTient")
+](else:)[
+    (go-to: "BouclierBrise1")
+]
+
+
+:: Le bouclier tient-il ? [Random] {"position":"3950,6950","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "BouclierTient1")
+](else:)[
+    (go-to: "BouclierBrise1")
+]
+
+
+:: Le chemin de la force {"position":"6850,2125","size":"100,100"}
+### Le Chemin de la Force:
+
+**Narration:**
+
+Les héros, confiants, suivent la voie de la lumière, sentant leur volonté se mêler à la mélodie de l’arbre. Le guerrier, en particulier, semble en harmonie avec la musique ancestrale, sa résolution résonnant avec l'énergie qui les enveloppe. En fin de chemin, une manifestation de l’Arbre Cœur apparaît, bienveillante et puissante.
+
+**Dialogue:**
+
+//**Entité de l'Arbre Cœur:** "Guerriers au grand cœur, vous avez fait preuve de force et de détermination. Vous avez mon respect et ma bénédiction."//
+
+Une branche descend vers eux, offrant un fragment de son essence scintillant d'une lumière apaisante. Ils acceptent avec gratitude et retournent à Blancheforêt, forts de ce présent précieux.
+
+[[Quête : Réparer le télescope->Quête P. 1]]
+
+
+:: Le chemin de soi {"position":"7050,2125","size":"100,100"}
+### Le Chemin du Soi:
+
+**Narration:**
+
+Les héros, sur le chemin du Soi, sentent la mélodie se faire introspective, chaque note faisant écho à leurs propres réflexions et souvenirs. Le chemin les confronte à des miroirs d’eau, reflétant non pas leurs visages, mais leurs peurs, doutes et regrets les plus profonds. Les héros sont ainsi mis à l’épreuve, non pas de leur force physique, mais de leur force intérieure et de leur capacité à faire face à leurs propres ombres.
+
+**Choix:**
+
+- **[[Choix : Confronter leurs propres peurs.->Confronter ses peurs]]**
+  Affrontant ce qui a été refoulé ou évité, une épreuve de réconciliation intérieure se déroule.
+
+- **[[Choix : Se détourner des miroirs et fuir.->Se détourner et fuir]]**
+  Choisissant de ne pas faire face à ce qu'ils voient, peut-être protégeant ainsi leurs cœurs des douleurs du passé.
+
+
+:: Magie [Plateau-rotatif] {"position":"3900,6275","size":"100,100"}
+<!--Magie-->
+
+(text-colour:magenta)[$nommar] déclenche une violente tempête électrique visant la créature.
+
+[[Voir si la créature est affectée->ResultatMagie]]
+[[Changer de stratégie avant de voir l’effet du sort->Physique]]
+
+
+:: Marcher vers l'amas d'étoiles. {"position":"8050,4875","size":"100,100"}
+### [Choix : Marcher vers l'amas d'étoiles.]
+
+**Narration:**
+
+L'équipe, guidée par une lumière douce et rassurante, progresse vers l'amas d'étoiles. Les faisceaux lumineux s'entrelacent, créant un chemin harmonieux à travers le passage cristallin. La lumière semble caresser leurs âmes, les encourageant, guidant leurs pas avec une bienveillance céleste.
+
+//**Érudit:** "Cette voie semble différente... c’est comme si chaque étoile veillait sur nous."//
+
+//**Mage du Bouclier de Varna:** "Mais restons vigilants. Même la plus douce des lumières peut cacher un danger inattendu."//
+
+Alors qu'ils progressent, une barrière de lumière intense surgit devant eux, un mur éblouissant qui semble impénétrable. 
+
+//**Mage d'Aria:** "Que faisons-nous maintenant ?"//
+
+**Narration:**
+
+Le mage du Bouclier de Varna s'avance, sentant une connexion profonde avec l'amas d'étoiles. Elle place sa main sur la barrière, et des images de personnes souffrant, de villages en feu, et de terres dévastées par la guerre inondent son esprit.
+
+//**Mage du Bouclier de Varna (chuchotant):** "Pourquoi me montrez-vous cela...?"//
+
+Une voix, douce mais empreinte d'une tristesse infinie, résonne dans l'esprit de la mage : //"Tu protèges les autres, n'est-ce pas? Mais que se passe-t-il quand le bouclier se brise, qui te protègera toi et ceux que tu aimes?"//
+
+**Narration:**
+
+La mage, les yeux remplis de larmes mais avec une détermination inébranlable dans sa voix, répond : //"Nous nous protégeons les uns les autres. Aucun bouclier n'est infaillible, mais dans notre union, nous trouvons la force de persévérer."//
+
+La barrière de lumière vacille, puis se dissipe lentement, révélant un fragment d'étoile flottant légèrement au-dessus du sol devant eux. La voix, maintenant apaisée et reconnaissante, résonne une dernière fois : //"Votre bouclier est fort, protectrice. Puisse-t-il ne jamais se briser sous le poids des ténèbres."//
+
+//**Guerrier:** "Tu as réussi... tu as vraiment réussi."//
+
+//**Mage du Bouclier de Varna:** "Nous avons réussi. Nous sommes notre propre bouclier."//
+
+---
+
+**Narration:**
+
+En tenant délicatement le fragment d'étoile, le groupe fait chemin retour vers Blancheforêt avec une nouvelle compréhension du véritable pouvoir de la solidarité et du sacrifice. La lumière de l'amas d'étoiles les accompagne un moment, avant de s'estomper, les laissant avec le doux souvenir de leur voyage à travers les étoiles.
+
+Leurs cœurs sont plus légers, mais gravés des leçons qu'ils ont apprises dans leur quête des étoiles, et avec la sagesse que même dans la protection, il est vital de se rappeler que tous sont égaux, et que le véritable pouvoir réside dans l'unité et la communauté.
+
+[[Quête : Réparer le télescope->Taverne 4]]
+
+
+:: MonstreAttaqueCercle [Non] {"position":"2475,6525","size":"100,100"}
+MonstreAttaqueCercle
+
+Le monstre, dans un élan de rage, parvient à briser le cercle protecteur et charge le groupe.
+
+[[Le groupe est anéanti->Fin]]
+
+
+:: MonstreDernierEffort [Non] {"position":"2275,6775","size":"100,100"}
+MonstreDernierEffort
+
+Le monstre, dans un élan de désespoir, déchaîne une vague de puissance dévastatrice, déterminé à emporter les héros avec lui dans la mort.
+
+[[Le groupe est anéanti->Fin]]
+
+
+:: MonstreFurieux [Mise-en-page+code-a-faire] {"position":"2525,7100","size":"100,100"}
+MonstreFurieux
+
+Le monstre, bien que blessé, se retourne avec fureur, frappant (text-colour:blue)[$nom] avec une puissante attaque.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter de résiter à  l'attaque]]
+
+
+:: MonstreSurvit [Non] {"position":"2475,7425","size":"100,100"}
+<!--MonstreSurvit-->
+
+Malgré l'explosion de la bombe, la créature se redresse, à peine affaiblie et encore plus furieuse.
+
+[[Le groupe est anéanti->CombatFinal]]
+
+
+:: MonstreVaincu [Ok] {"position":"2475,6725","size":"100,100"}
+MonstreVaincu
+
+La créature s'effondre avec un bruit sourd, sa structure cristalline se désagrégeant lentement sur le sol de la caverne.
+
+[[GolemTuer]]
+
+
+:: MourirPiege [Non] {"position":"3200,6475","size":"100,100"}
+MourirPiege
+
+Les héros, trop faibles pour chercher une sortie, s'effondrent dans la crevasse, mourant lentement mais sûrement dans l'obscurité.
+
+[[Fin du périple->Fin]]
+
+
+:: Negocier [Mise-en-page+code-a-faire] {"position":"3100,6725","size":"100,100"}
+Negocier
+
+(text-colour:blue)[$nom] tente de communiquer avec la créature, cherchant un terrain d'entente ou un moyen de la calmer.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter de calmer la créature]]
+
+
+:: NouvelleAttaque [Plateau-rotatif] {"position":"4975,6625","size":"100,100"}
+NouvelleAttaque
+
+Les yeux de la créature, étincelant d'une lueur meurtrière, se fixent sur le $nomg tandis qu'une énergie malveillante commence à pulser à travers ses membres cristallins. La chambre résonne d'une basse fréquence menaçante alors que le monstre se prépare à déchaîner une nouvelle attaque, plus féroce et désespérée que les précédentes. Les héros, bien que épuisés, se tiennent fermement, préparant leurs armes et sorts pour le prochain assaut.
+
+[[Lancer une offensive avant qu'il n'attaque->OffensiveDesesperee]]
+[[Créer un bouclier protecteur en anticipation de l'attaque->BouclierAnticipation]]
+[[Tenter une diversion pour déconcentrer la créature->TenterDiversion]]
+
+
+:: NouvelleStrategie [Plateau-rotatif] {"position":"2775,6275","size":"100,100"}
+<!--NouvelleStrategie-->
+
+Devant l’effet inverse de la magie, le groupe est dans une position délicate. Le monstre, maintenant plus puissant, est plus dangereux que jamais. (text-colour:blue)[$nom], avec son savoir étendu, tente de se rappeler des faiblesses potentielles de la créature, tandis que les autres membres du groupe sont prêts à intervenir pour protéger  (text-colour:blue)[$nom] le temps qu’il réfléchisse.
+
+1. [[L'érudit se souvient d’une faiblesse->FaiblesseDecouverte]]
+2. [[Pas le temps, le monstre attaque->AttaqueMonstre]]
+
+
+:: Observatoire ruine [Terminé] {"position":"3250,3875","size":"100,100"}
+### L''Observatoire en ruine
+
+L'observatoire, situé sur une colline dominant Blancheforêt, est une structure à moitié engloutie par le voile du temps. Autrefois resplendissant de savoir et de découvertes, il est maintenant la coquille d'une époque révolue. Les murs en pierre autrefois solides sont désormais usés et envahis par des vignes sauvages et des mousses, offrant un spectacle d'une beauté mélancolique. Les fenêtres sont vides de tout verre, permettant au vent de murmurer à travers les crevasses, portant avec lui les échos d'un passé lointain. 
+
+À l'intérieur, des étagères désordonnées et de vieux bureaux jonchent le sol, le bois rongé par l'humidité et les termites. Au centre, le dôme de l'observatoire s'ouvre à la voûte céleste, où une ancienne lunette astronomique, maintenant rouillée et démantelée, pointe éternellement vers le ciel, comme une main tendue vers les mystères inatteignables de l'univers.
+
+Dans un coin, à l'abri des éléments, se trouve un vieux pupitre en bois, son encre asséchée et son papier jauni.
+
+### Journal de Valorian
+
+Les pages du journal, éparpillées et pour certaines grignotées par le temps, révèlent les pensées les plus intimes et les découvertes de l'astronome Valorian.
+
+*"27ème nuit du Moissonneur, l'an 452*
+
+//Je regarde vers les cieux avec une soif insatiable de comprendre l'incompréhensible. Les étoiles me guident, me parlent, et pourtant elles gardent leurs secrets si jalousement. Ma quête de la vérité cosmique est à la fois une bénédiction et un fardeau."//
+
+
+*"3ème nuit du Gel, l'an 453*
+
+//Les composants du télescope avancent, mais chaque réponse apporte de nouvelles questions. L'alliage parfait pour le miroir doit être un mélange de cristal de la grotte Cristalline et d'argent de la mine Abandonnée. Le support nécessite du bois de l’Arbrecoeur, renommé pour sa résilience et son énergie latente. Mais ces composants ne sont rien sans le secret le plus crucial, le Fragment d’Étoile. Son pouvoir amplifie et focalise l'énergie stellaire, permettant une vision au-delà du voile céleste."//
+
+*"15ème nuit de la Renaissance, l'an 454*
+
+//Parfois, je me demande si ma quête vaut la solitude qui l’accompagne. Les étoiles sont mes compagnes, mais elles ne remplacent pas les rires et les échanges que j’ai abandonnés pour cette vie recluse. Les constellations ne me confortent pas dans les nuits froides, et les nébuleuses ne partagent pas les rêves brisés d’un vieil homme."//
+
+Le journal, bien que fragmentaire et incomplet, offre un regard poignant sur la vie et les aspirations de Valorian. Les héros, à travers ces mots, sentent un frisson de connexion avec cet astronome d'un autre temps, partageant un instant de compréhension mutuelle à travers les âges. 
+
+[[Retourner à Blancheforêt->Blancheforêt : la place 1]]
+
+
+:: OffensiveDesesperee [Mise-en-page+code-a-faire] {"position":"4775,6725","size":"100,100"}
+OffensiveDesesperee
+
+(text-colour:orange)[$nomg], l'éclat résolu dans ses yeux, charge avec une puissante détermination, tandis que (text-colour:magenta)[$nommar] et (text-colour:blue)[$nom] soutiennent son assaut avec une pluie de sorts et de cailloux (fronde).
+
+(set: $randomChoice to (either: 1, 2))
+[[charger avec une puissante détermination]]
+
+
+:: Offrir un cadeau [Random] {"position":"2075,6625","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "AccepteCadeau")
+](else:)[
+    (go-to: "RejetCadeau")
+]
+
+
+:: Page de garde [Terminé] {"position":"2700,300","size":"100,100"}
+<span style="font-size: 24px; font-family: 'Arial', sans-serif; text-transform: uppercase; position: relative;">
+  <span style="color: #00f; text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f;">
+    L'éclat d'Elysia
+    Une histoire du monde d'Aria
+  </span>
+</span>
+
+//Par Foulques//
+
+1. [[Commencer->Passage 2: Le Départ]]
+2. [[Remerciements.->Remerciements]]
+
+<<audio "combat" stop>>\
+<<audio "bgm0" stop>>\
+<!--Musique, ambiance et images-->
+
+
+:: ParerAttaque [Mise-en-page+code-a-faire] {"position":"4100,6750","size":"100,100"}
+ParerAttaque
+
+(text-colour:orange)[$nomg], en première ligne, lève son bouclier avec force, faisant de son mieux pour parer l'attaque puissante du monstre.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter de parer l'attaque]]
+
+[[BouclierBrise2]]
+
+
+:: ParlerPlus {"position":"1825,6675","size":"100,100"}
+<!--ParlerPlus-->
+
+Les efforts de (text-colour:yellow)[$nomalc] semblent inutiles alors que la créature avance encore, sa menace grandissant.
+
+[[Insister dans la communication->Insister]]
+[[Attaquer en premier pour se protéger->PreparerCombat]]
+
+
+:: PasDupeMonstre [Peut-être] {"position":"3200,6825","size":"100,100"}
+PasDupeMonstre
+
+La créature ne tombe pas dans le piège et se retourne vers (text-colour:green)[$nommvb] avec une rage amplifiée.
+
+[[Résister au courroux du monstre->ResisterCourroux]]
+[[Tenter de fuir avant qu'il n'attaque->Fuite]]
+
+
+:: Passage 2: Le Départ [contient-media] {"position":"2700,550","size":"100,100"}
+<img src="img/hero-1.png">
+<<audio "fire"  volume 0.5 play>>\
+<!--Musique, ambiance et images-->
+
+Vous vous réveillez près d'un feu à la lisière d'une sombre forêt.
+
+Les événements de ces derniers jours pèsent lourdement sur votre esprit. Avez-vous fait les bons choix ? Ces moments difficiles laisseront leurs empreintes, quel que soit votre chemin.
+
+Le trajet vers Blancheforêt est empreint de mystère. Les récents événements inexplicables, qui ont frappé récemment la région, ont laissé derrière eux des cratères fumants, témoins silencieux de la destruction.
+
+Chaque pas vous mène plus profondément dans l'inconnu. La route se dirige vers le midi, menant à Blancheforêt. Vers l'est, une lueur émane d'un cratère enfumé, attirant votre curiosité.
+
+1. [[Continuer sur la route princiaple->3ARoutePrincipale]]
+2. [[Explorer le cratère.->cratere]]
+3. [[Regarder autour de vous.->foret1]]
+
+
+:: Passage Bleu [Terminé] {"position":"3350,5525","size":"100,100"}
+### Passage Bleu
+
+En suivant ce chemin, vous découvrez une salle où les cristaux bleus dominent. Au milieu de la salle se trouve une fontaine cristalline. Les héros peuvent choisir de boire l'eau, qui leur offre un regain d'énergie, mais cela les ramène aussi à l'entrée du labyrinthe.
+
+1. [[Boire l'eau de la fontaine.->Entrée de la Grotte Cristalline]]
+2. [[Continuer d'avancer.->Passage d'Obsidienne]]
+3. [[Revenir en arrière.->Entrée de la Grotte Cristalline]]
+
+
+:: Passage Pourpre [Terminé] {"position":"3925,5050","size":"100,100"}
+### Passage Pourpre
+
+Vous arrivez dans une salle où les murs semblent raconter une histoire ancienne, peut-être un indice sur la manière de naviguer dans la grotte. Les images dépeignent des personnes choisissant différentes couleurs pour trouver le bon chemin.
+
+[[Examiner les images de plus près.->Indice des Couleurs]]
+[[Continuer d'explorer.->Salle des Miroitements]]
+[[Revenir en arrière.->Entrée de la Grotte Cristalline]]
+
+
+:: Passage Vert [Terminé] {"position":"3700,5825","size":"100,100"}
+## Passage Vert
+
+Le chemin s'enfonce dans la profondeur de la grotte, la lueur verte devenant plus intense. Après un moment, vous découvrez une salle avec un cristal massif au centre. C'est peut-être le cristal que vous cherchez.
+
+[[S'avancer vers le cristal->Le Défi]]
+[[Revenir en arrière.->Passage d'Obsidienne]]
+
+
+:: Passage d'Obsidienne [Terminé] {"position":"3050,5825","size":"100,100"}
+### Passage d'Obsidienne
+
+Alors que le groupe explore davantage, ils trouvent un passage dont les murs sont faits d'une roche noire brillante, semblable à de l'obsidienne. Il fait froid et une légère brume couvre le sol. Au bout de ce passage, ils entendent des bruits étranges.
+
+[[Avancer prudemment.->Rencontre avec le Monstre]]
+[[Revenir en arrière.->Passage Bleu]]
+
+
+:: PassageEchoue [Peut-être] {"position":"1875,7325","size":"100,100"}
+<!--PassageEchoue-->
+
+Le monstre remarque le mouvement de (text-colour:orange)[$nomg ]et attaque avec fureur.
+
+[[Tenter de parer l’attaque->ParerAttaque]]
+
+
+:: PasserDistract [Mise-en-page+code-a-faire] {"position":"1775,7425","size":"100,100"}
+<!--PasserDistract-->
+
+Le groupe tente de passer discrètement tandis que le monstre est distrait par l’attaque feinte.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter de passer discrètement]]
+
+
+:: PerirAvecHonneur [Non] {"position":"3475,6425","size":"100,100"}
+PerirAvecHonneur
+
+Les héros choisissent de faire face à leur fin avec dignité, regardant le monstre droit dans les yeux alors qu'il déchaîne sa fureur finale sur eux.
+
+[[(Fin tragique - Groupe meurt)->Fin]]
+
+
+:: Physique [Plateau-rotatif] {"position":"4250,6150","size":"100,100"}
+Physique
+
+(text-colour:orange)[$nomg], avec une force colossale, vise le cœur de la créature avec son épée.
+
+[[Voir si la créature est blessée->ResultatPhysique]]
+[[Retirer l'épée avant que la créature ne réagisse->RetirerEpee]]
+
+
+:: Piège des Miroirs [Terminé] {"position":"3925,5300","size":"100,100"}
+### Piège des Miroirs
+
+L'un des héros, en s'approchant, voit son reflet sortir du miroir et attaquer. Les autres reflets font de même, et bientôt le groupe est aux prises avec des doubles maléfiques d'eux-mêmes. Ils doivent se battre ou trouver un moyen de briser le charme.
+
+[[Combattre les doubles.->Combat Contre les Reflets]]
+[[Chercher une faille dans la salle pour rompre le charme.->Rompre le Charme]]
+
+
+:: PousserEpee [Plateau-rotatif] {"position":"4775,6500","size":"100,100"}
+PousserEpee
+
+Le guerrier pousse avec toute sa force, mais la créature réagit en frappant violemment, envoyant le guerrier voler à travers la caverne.
+
+[[Se préparer pour une nouvelle attaque de la créature->NouvelleAttaque]]
+[[Courir vers une sortie aperçue au loin->Fuite]]
+
+
+:: Prendre le monstre en tenaille [Random] {"position":"2175,7525","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "BlesseMonstre")
+](else:)[
+    (go-to: "AnticipationMonstre")
+]
+
+
+:: PreparerCombat [Plateau-rotatif] {"position":"2625,6150","size":"100,100"}
+<!--PreparerCombat-->
+
+Les héros se mettent en position, prêts à affronter la menace cristalline devant eux.
+
+[[Utiliser la magie pour attaquer->Magie]]
+[[Utiliser une stratégie physique->Physique]]
+
+
+:: ProposerCadeau [Mise-en-page+code-a-faire] {"position":"1975,6625","size":"100,100"}
+ProposerCadeau
+
+(text-colour:blue)[$nom] se rappelle certaines légendes au sujet des créatures de la grotte, propose un cristal brillant en offrande à la créature.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Offrir un cadeau]]
+
+
+:: Que va-t-il se passer ? [Random] {"position":"2475,7325","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "MonstreVaincu")
+](else:)[
+    (go-to: "MonstreSurvit")
+]
+
+
+:: Quête P. 1 [A-retravailler] {"position":"3400,4025","size":"100,100"}
+**Réparation du Télescope : Matériaux Requis - Partie 1**
+
+1. **Cristaux de la Grotte Cristalline** :
+   * **Lien :** [[Arthur, le Forgeron->Arthur, le Forgeron]]
+   * **Description :** Arthur, reconnu forgeron de Blancheforêt, possède la connaissance nécessaire à l'extraction des cristaux. Ces derniers sont essentiels à la confection des lentilles pour le télescope.
+
+
+:: Quête P. 2 {"position":"3575,4025","size":"100,100"}
+**Réparation du Télescope : Matériaux Requis - Partie 2**
+
+~~1. **Cristaux de la Grotte Cristalline** :
+   * **Lien :** [[Arthur, le Forgeron->Arthur, le Forgeron]]
+   * **Description :** Arthur, reconnu forgeron de Blancheforêt, possède la connaissance nécessaire à l'extraction des cristaux. Ces derniers sont essentiels à la confection des lentilles pour le télescope.~~
+
+2. **Bois de l'Arbre Cœur** :
+   * **Lien :** [[Alaric Brumecoeur->Alaric Brumecoeur]]
+   * **Description :** Alaric Brumecoeur, l'horloger respecté du village, détient le savoir-faire unique pour extraire du bois précieux de l'Arbre Cœur.
+
+
+:: Quête P. 3 {"position":"3725,4025","size":"100,100"}
+**Réparation du Télescope : Matériaux Requis - Partie 3**
+
+~~1. **Cristaux de la Grotte Cristalline** :
+   * **Lien :** [[Arthur, le Forgeron->Arthur, le Forgeron]]
+   * **Description :** Arthur, reconnu forgeron de Blancheforêt, possède la connaissance nécessaire à l'extraction des cristaux. Ces derniers sont essentiels à la confection des lentilles pour le télescope.~~
+
+~~~~Strikethrough Text~~2. **Bois de l'Arbre Cœur** :
+   * **Lien :** [[Alaric Brumecoeur->Alaric Brumecoeur]]
+   * **Description :** Alaric Brumecoeur, l'horloger respecté du village, détient le savoir-faire unique pour extraire du bois précieux de l'Arbre Cœur.~~
+
+3. **Fragments d'Étoiles** :
+   * **Lien :** [[Isabella Lumenoire->Isabella Lumenoire]]
+   * **Description :** Isabella Lumenoire, dotée de connaissances astrales profondes, comprend comment intégrer les fragments d'étoiles dans la conception du télescope.
+
+
+:: Quête P. 4 {"position":"3875,4025","size":"100,100"}
+**Réparation du Télescope : Matériaux Requis - Terminé**
+
+Tout les matériaux ont été collectés
+
+[[Méditer et se diriger vers l'observatoire.->Interlude : l'observatoire]]
+
+
+:: Reculer [Plateau-rotatif] {"position":"1875,7125","size":"100,100"}
+Reculer
+
+(text-colour:blue)[$nom], voyant que les tentatives de communication ont échoué, recule prudemment, gardant les yeux fixés sur la créature tout en réfléchissant intensément à une nouvelle approche.
+
+[[Proposer un cadeau au monstre->ProposerCadeau]]
+[[Essayer de contourner le monstre discrètement->ContournerMonstre]]
+[[Préparer une attaque surprise->AttaqueSurprise]]
+
+
+:: ReculerPlan [Plateau-rotatif] {"position":"3950,7225","size":"100,100"}
+ReculerPlan
+
+Le groupe se retire prudemment, maintenant une distance sûre avec la créature cristalline. Les héros réfléchissent rapidement, discutant des options et des ressources dont ils disposent.
+
+[[Utiliser une puissante bombe alchimique->BombeAlchimique]]
+[[Dessiner un cercle de protection->CercleProtection]]
+
+
+:: Reflet vaincus [Terminé] {"position":"3775,5550","size":"100,100"}
+### Triomphe face aux Reflets
+
+Alors que le groupe parvient à vaincre un reflet après l'autre, chaque victoire fait disparaître le miroir qui le reflétait. Les images distordues et menaçantes des héros s'effritent comme du verre brisé, se transformant en fine poussière luminescente avant de s'évaporer dans les airs. 
+
+//(text-colour:magenta)[**$nommar** (en reprenant son souffle) : "C'était... intense. Affronter soi-même n'est jamais une tâche aisée."]//
+
+//(text-colour:yellow)[**$nomalc** (en examinant les résidus des miroirs) : "Je n'ai jamais rien vu de tel. Ces miroirs renfermaient une magie ancienne et puissante."]//
+
+//(text-colour:green)[**$nommvb** (souriant malgré la fatigue) : "Nous avons tenu bon et protégé les nôtres. C'est tout ce qui compte."]//
+
+//(text-colour:orange)[**$nomg** (en haussant les épaules) : "Je préfère encore affronter un ennemi en chair et en os. Mais bon travail, tout le monde."]//
+
+//(text-colour:blue)[**$nom** (en se tournant vers l'endroit où se tenaient les miroirs) : "Il semble y avoir un passage derrière ces miroirs."]//
+
+Au-delà des vestiges des miroirs, un couloir s'étend, éclairé par une douce lumière bleue. Des cristaux saphir ornent les parois, projetant leur luminescence sur le chemin. Cette voie, plus apaisante que celle des miroirs, semble conduire directement au Passage Bleu, une étape cruciale dans leur quête à travers la grotte cristalline.
+
+1. [[Poursuivre dans le Passage Bleu.->Passage Bleu]]
+2. [[Revenir en arrière pour explorer d'autres voies.->Entrée de la Grotte Cristalline]]
+
+
+:: Reflet vainqueur [Terminé Fin-de-partie] {"position":"3900,5550","size":"100,100"}
+### Reflets Indomptables
+
+Alors que le groupe se bat avec acharnement contre leurs reflets, la situation devient de plus en plus critique. Malgré leurs efforts combinés, les héros ont du mal à tenir tête à ces adversaires qui semblent connaître chaque mouvement, chaque pensée, anticipant chaque attaque. 
+
+$nomg, frappé par son propre reflet armé d'une épée, trébuche et tombe à terre. $nommar est acculé dans un coin, submergé par les sortilèges miroités de son double. $nom est paralysé, son propre reflet murmurant des paroles sombres qui ébranlent sa détermination. $nomalc, essayant de concocter une potion en urgence, est distrait par son double qui sème le chaos dans ses ingrédients. $nommvb, bien qu'érigeant barrière sur barrière, est lentement submergé par les attaques incessantes de son double.
+
+Avec un dernier cri d'effort, le groupe est finalement vaincu, leurs reflets se tenant debout, victorieux, alors que les véritables héros gisent à terre, épuisés et blessés.
+
+Les miroirs, ayant prouvé leur supériorité, redeviennent silencieux, leurs surfaces réfléchissant à nouveau le groupe affaibli. La grotte retombe dans un silence pesant, laissant les héros à la merci de la magie oppressante des lieux, avec la réalisation troublante que, peut-être, certains combats ne peuvent être gagnés.
+
+* [[Vous êtes mort.->Points de contrôles]]
+
+
+:: RejetCadeau [Peut-être] {"position":"2075,6725","size":"100,100"}
+RejetCadeau
+
+La créature frappe le cristal loin avec une force brutale, ses yeux brillant d'une colère accrue.
+
+[[Préparer pour le combat->PreparerCombat]]
+[[Courir et chercher une sortie->Fuite]]
+
+
+:: Remerciements {"position":"2900,300","size":"100,100"}
+<h1>''Remerciements''</h1>
+Cette page vise à remercier les personnes qui ont participé, de loin ou de près, à l'élaboration de ce scénario. Il est possible de l'intégrer dans une campagne du jeu de rôle Aria, afin d'offrir aux joueurs une quête principale supplémentaire.
+ 
+ Merci à : ''Fibretigre'' pour avoir créer Aria.
+ 
+<h2> La famille :</h2>
+ * Zykez
+ 
+<h2> Membre de la DiceRollingTea (https://discord.gg/4ttWjhyf) :</h2>
+* Le Darkwing Duck
+* Arc
+* Devine
+
+<h2> Membre de la JDR Academy (https://discord.gg/tcR6FaU) :</h2>
+ * Herge56
+ 
+<h2> Musiques :</h2>
+ * Tabletop Audio : https://tabletopaudio.com/
+ 
+ <h2>Bruitages :</h2>
+ 
+ * La sonothèque : https://lasonotheque.org/
+ * Sound Fishing : https://www.sound-fishing.net
+ * Pixabay : https://pixabay.com/fr/sound-effects/
+ 
+<h2> Images :</h2>
+ * DALL-E : https://openai.com/dall-e-2
+
+ 
+ [[Accueil->Page de garde]]
+
+
+:: Rencontre avec le Monstre [Plateau-rotatif] {"position":"2925,6050","size":"100,100"}
+<!--Rencontre avec le Monstre-->
+
+En entrant dans la vaste caverne, l'équipe est stoppée net par la présence menaçante d'un monstre de cristaux. Sa stature imposante et ses yeux malveillants créent une tension palpable dans l'air. Votre groupe doit faire un choix rapide :
+
+[[Tenter de communiquer avec le monstre->Communiquer]]
+[[Préparer le combat->PreparerCombat]]
+[[Chercher une issue discrète->Fuite]]
+
+
+:: ResisterCourroux [Mise-en-page+code-a-faire] {"position":"3375,6725","size":"100,100"}
+ResisterCourroux
+
+(text-colour:orange)[$nomg] fait front, faisant bloc contre la colère du monstre.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Faire bloc.]]
+
+
+:: ResultatMagie [Plateau-rotatif] {"position":"4150,6350","size":"100,100"}
+<!-- ResultatMagie -->
+
+L'électricité parcourt la créature, mais au lieu de la blesser, elle semble absorber l'énergie, devenant plus puissante.
+
+[[Réfléchir vite à une nouvelle stratégie->NouvelleStrategie]]
+[[Préparer à encaisser une attaque de la créature->Encaisser]]
+
+
+:: ResultatOffensive [Peut-être] {"position":"4875,6825","size":"100,100"}
+ResultatOffensive
+
+L'offensive, bien que courageuse, semble à peine égratigner la créature. Les épées et autres armes trouvent peu de prises dans le corps robuste de la créature, tandis que les sorts semblent presque l'alimenter. Cependant, le groupe remarque qu'une des attaques a laissé une petite fissure sur un des cristaux du monstre.
+
+[[Viser la fissure avec toutes leurs forces->ViserFissure]]
+[[Reculer et repenser leur stratégie->Reculer]]
+
+
+:: ResultatPhysique [Plateau-rotatif] {"position":"4775,6225","size":"100,100"}
+ResultatPhysique
+
+L'épée se coince dans le cœur cristallin de la créature. Elle hurle, faisant vibrer toute la caverne.
+
+[[Retirer l'épée->RetirerEpee]]
+[[Pousser l'épée plus profondément->PousserEpee]]
+
+
+:: RetirerEpee [Plateau-rotatif] {"position":"4500,6300","size":"100,100"}
+RetirerEpee
+
+Avec agilité, (text-colour:orange)[$nomg] retire rapidement son épée, esquivant une contre-attaque imminente de la créature. Les héros observent attentivement, guettant sa réaction.
+
+[[La créature, enragée, lance une attaque furieuse->AttaqueFurieuse]]
+
+
+:: RetraiteTactique [Peut-être] {"position":"2875,6725","size":"100,100"}
+RetraiteTactique
+
+Le groupe se retire en boitant du combat, tentant de trouver un lieu sûr pour panser leurs blessures et récupérer.
+
+[[Continuer l'aventure->ContinuerAventure]]
+
+
+:: ReussiteFaufiler [Ok] {"position":"1875,7525","size":"100,100"}
+<!--ReussiteFaufiler-->
+
+Le groupe parvient à se faufiler avec succès, évitant la confrontation avec la créature et poursuivant leur aventure dans la caverne.
+
+[[GolemEsquivé]]
+
+
+:: RiposteViolente [Non] {"position":"4675,6825","size":"100,100"}
+RiposteViolente
+
+Le monstre, indifférent aux attaques, déclenche une explosion de puissance à travers la pièce. Les héros sont projetés en arrière, gravement blessés et à bout de souffle.
+
+[[Tenter de se relever et de fuir->Fuite]]
+[[Accepter leur sort->Fin]]
+
+
+:: Rompre le Charme [Terminé] {"position":"4100,5425","size":"100,100"}
+### Briseurs de charme
+
+Face à leurs propres reflets déformés et menaçants, les héros réalisent rapidement que la force brute ne suffira pas. $nom, inspiré par une intuition soudaine, entame un chant ancien qu'il avait étudié il y a des années. La mélodie est douce et envoûtante, emplissant la salle de sa magie.
+
+//(text-colour:magenta)[**$nommar** (en joignant ses mains) : "Je connais ce chant. Laissez-moi vous aider." Les deux mages entrelacent leurs voix, amplifiant la puissance de l'incantation.]//
+
+//(text-colour:yellow)[**$nomalc** (en fouillant rapidement dans son sac) : "J'ai ici une poudre qui pourrait renforcer le charme." Il disperse délicatement la poudre autour de la salle, qui scintille en réponse à la mélodie.]//
+
+//(text-colour:green)[**$nommvb** (en levant son bâton) : "Je vais créer un bouclier pour nous protéger pendant le rituel." Une aura protectrice se forme autour du groupe.]//
+
+//(text-colour:orange)[**$nomg** (en surveillant les reflets) : "Dépêchons-nous. Ils deviennent de plus en plus agressifs."]//
+
+1. [[Test de charisme.->Test Charisme]]
+
+
+:: S'enfuir [Random] {"position":"3200,6375","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "SortieSecrete")
+](else:)[
+    (go-to: "MourirPiege")
+]
+
+
+:: Salle des Miroitements [Terminé] {"position":"3925,5175","size":"100,100"}
+### Salle des Miroitements
+
+En avançant dans le Passage Pourpre, les héros découvrent une autre salle. Ici, les murs sont comme des miroirs, reflétant leurs propres images. Mais en observant plus attentivement, ils remarquent que certaines de leurs réflexions bougent différemment...
+
+[[Examiner les miroirs de plus près.->Piège des Miroirs]]
+[[Choisir un autre passage.->Entrée de la Grotte Cristalline]]
+
+
+:: Se détourner et fuir {"position":"7050,2250","size":"100,100"}
+### Se Détourner des Miroirs et Fuir
+
+---
+
+**Narration:**
+
+Les héros, face à la mer indomptable de leurs propres peurs et doutes, ressentent un froid envahissant qui glace leurs os. Chaque reflet, bien que troublant, offre une opportunité, une porte vers une compréhension plus profonde d'eux-mêmes. Pourtant, ce potentiel est brouillé par le tumulte de leur propre insécurité.
+
+Plutôt que d'embrasser et d'apprendre, ils font un choix : un choix de fermer les yeux, de s'enfoncer dans l'ignorance délibérée. Ils se détourneront des miroirs, rejetant l'appel à la croissance et à la compréhension. Les mélodies de l'Arbre Cœur, autrefois chaleureuses et invitant à la découverte, s'assombrissent, tournant vers une mélodie de déception et de tristesse.
+
+**Dialogue:**
+
+//**Entité de l'Arbre Cœur:** "Voyageurs, vous avez choisi de fuir devant vous-mêmes, et ainsi, vous avez fui la vérité et la connaissance qui se trouvent dans l'acceptation et la compréhension. Vous portez maintenant un fardeau plus lourd que celui que vous cherchiez à éviter."//
+
+//**Mage d'Aria:** "Nous avons perdu... non pas une bataille contre une entité ou une force, mais contre nous-mêmes. Notre refus de voir et d'apprendre nous a emprisonnés dans notre propre cécité."//
+
+---
+
+**Narration:**
+
+En tournant le dos à l’énigme de l’Arbre Cœur, les héros quittent la clairière, leur moralité et confiance brisées, des fragments de leurs reflets inexplorés les hantant avec chaque pas. Les échos de la mélodie de déception de l'Arbre Cœur les suivent dans la forêt, s’immisçant dans leurs esprits, leurs âmes.
+
+Le groupe, désormais frappé par une ombre de méfiance et de peur non résolue, s'érode de l’intérieur. Les discussions se changent en disputes, et les alliances s'effritent dans le désespoir et la frustration.
+
+**Dialogue:**
+
+//**Guerrier:** "Nous étions si proches, si près de quelque chose de réel et de puissant. Et nous avons laissé la peur nous aveugler, nous guider dans les ténèbres de l'ignorance et du regret."//
+
+//**Alchimiste:** "La quête n'est pas seulement celle du monde extérieur, mais aussi du monde intérieur. En fuyant l'un, nous avons abandonné l'autre."//
+
+---
+
+**Narration:**
+
+Le groupe, autrefois uni dans une quête commune, est désormais dissous, chaque membre errant seul dans les profondeurs du bois de Blancheforêt, perdus dans un labyrinthe intérieur d'opportunités manquées et de paroles non dites. L'aventure, qui aurait pu les mener à la gloire et à la sagesse, est terminée avant même d'avoir réellement commencé, ensevelie sous un amas de ce qui aurait pu être.
+
+Les feuilles de la forêt murmurent les lamentations des héros perdus alors qu'ils s'enfoncent dans l'ombre, disparus dans les échos d'une mélodie perdue.
+
+Ainsi, la quête se termine, non pas avec l'épée ou la magie, mais avec le choix de fermer les yeux devant les peurs et les vérités qui leur auraient offert la véritable victoire.
+
+[[Vous êtes mort.->Points de contrôles]]
+
+
+:: SortEchoue [Non] {"position":"5475,6975","size":"100,100"}
+SortEchoue
+
+Malgré ses meilleurs efforts, (text-colour:green)[$nommvb] n'est pas assez rapide. La barrière protectrice commence à se former, mais elle est trop faible pour résister à la puissance de l'onde de choc. Le groupe est projeté en arrière, chaque membre ressentant le poids écrasant de l'énergie contre eux.
+
+[[Fin du périple->Fin]]
+
+
+:: SortProtecteur [Mise-en-page+code-a-faire] {"position":"5375,6875","size":"100,100"}
+SortProtecteur
+
+(text-colour:green)[$nommvb], malgré la fatigue, tisse rapidement un sort protecteur, tentant de créer une barrière entre le groupe et l'onde de choc imminente.
+
+(set: $randomChoice to (either: 1, 2))
+ [[Tisse rapidement un sort protecteur]]
+
+
+:: SortReussi [Ok] {"position":"5475,6775","size":"100,100"}
+SortReussi
+
+Avec une concentration sans faille, (text-colour:green)[$nommvb] parvient à dresser un dôme de lumière juste à temps. L'onde de choc frappe la barrière protectrice, créant une distorsion visuelle spectaculaire à travers laquelle on peut voir l'énergie se disperser et s'atténuer. Au fur et à mesure que l'onde s'affaiblit, le dôme lumineux s'évanouit, laissant le groupe intact mais profondément épuisé.
+
+(text-colour:green)[$nommvb] s'effondre de fatigue, mais un sourire de satisfaction éclaire son visage. "C'était plus proche que je ne l'aurais souhaité", murmure-t-il.
+
+Les autres membres du groupe hochent la tête en signe de reconnaissance, soulagés d'être encore en vie grâce à la rapidité d'action de (text-colour:green)[$nommvb].
+
+[[Continuer l'aventure->GolemTuer]]
+
+
+:: SortieSecrete [Peut-être] {"position":"3200,6300","size":"100,100"}
+SortieSecrete
+
+En se cachant, le groupe découvre par hasard un passage secret qui les conduit à l’extérieur du cratère. Bien qu'éreintés et blessés, ils sont en vie et libres.
+
+[[Continuer l'aventure->ContinuerAventure]]
+
+
+:: StoryBanner [data] {"position":"2750,150","size":"100,100"}
+<img src="img/blancheforet0.png" width="50%">
+
+
+:: StoryInit [data] {"position":"2650,150","size":"100,100"}
+<<cacheaudio "bgm0" "aud/297_marchands.mp3">>
+<<cacheaudio "bgm1" "aud/235_rainy.mp3">>
+<<cacheaudio "combat" "aud/171_combat.mp3">>
+<<cacheaudio "fire" "aud/feu_camp.mp3">>
+<<cacheaudio "marcher" "aud/marcher.mp3">>
+<<cacheaudio "vent" "aud/vent_faible.mp3">>
+<<cacheaudio "bete" "aud/bete.mp3">>
+<<cacheaudio "bete2" "aud/bete_2.mp3">>
+<<cacheaudio "coeur" "aud/coeur.mp3">>
+<<cacheaudio "recompense" "aud/recompense.mp3">>
+<<cacheaudio "rougeot" "aud/rougeot.mp3">>
+<<cacheaudio "piano" "aud/piano.mp3">>
+<<cacheaudio "wind" "aud/wind.mp3">>
+<<cacheaudio "tavernblf" "aud/taverneblf.mp3">>
+
+
+
+
+:: SubirContreAttaque [Mise-en-page+code-a-faire] {"position":"2775,6625","size":"100,100"}
+SubirContreAttaque
+
+La créature contre-attaque violemment, infligeant de lourds dégâts au groupe. C'est un tournant désespéré dans le combat. Le groupe tente une retraite tactique.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter une retraite tactique]]
+
+
+:: Suivre l'étoile solitaire. {"position":"7850,4875","size":"100,100"}
+### [Choix : Suivre l'étoile solitaire.]
+
+**Narration:**
+
+L'équipe, hypnotisée par l'intense brillance de l'étoile solitaire, s'avance prudemment sur le chemin qu'elle illumine, ses faisceaux de lumière projetant des ombres dansantes sur les murs du passage cristallin. Cependant, plus ils avancent, plus la lumière devient éblouissante et dévorante, jusqu'à ce qu'elle soit presque insupportable.
+
+//**Mage d'Aria:** "Quelque chose ne va pas... Cette lumière, elle ne nous élève pas, elle nous consume!"//
+
+Les héros sentent leurs forces s'effriter, chaque pas devient une lutte alors que leurs ombres semblent se dissoudre dans la lumière avide de l'étoile. Leurs formes commencent à se désintégrer, se perdant dans l’incandescence oppressante.
+
+//**Guerrier:** "Non, nous ne pouvons pas finir ainsi... après tout ce que nous avons traversé..."//
+
+//**Alchimiste:** "C’est comme si cette étoile... elle absorbe tout ce que nous sommes. Notre essence même est en train de se dissoudre dans son éclat."//
+
+---
+
+**Narration:**
+
+Mais il est trop tard. L’étoile, dans son isolement solitaire, dévore leur essence, les transformant en poussière d’étoile, les atomes qui les composaient maintenant perdus dans son éclat. Leur lumière s'éteint, et avec elle, les espoirs de sauver le village et de réparer l'observatoire s'évanouissent dans le néant.
+
+Le dernier murmure de l'érudit, avant qu'ils ne soient tous engloutis, résonne à travers la voûte céleste, un écho lointain d'un souvenir perdu : "La lumière... elle n'était pas ce qu'elle semblait être..."
+
+La quête s'achève dans cet abîme étincelant, une leçon tragique sur la séduction de la force isolée et autocentrée. Les étoiles continuent de briller, indifférentes aux héroïsmes et aux tragédies qui se déroulent en dessous, et Blancheforêt reste sans les ressources nécessaires pour survivre à l'avenir incertain qui l'attend.
+
+---
+
+[[Vous êtes mort.->Points de contrôles]]
+
+
+:: Taverne 1 [Terminé] {"position":"3400,2200","size":"100,100"}
+<img src="img/taverneblf.png">
+<<audio "fire" loop volume 0.5 play>>\
+<<audio "tavernblf" loop volume 0.5 play>>\
+<!--Musique, ambiance et images-->
+<h2>La Taverne de la Comète</h2>
+
+La Taverne de la Comète, nichée au cœur de Blancheforêt, émet une lueur chaleureuse à travers ses fenêtres cintrées, promettant refuge et réconfort aux âmes fatiguées. À leur approche, les héros sont accueillis par le murmure doux des conversations amicales et le parfum alléchant du ragoût qui mijote. La taverne, ornée de boiseries sculptées et de tapisseries étoilées, évoque une convivialité rassurante. Des éclats de rire résonnent au sein du brouhaha, alors que des villageois partagent des histoires et des verres de breuvages locaux.
+
+1.[[Entrer dans la taverne.->taverne-2]]
+
+
+:: Taverne 2 [Terminé] {"position":"4600,3575","size":"100,100"}
+### Retour à l'Auberge de la Comète
+
+Dès que les héros pénètrent dans l'auberge, une atmosphère de curiosité s'installe. Les habitants de Blancheforêt, ayant entendu parler de leur quête, attendent avec impatience de connaître l'issue de leur voyage. Mira, avec son sourire chaleureux, les accueille en leur disant : 
+
+//**Mira** : "Ah, vous revoilà enfin ! Tout le village parle de votre quête. Alors, comment s'est passée votre expédition à la grotte cristalline ?"//
+
+(text-colour:blue)[**$nom** : "La grotte était à la fois majestueuse et terrifiante. Nous avons affronté des défis qui nous ont mis à l'épreuve, tant physiquement que mentalement."]
+
+(text-colour:orange)[**$nomg** : "Oui, ce n'était pas une simple promenade. Nous avons dû affronter des reflets de nous-mêmes, une version sombre et menaçante qui nous a poussés à nos limites."]
+
+(text-colour:magenta)[**$nommar** : "Et le golem de cristal... Une créature majestueuse mais redoutable. Mais nous avons réussi à le vaincre et à récupérer les cristaux nécessaires."]
+
+//**Mira** (les yeux écarquillés) : "Un golem de cristal ?! Par les étoiles... Vous avez vraiment dû faire face à des dangers inimaginables. Je suis soulagée de vous voir tous sains et saufs."//
+
+(text-colour:green)[**$nommvb** : "Les cristaux que nous avons récupérés ont une énergie puissante. Je peux sentir leur force, même à travers les poches de ma robe."]
+
+(text-colour:yellow)[**$nomalc** : "Mais au-delà des dangers, il y avait une beauté inexplicable là-bas. Les cristaux scintillaient de mille feux, comme des étoiles prisonnières à l'intérieur de la grotte."]
+
+//**Mira** : "Vos récits sont captivants. Les habitants de Blancheforêt seront ravis de les entendre. Mais pour l'instant, reposez-vous. Vous avez bien mérité une nuit de repos."//
+
+Alors que les héros s'installent autour d'une table pour se restaurer, les murmures d'admiration et de respect des autres clients de l'auberge les entourent. Leur aventure dans la grotte cristalline est désormais gravée dans les annales de Blancheforêt, et leur réputation grandit avec chaque histoire qu'ils partagent.
+
+[[Dormir à l'auberge. Puis aller sur la place de Blancheforêt->Blancheforêt : la place 2]]
+
+
+:: Taverne 3 [En-attente A-retravailler] {"position":"4750,3575","size":"100,100"}
+[[Dormir à l'auberge. Puis aller sur la place de Blancheforêt->Blancheforêt : la place 3]]
+
+
+:: Taverne 4 [A-retravailler En-attente] {"position":"4900,3575","size":"100,100"}
+[[Dormir à l'auberge. Puis aller sur la place de Blancheforêt->Blancheforêt : la place 4]]
+
+
+:: Tenter de briser le cristal [Random] {"position":"2775,6525","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "CristalDetruit")
+](else:)[
+    (go-to: "SubirContreAttaque")
+]
+
+
+:: Tenter de calmer la créature [Random] {"position":"3200,6725","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "CreatueApaisee")
+](else:)[
+    (go-to: "PasDupeMonstre")
+]
+
+
+:: Tenter de parer l'attaque [Random] {"position":"4000,6750","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "BouclierResiste2")
+](else:)[
+    (go-to: "BouclierBrise2")
+]
+
+
+:: Tenter de passer discrètement [Random] {"position":"1875,7425","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "ReussiteFaufiler")
+](else:)[
+    (go-to: "PassageEchoue")
+]
+
+
+:: Tenter de résiter à  l'attaque [Random] {"position":"2625,7100","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "GroupeResiste")
+](else:)[
+    (go-to: "GroupeEcrase")
+]
+
+
+:: Tenter de s'échapper [Random] {"position":"4275,6575","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "EchapperReussi")
+](else:)[
+    (go-to: "EtreRattrape")
+
+
+:: Tenter de se faufiler [Random] {"position":"1875,7625","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "ReussiteFaufiler")
+](else:)[
+    (go-to: "EchecFaufiler")
+]
+
+
+:: Tenter une esquive [Random] {"position":"4575,6575","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "EsquiveReussie")
+](else:)[
+    (go-to: "EsquiveEchoue")
+]
+
+
+:: Tenter une offensive audacieuse [Random] {"position":"2575,6725","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "MonstreVaincu")
+](else:)[
+    (go-to: "CombatFinal")
+]
+
+
+:: Tenter une retraite tactique [Random] {"position":"2775,6725","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "CombatFinal")
+](else:)[
+    (go-to: "RetraiteTactique")
+]
+
+
+:: TenterDiversion [Mise-en-page+code-a-faire] {"position":"5275,6725","size":"100,100"}
+TenterDiversion
+
+Avec rapidité et astuce, (text-colour:green)[$nommvb] lance une diversion, utilisant des sorts lumineux et du bruit pour distraire la créature de son attaque imminente.
+
+(set: $randomChoice to (either: 1, 2))
+[[ lancer une diversion]]
+
+
+:: TenterEchapper [Mise-en-page+code-a-faire] {"position":"4175,6575","size":"100,100"}
+TenterEchapper
+
+Blessés mais non brisés, les héros tentent de s’échapper vers un passage adjacent.
+
+(set: $randomChoice to (either: 1, 2))
+
+[[Tenter de s'échapper]]
+
+
+:: Test Charisme [Terminé] {"position":"4100,5550","size":"100,100"}
+### Test de charisme
+
+<button id="rollD100Button" class="d100Button">Lancer dés corps à corps</button>
+<p id="d100Result">Résultat D100 : </p>
+
+1. [[Réussite.->chant +]]
+2. [[Echec.->chant -]]
+
+
+:: Tisse rapidement un sort protecteur [Random] {"position":"5475,6875","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "SortReussi")
+](else:)[
+    (go-to: "SortEchoue")
+]
+
+
+:: Ultime contre-attaque [Random] {"position":"3475,6925","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "HerosTriomphent")
+](else:)[
+    (go-to: "HerosDefaits")
+]
+
+
+:: UltimeAttaque [Mise-en-page+code-a-faire] {"position":"3675,6775","size":"100,100"}
+UltimeAttaque
+
+Mettant tout en jeu, (text-colour:orange)[$nomg] lance une ultime attaque désespérée vers la fissure, espérant mettre fin au conflit avant que l'onde de choc ne les consume.
+
+(set: $randomChoice to (either: 1, 2))
+[[Lancer une ultime attaque]]
+
+
+:: ViserFissure {"position":"4775,6975","size":"100,100"}
+ViserFissure
+
+Les héros, rassemblant toutes leurs forces restantes, concentrent leur attaque sur la fissure dans le cristal de la créature. Chacun à leur manière - avec des sorts, et des coups d'épée - ils frappent avec une précision chirurgicale, dans l'espoir que leur coopération et leur persévérance porteront leurs fruits.
+
+[[Voir l'effet des attaques sur la créature->EffetAttaqueFissure]]
+
+
+:: alden-1 {"position":"2800,2000","size":"100,100"}
+//"Bienvenue, voyageur, à Blancheforêt. Je suis Alden, le Maire de cet humble village. Votre visage ne m'est point familiers..."//
+
+Vous vous avancez, serrant respectueusement la main d’Alden. 
+
+[[Entamer la conversation.->alden-2]]
+
+
+:: alden-2 {"position":"2800,2125","size":"100,100"}
+"Je vous salut, Alden. 
+Je suis venu chercher votre aide ainsi que celle de votre paisible village. Il semble que le ciel déchaîne sa colère, et ma quête m'a guidés ici, vers votre observatoire, qui, selon nos informations, est maintenant en ruines..."
+
+Un soupir s'échappe des lèvres d'Alden, son regard se tourne un instant vers la colline avant de revenir vers vous.
+
+[[Ecouter l'homme.->alden-3]]
+
+
+:: alden-3 {"position":"2800,2250","size":"100,100"}
+Alden : "Exactes, un malheur sans précédent s'est abattu sur notre bien-aimé observatoire. Un lieu autrefois empreint de connaissances et de découvertes a été réduit en décombres par une force impitoyable."
+
+
+Vous : "J'ai contemplé les astres s'écraser sur notre route, Alden, et je perçois l'urgence qui nous presse. Je suis venu ici dans le but de saisir la nature de cet événement, d'entraver son avancement, et, avec la bénédiction des divinités, de restaurer ce qui a été endommagé."
+
+[[Poursuivre la conversation.->alden-4]]
+
+
+:: alden-4 {"position":"3000,1875","size":"100,100"}
+Alden hoche la tête lentement,
+
+Alden: "Si  vos pas vous ont guidés jusqu'à nous, alors peut-être reste-t-il un espoir. Venez, partageons du pain et du vin et discutons plus amplement de ce mal qui s'est abattu sur nos terres et, semble-t-il, sur le monde entier."
+
+[[Suivre le maire dans sa maison->alden-5]]
+
+
+:: alden-5 [Terminé contient-media] {"position":"3000,2000","size":"100,100"}
+<img src="img/alden-maison.webp">
+<<audio "fire"  loop volume 0.5 play>>\
+<<audio "bgm1" stop>>\
+<!--Musique, ambiance et images-->
+
+<h2>Dans la Demeure du Maire</h2>
+
+La maison d’Alden est une modeste bâtisse, faite du même bois précieux que les autres demeures du village, mais avec une touche supplémentaire d’élégance et de raffinement. 
+
+À l’intérieur, les murs sont ornés de tapisseries.
+
+Un feu crépite doucement dans la cheminée, diffusant une chaleur réconfortante à travers la pièce où des fauteuils en cuir épais invitent à la détente. 
+
+Les étagères croulent sous le poids de divers objets de curiosité et de livres anciens, certains semblent même dater de plusieurs siècles.
+
+Alden: "Je vous en prie, installez-vous. Ma demeure est la vôtre"
+
+[[S'installer au tour de la table.->alden-6]]
+
+
+:: alden-6 {"position":"3000,2125","size":"100,100"}
+Vous prenez place autour d'une table située près de la cheminée, trouvant dans l'atmosphère accueillante de la pièce un certain réconfort face aux préoccupations qui vous accablent. 
+
+Alden verse un vin rouge d'une teinte riche et profonde dans des coupes délicatement ciselées, puis s'assoit en laissant échapper un soupir. 
+
+Vous vous restaurez et profitez de ce moment de tranquillité. Les histoires fusent, chacun partageant anecdotes et nouvelles du monde extérieur, créant un patchwork de récits qui se mêlent à la douce chaleur de la pièce.
+
+Puis, au bout d'un moment...
+
+Le regard d'Alden, fatigué, se perd dans les flammes dansantes de la cheminée.
+
+[[Entamer la conversation.->alden-7]]
+
+
+:: alden-7 {"position":"3000,2250","size":"100,100"}
+Vous : "J'ai été témoin des mêmes phénomènes célestes, et une pierre étrange, tombée du ciel lui-même, m'a été confiée dans un rêve. Nous pensons que le chaos qui s’abat sur nos terres est lié à cet artefact et à l’observatoire."
+
+Alden fixe intensément la pierre d'étoile, puis lève les yeux versvous avec une expression mêlée de crainte et de fascination.
+
+Alden: "Des légendes parlent d’une étoile fragmentée, une force capable soit de bénir soit de maudire la terre qu’elle touche. Votre présence et celle de cette pierre ne sont sans doute pas un simple hasard. Peut-être les anciens textes de l'observatoire pourraient-ils éclairer ce mystère."
+
+[[Ecouter se qu'a à dire (text-colour:magenta)[$nommar].->alden-8]]
+
+
+:: alden-8 {"position":"3125,1875","size":"100,100"}
+Le mage d’Aria intervient, sa voix douce tranche avec l’intensité de la conversation.
+
+Vous : "Nous ne pouvons ignorer les signes, Alden. La pierre, l’étoile, et ces catastrophes ne sont liées par aucune coïncidence. Il y a une intention, une volonté derrière tout cela."
+
+Un silence s’installe, chacunperdu dans ses pensées, contemplant les ramifications de leurs découvertes et les mystères encore non résolus.
+
+Après un moment, Alden se lève et marche lentement vers une petite armoire en chêne. Il en sort une clé ornée et vous la tend.
+
+[[Prendre la clé.->alden-9]]
+
+
+:: alden-9 {"position":"3125,2000","size":"100,100"}
+Alden: "Ceci ouvre les portes de ce qu’il reste de notre observatoire. Demain, à la première lumière, cherchez vos réponses là-bas. Mais pour ce soir, je vous en prie, reposez-vous et trouvez un peu de paix dans notre humble village."
+
+Il marque une pause, un sourire fatigué mais sincère se dessinant sur son visage.
+
+Alden: "La Taverne de la Comète vous accueillera avec des lits chauds et une nourriture réconfortante. Dites à Mira, la tenancière, que c'est moi qui vous envoie. Elle prendra soin de vous."
+
+Remerciant Alden pour son hospitalité, vous quittez sa maison pour vous diriger vers la taverne.
+
+<<set $clefobs = true>><span style="color: green;">//Vous obtenez la clef de l'observatoire.//</span>
+<<audio "recompense" play>>\
+
+[[Aller à la taverne->Taverne 1]]
+
+
+:: arrivee-blancheforet [contient-media] {"position":"2700,900","size":"100,100"}
+<<audio "bgm0"  stop>>\
+<<audio "bgm1" loop volume 0.5 play>>\
+<img src="img/blancheforet0.png">
+<!--Musique, ambiance et images-->
+<h2>Arrivée à Blancheforêt</h2>
+
+Vous arrivez enfin vers Blancheforêt, le village réputé pour son observatoire, après un périple long et fatiguant sur des routes  peu sûres. 
+
+Un parfum léger de sapins et de terres humides vous accueillent alors que vous franchissez les limites du village, les ombres des arbres projetant des formes dansantes sur votre chemin. 
+
+1. [[Observer les maisons->observermaisons]] 
+2. [[Tourner votre regard vers la coline->regardercoline]] 
+3. [[Entrer dans Blancheforet->entrée-blancheforet]]
+
+
+:: chant + [Terminé] {"position":"4175,5675","size":"100,100"}
+(text-colour:green)[### Réussite]
+
+À mesure que le chant se poursuit, les miroirs commencent à vibrer, les reflets se tordant en des formes de plus en plus étranges. Puis, avec un son cristallin, les miroirs se fissurent un à un, libérant les héros de leurs doubles maléfiques.
+
+//(text-colour:magenta)[**$nommar** (haletante) : "C'était... étonnamment beau. Je n'aurais jamais pensé que rompre un charme pouvait être aussi poétique."]//
+
+//(text-colour:green)[**$nommvb** (en ramassant un fragment de miroir) : "Ce sera un souvenir précieux. La magie derrière ces miroirs était unique."]//
+
+//(text-colour:blue)[**$nom** (en souriant) : "C'était une épreuve de l'esprit, pas de la force. Et nous avons triomphé."]//
+
+Derrière les restes des miroirs, un couloir éclairé d'une douce lumière bleue se dévoile. Cette voie, parsemée de cristaux scintillants, semble conduire directement au Passage Bleu, une étape essentielle dans leur quête à travers la grotte cristalline.
+
+1. [[Poursuivre dans le Passage Bleu.->Passage Bleu]]
+2. [[Revenir en arrière pour explorer d'autres voies.->Entrée de la Grotte Cristalline]]
+
+
+:: chant - [Terminé] {"position":"4025,5675","size":"100,100"}
+(text-colour:red)[### Echec]
+
+$nom, inspiré par un souvenir lointain, entame un chant ancien censé apaiser les âmes tourmentées. Sa voix s'élève dans la grotte, écho doux et mélancolique résonnant parmi les cristaux. Les autres membres du groupe se joignent à lui, leurs voix s'entrelaçant dans une harmonie fragile. Cependant, à mesure que le chant progresse, une sensation d'oppression grandit dans la pièce. Les miroirs vibrent légèrement, mais au lieu de se briser, ils semblent absorber la mélodie, la transformant en une cacophonie discordante. L'air se charge d'une énergie malveillante, et les reflets deviennent plus menaçants. Le chant, au lieu d'apaiser, semble avoir renforcé le pouvoir du charme. Le groupe, désemparé, se retrouve à chercher rapidement une autre solution.
+
+1. [[Combattre les doubles.->Combat Contre les Reflets]]
+
+
+:: charger avec une puissante détermination [Random] {"position":"4775,6825","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "ResultatOffensive")
+](else:)[
+    (go-to: "RiposteViolente")
+]
+
+
+:: combat1-0 [contient-media] {"position":"2150,625","size":"100,100"}
+<<audio "vent"  volume 0.5 stop>>\
+<<audio "combat" loop volume 0.5 play>>\
+<<audio "bete" play>>\
+<!--Musique, ambiance et images-->
+
+Cependant, l’exploration est interrompue par le grognement d’une créature, attirée par votre présence. Les yeux brillants de menace, elle émerge de l'obscurité."
+
+<img src="img/combat1.png">
+
+Il s'agit d'un ours massif !
+
+1. [[Affronter la créature.->combat1-1]]
+
+
+:: combat1-1 {"position":"2150,750","size":"100,100"}
+Comment allez-vous procéder pour affronter la créature ?
+
+[[Tenter d'aipaiser la créature.->combat1-2a]]
+[[Combattre la créature avec votre dague.->combat1-2b]]
+[[Tenter de fuir.->combat1-3b]]
+
+
+:: combat1-2-3 [Random] {"position":"2050,1200","size":"100,100"}
+<<set $randomChoice = random(1, 2)>>
+
+<<if $randomChoice == 1>>
+ <span style="color: green;">Votre choix vous a mené à une issue favorable.</span>
+ 
+Vous évitez un coup de l'ours et parvenez à vous enfuir. Il en vous a pas échappé que la bête semblai blessée au niveau de l'abdomaine...
+
+[[Partir.->3ARoutePrincipalePrelude]]
+    
+<<else>>
+
+ <span style="color: red;">Votre choix vous a mené à une issue moins chanceuse.</span>
+    
+La peur vous saisit profondément, figeant vos entrailles. Vous êtes paralysé face à cette vision d'effroi.
+
+La créature fond sur vous.
+
+Au début, une douleur intense vous traverse, votre sang chaud se répand sur vos vêtements. Votre vue s'assombrit. Le froid s'installe. Votre vie défile devant vos yeux. Un sentiment de mélancolie vous envahit avant que vous ne laissiez échapper votre dernier souffle.
+
+[[Vous êtes mort(e)->Page de garde]]
+<</if>>
+
+
+:: combat1-2-4 [Random] {"position":"2250,1200","size":"100,100"}
+<<set $randomChoice = random(1, 2)>>
+
+<<if $randomChoice == 1>>
+ <span style="color: green;">Votre choix vous a mené à une issue favorable.</span>
+ 
+Le combat fait rage, cependant, il ne vous échappe pas que l'ours semble mal en point. Vous portez un ultime coup à la gorge. Finissant ainsi de terrasser la bête, qui dans un dernier râle s'effondre au sol.
+
+[[Poursuivre->combat1-2-5]]
+    
+<<else>>
+
+ <span style="color: red;">Votre choix vous a mené à une issue moins chanceuse.</span>
+    
+Vous tentez de blesser la créature mais elle est plus vive que vous et contre attaque.
+Vous prenez une blessure et vous retrouvez à terre.
+Il faut vous rendre à l'évidence, cette bête est beaucoup plus forte que vous !
+
+[[Tenter de fuir (résolution aléatoire)->combat1-2-3]]
+<</if>>
+
+
+:: combat1-2-5 {"position":"2250,1325","size":"100,100"}
+<<audio "combat"  volume 0.5 stop>>\
+<<audio "bgm0" loop volume 0.5 play>>\
+<!--Musique, ambiance et images-->
+
+Couvert(e) de sang et haletant(e). Vous prenez un moment pour reprendre vos esprit.
+Le froid est mordant et ce vent glacial.
+
+En observant autour de vous, vous apercevez une petite tanière.
+
+[[Regarder de plus prêt la tannière.->ourson0]]
+
+
+:: combat1-2a {"position":"1925,950","size":"100,100"}
+Vous préférez tenter d'apaiser la créature. Un choix audacieux.
+
+Vous vous approchez de la créature, qui vous scrute  d'un air menaçant.
+
+[[Continuer d'approcher->combat1-3a]]
+
+
+:: combat1-2b {"position":"2150,900","size":"100,100"}
+Vous dégainez votre dague et vous vous jetez vers la créature, arme en avant, poussant un hurlement terrifiant.
+
+[[Tenter de blesser la créature (résolution aléatoire).->combat1-2c]]
+
+
+:: combat1-2c [Random] {"position":"2150,1025","size":"100,100"}
+<<set $randomChoice = random(1, 2)>>
+
+<<if $randomChoice == 1>>
+ <span style="color: green;">Votre choix vous a mené à une issue favorable.</span>
+ 
+Vous parvenez à blesser la créature et à lui infliger de lourds dommages.
+
+[[Continuer le combat (résolution aléatoire).->combat1-2-4]]
+    
+<<else>>
+
+ <span style="color: red;">Votre choix vous a mené à une issue moins chanceuse.</span>
+    
+Vous tentez de blesser la créature mais elle est plus vive que vous et contre attaque.
+Vous prenez une blessure et vous retrouvez à terre.
+Il faut vous rendre à l'évidence, cette bête est beaucoup plus forte que vous !
+
+[[Tenter de fuir (résolution aléatoire)->combat1-2-3]]
+<</if>>
+
+
+:: combat1-3a {"position":"1925,1075","size":"100,100"}
+<<audio "bete" play>>\
+<!--Musique, ambiance et images-->
+
+En vous voyant approcher, la créature grogne de nouveau.
+Elle se met sur ses pattes arrière pour se donner un air encore plus impressionnant et menaçant.
+
+[[Poursuivre votre manoeuvre d'apaisement.->Combat1-4a]]
+[[Se résigner et changer de tactique.->combat1-1]]
+
+
+:: combat1-3b {"position":"2375,900","size":"100,100"}
+Face à cette imposante créature menaçante, vous décidez que la fuite est plus sage.
+
+[[Test de fuite (résolution aléatoire).->combat1-4b]]
+
+
+:: combat1-4b [Random] {"position":"2375,1025","size":"100,100"}
+<<set $randomChoice = random(1, 2)>>
+
+<<if $randomChoice == 1>>
+ <span style="color: green;">Votre choix vous a mené à une issue favorable.</span>
+ 
+Vous parvenez à fuire la créature. Vous entendez des grognements au loin, elle semble ne pas vouloir vous poursuivre.
+
+[[Courrir.->3ARoutePrincipalePrelude]]
+    
+<<else>>
+
+ <span style="color: red;">Votre choix vous a mené à une issue moins chanceuse.</span>
+    
+Vous tentez de fuir, mais trébuchez. Vous tombez à terre, vous retournez. 
+La créature est face à vous, s'apprêtant à vous tomber dessus et à vous lacérer de ses griffes.
+
+[[Tenter d'esquiver (résolution aléatoire).->combat1-5b]]
+
+<</if>>
+
+
+:: combat1-5a {"position":"1925,1325","size":"100,100"}
+<<audio "bete2" play>>\
+<<audio "coeur" play>>\
+<<audio "combat" stop>>\
+<<audio "bgm0" loop volume 0.5 play>>\
+<!--Musique, ambiance et images-->
+
+Vous avancez humblement devant la créature, posant votre main sur sa poitrine. Vous sentez son coeur battre.
+
+A ce moment, elle comprend que vous n'êtes pas une menace.
+
+Elle s'allonge calmement et dans un dernier soupir pointe son regarde vers une tanière cachée juste derrière elle.
+
+[[Regarder de plus prêt la tannière.->ourson0]]
+
+
+:: combat1-5b [Random] {"position":"2375,1150","size":"100,100"}
+<<audio "combat" stop>>\
+<<audio "bgm0" volume 0.5 play>>\
+<!--Musique, ambiance et images-->
+
+<<set $randomChoice = random(1, 2)>>
+
+<<if $randomChoice == 1>>
+ <span style="color: green;">Votre choix vous a mené à une issue favorable.</span>
+ 
+Vous parvenez à esquiver la créature. Elle semble faible. Vous profitez de son état pour fuir loin d'elle.
+
+[[Partir.->3ARoutePrincipalePrelude]]
+    
+<<else>>
+
+ <span style="color: red;">Votre choix vous a mené à une issue moins chanceuse.</span>
+    
+La peur vous saisit profondément, figeant vos entrailles. Vous êtes paralysé face à cette vision d'effroi.
+
+La créature fond sur vous.
+
+Au début, une douleur intense vous traverse, votre sang chaud se répand sur vos vêtements. Votre vue s'assombrit. Le froid s'installe. Votre vie défile devant vos yeux. Un sentiment de mélancolie vous envahit avant que vous ne laissiez échapper votre dernier souffle.
+
+[[Vous êtes mort(e)->Page de garde]]
+
+<</if>>
+
+
+:: coordonne une attaque puissante [Random] {"position":"2475,6625","size":"100,100"}
+(if: $randomChoice is 1)[
+    (go-to: "MonstreVaincu")
+](else:)[
+    (go-to: "MonstreAttaqueCercle")
+]
+
+
+:: cratere [Bruitage] {"position":"2150,500","size":"100,100"}
+<<audio "fire"  volume 0.5 stop>>\
+<<audio "vent"  volume 0.5 play>>\
+<!--Musique, ambiance et images-->
+
+"La curiosité vous guide vers un cratère voisin. 
+L'intérieur du cratère scintille de fragments métalliques d'origine extra-terrestre. Intrigué(e), vous vous agenouillez pour examiner de plus près ces débris, il s'agit d'un métal noir particulièrement résistant dont il émane une faible énergie. 
+
+[[Suite.->combat1-0]]
+
+
+:: entrée-blancheforet {"position":"2800,1700","size":"100,100"}
+Malgré la tranquillité apparente du village, une tension sous-jacente se fait sentir dans l'air. Un mélange subtil de peur, d'inquiétude et de tristesse plane sur Blancheforêt. Vous percevez les regards curieux et interrogateurs des habitants qui se posent sur vous, tandis qu'un murmure discret mais perceptible traverse l'atmosphère fraîche de du soir.
+
+<<set $soir1 = true>><span style="color: orange;">//Le soleil se couche...//</span>
+
+1. [[Rencontrer le maire->Alden-A-0]]
+2. [[Aller à la rencontre des habitants->1-Les habitants]]
+
+
+:: foret 3a {"position":"3250,575","size":"100,100"}
+Vous tendez la main, le petit passereau monte dessus à votre grande surprise. Il vous fixe de son regard perçant...
+
+2. [[Lui tendre des miettes de pains.->foret3b]]
+3. [[Poursuivre votre chemin.->3ARoutePrincipale]]
+4. [[Explorer le cratère.->cratere]]
+
+
+:: foret1 {"position":"2900,500","size":"100,100"}
+En scrutant les alentours, vous contemplez l'élégance des arbres majestueux, leurs cimes s'élevant avec grâce vers les cieux infinis. La mousse qui tapisse les pierres exhale un parfum délicat, enveloppant vos sens d'une douceur réconfortante. Les nuances apaisantes de vert et de marron se fondent harmonieusement, offrant à votre esprit tourmenté un refuge dans cette nature immuable.
+
+Soudain, un frémissement se fait entendre dans le petit fourré voisin, brisant le silence qui régnait jusque-là...
+
+1. [[Aller voir le buisson.->foret2]]
+2. [[Poursuivre votre chemin.->3ARoutePrincipale]]
+3. [[Explorer le cratère.->cratere]]
+
+
+:: foret2 {"position":"3100,500","size":"100,100"}
+<img src="img/rougeot.webp">
+Vous approchez discrètement du buisson, curieux de découvrir l'origine du bruit. À votre grande surprise, vous apercevez un petit rouge-gorge, ses plumes chatoyantes éclairées par les rayons tamisés du soleil. Il semble jeune et peu farouche, ses yeux vifs vous fixant avec curiosité. D'un mouvement délicat, il penche la tête sur le côté, comme s'il cherchait à percer le mystère de votre présence. Une étrange connexion s'établit entre vous, brisant la barrière habituelle entre l'homme et la nature.
+
+1. [[Tendre la main.->foret 3a]]
+2. [[Lui tendre des miettes de pains.->foret3b]]
+3. [[Poursuivre votre chemin.->3ARoutePrincipale]]
+4. [[Explorer le cratère.->cratere]]
+
+
+
+:: foret3b [contient-media] {"position":"3250,400","size":"100,100"}
+Il semble apprécier votre geste, picorant quelques morceaux de pain avant de s'envoler sur une branche voisine. Son chant joyeux résonne dans l'air, laissant dans votre cœur une trace de légèreté. Quelle drôle de rencontre, pensez-vous, alors que vous observez le rouge-gorge s'éloigner dans les hauteurs de la forêt.
+
+<<set $rougeot = true>><span style="color: green;">//Vous vous sentez observé...//</span>
+<<audio "recompense" play>>\
+<<audio "rougeot" play>>\
+
+3. [[Poursuivre votre chemin.->3ARoutePrincipale]]
+4. [[Explorer le cratère.->cratere]]
+
+
+:: les-marchands [contient-media] {"position":"3200,725","size":"100,100"}
+<<audio "bgm0" loop volume 0.5 play>>\
+<img src="img/caravanne.png">
+<!--Musique, ambiance et images-->
+
+Vous prenez la décision de venir en aide aux marchands en difficulté. 
+
+Les marchandises, disséminées chaotiquement, témoignent de la violence de l'évènement.
+
+[[Converser avec les marchands.->marchands-converser]]
+
+
+:: marchands-ancien [contient-media] {"position":"3450,725","size":"100,100"}
+Vous vous approchez de l'un d'eux, un homme âgé, dont les traits montrent qu'il a beaucoup voyagé.
+
+<img src="img/vieux-marchand.png">
+
+//Le vielle homme : //"Il semble que les cieux aient dirigé leur fureur contre nous. Ce chaos... nous avons quasiment tout perdu," murmure le vieux marchand, sa voix vacillant sous le poids de la peur et de la tristesse.
+
+[[Continuer d'écouter l'ancien.->marchands-ancien2]]
+
+
+:: marchands-ancien-aider0 {"position":"3700,850","size":"100,100"}
+Vous reprenez :
+
+"Je compatis sincèrement avec votre peine et espère de tout cœur que vous retrouverez votre médaillon. Hélas, des obligations pressantes m'attendent et le temps me fait défaut."
+
+Le regard du vieil homme s'assombrit, une larme perlant à l'angle de son œil, avant de glisser le long de sa joue. Il reprend d'une voix empreinte de résignation :
+
+"Vous avez raison, je vous suis reconnaissant d'avoir pris un moment pour m'écouter. Qu'est-ce que la tristesse d'un vieil homme face à un monde qui semble perdre la raison ? Je vous souhaite plein succès dans vos entreprises."
+
+[[Rejoindre les autres.->marchands-choix2]]
+
+
+:: marchands-ancien-aider1 {"position":"3825,725","size":"100,100"}
+Vous reprenez :
+
+"Je comprends que ce médaillon avait une valeur inestimable pour vous, et je suis sincèrement désolé pour votre perte. Mais je vous promets que je ferais tout mon possible pour le retrouver. Même dans ce chaos, je trouverai un moyen. Votre histoire mérite une fin heureuse."
+
+[[Poursuivre la conversation->marchands-ancien-aider2]]
+
+
+:: marchands-ancien-aider2 {"position":"3825,850","size":"100,100"}
+Le vieux marchand lève les yeux, et bien qu'empreints de tristesse, une lueur d'espoir semble renaître. 
+
+"Merci, jeune ami(e). Votre gentillesse me réchauffe le cœur dans ces temps sombres. Peut-être que tout n'est pas perdu, après tout."
+
+[[Commencer à fouiller les alentours (résolution aléatoire)->marchands-fouiller]]
+
+
+:: marchands-ancien-aider3 [contient-media] {"position":"3825,1100","size":"100,100"}
+Le médaillon, façonné dans un métal précieux, scintille doucement au fond de sa main. 
+Sur sa surface lisse, deux lettres sont délicatement gravées et entrelacées - 'I & A'. 
+Autour du bord, une inscription élégante encercle le tout : 'Ina préserve votre cœur'.
+
+<img src="img/medaillon.png">
+
+[[Ramener le bijoux au vielle homme.->marchands-ancien-aider4]]
+
+
+:: marchands-ancien-aider4 {"position":"3825,1225","size":"100,100"}
+Vous vous retournez, balayant la foule du regard à la recherche du vieil homme. Constatant avec surprise que celui-ci a disparu. 
+
+Interrogeant les autres, il n'y que des visages perplexes. Chacun affirme qu'il n'y a jamais eu de vieil homme parmi les marchands...
+
+Une hallucination ? Cela pourrait-il vraiment être le cas ? Mais alors, d'où vient ce collier ?
+
+Un des marchands, ayant observé la scène, s'approche. Il se souvient avoir acquis cette "babiole" d'un individu peu recommandable. Quant à son origine, il avoue son ignorance.
+
+[[Ranger ce collier pour le moment et rejoindre les autres...->marchands-choix2]]
+
+
+:: marchands-ancien-rassurer {"position":"3700,725","size":"100,100"}
+Emu(e) par le désarroi du vieux marchand, vous vous approchez de lui. 
+
+"Ne perdez pas espoir," parlant doucement, posant une main rassurante sur l'épaule frêle de l'homme. 
+
+"Les objets peuvent être perdus, mais les souvenirs et l'amour qu'ils représentent demeurent éternels. Votre médaillon était peut-être un symbole de votre affection, mais ce qu'il symbolisait, l'amour que vous portiez à votre bien-aimée, ne pourra jamais vous être enlevé."
+
+Vous marquez une pause, cherchant vos mots avec soin. 
+
+[[Aider à retrouver le médaillon.->marchands-ancien-aider1]]
+[[Lui souhaiter bon courage.->marchands-ancien-aider0]]
+
+
+:: marchands-ancien2 {"position":"3575,725","size":"100,100"}
+"Et parmi ce que nous avons perdu,"
+
+//continue le vieux marchand, une lueur de douleur dans le regard,// 
+
+"il y a un objet qui m'est plus cher que tout. Mon médaillon, le seul souvenir tangible qu'il me restait d'elle... ma bien-aimée. Ce petit pendentif, gravé de nos initiales entrelacées, a survécu à tant de voyages et de tribulations. 
+
+Mais dans cette tempête de feu et de roches, il m'a été arraché, comme si les cieux eux-mêmes voulaient m'ôter le dernier fragment de mon passé heureux. 
+
+Aujourd'hui, tout ce que j'ai, c'est le souvenir de son visage dans mon cœur, et l'ombre de son sourire dans mes pensées.
+
+[[Rassurer le vielle homme.->marchands-ancien-rassurer]]
+[[Vous n'avez pas le temps pour ses jérémiades.->marchands-choix2]]
+
+
+:: marchands-choix2 {"position":"3425,1025","size":"100,100"}
+[[Regarder autour des chariots.->marchands-observation]]
+[[Aider à ranger les marchandises.->rangermarchandises]]
+[[Poursuivre votre route.->arrivee-blancheforet]]
+
+
+
+:: marchands-choix3 {"position":"3275,1225","size":"100,100"}
+[[Aider à ranger les marchandises.->rangermarchandises]]
+[[Poursuivre votre route.->arrivee-blancheforet]]
+
+
+:: marchands-converser {"position":"3325,725","size":"100,100"}
+Les marchands, secoués mais indemnes, racontent des histoires de cieux déchaînés et de terres dévastées. Leurs paroles, chargées d'angoisse et de tristesse, créent une tension palpable. Cette atmosphère lourde enveloppe tout le monde, vous y compris, alors que chacun peine à comprendre l'ampleur de ces événements.
+
+[[Aller voir le vielle homme->marchands-ancien]] 
+
+
+:: marchands-fouiller [Random Objet-clef] {"position":"3825,975","size":"100,100"}
+<<set $randomChoice = random(1, 2)>>
+
+<<if $randomChoice == 1>>
+ <span style="color: green;">Votre choix vous a mené à une issue favorable.</span>
+ 
+Vous fouillez aux alentours de la zone sinistrée, scrutant chaque détail. votre attention est attirée par un léger scintillement émanant d'un petit buisson. En s'approchant, vous découvrez qu'un médaillon y est suspendu par sa chaîne.
+
+<<set $medaillon = true>><span style="color: green;">//Vous obtenez le médaillon//</span>
+<<audio "recompense" play>>\
+
+
+[[Observer le médaillon.->marchands-ancien-aider3]]
+    
+<<else>>
+
+ <span style="color: red;">Votre choix vous a mené à une issue moins chanceuse.</span>
+    
+Après avoir passer du temps à fouiller, vous ne trouvez pas le médaillon.
+S'ensuit un bref échange avec le vieille homme, puis vous rejoignez les autres.
+
+[[Rejoindre avec les autres.->marchands-choix2]]
+
+<</if>>
+
+
+
+:: marchands-fragments {"position":"3425,1225","size":"100,100"}
+Vous saisissez le fragment dans votre paume, et immédiatement, vous ressentza sa froideur intense... glacial... insupportablement froid ! 
+
+La sensation de brûlure envahit rapidement votre main. Dans un geste réflexe, accompagné d'un cri étouffé de douleur, vous projettez le cristal au sol. 
+
+Celui-ci se fracasse en mille éclats, se désintégrant presque instantanément.
+
+En observant votre main, vous remarquez des veines d'un bleu profond se dessiner, puis s'effacer progressivement. votre main, devenue engourdie, vous résiste lorsque vous tentez de remuer vos doigts.
+
+[[Rejoindre les autres.->marchands-choix3]] 
+
+
+
+
+:: marchands-observation {"position":"3575,1225","size":"100,100"}
+En observant plus attentivement le chaos, vous trouvez un fragment de météorite parmi les marchandises. Il est plus sombre et semble absorber la lumière environnante, contrastant vivement avec la pierre étoilée trouvée à Claveau.
+
+[[Prendre la pierre dans votre main.->marchands-fragments]]
+[[Ne pas toucher la pierre.->marchands-choix2]] 
+
+
+:: marchands-ranger {"position":"3050,1050","size":"100,100"}
+Vous vous voyez proposer un petit objets de valeur en remerciement de votre aide.
+
+[[Refuser l'objet et poursuivre votre route.->arrivee-blancheforet]]
+[[Accepter l'objet (résolution aléatoire).->objet1]]
+
+
+:: marchands-recits {"position":"3050,925","size":"100,100"}
+Là-bas, à Blancheforêt, la chute des météorites a été catastrophique. 
+
+Les histoires suggèrent un mouvement délibéré, presque comme si ces météorites étaient dirigées. 
+
+Cependant, la confusion règne rapidement : les théories fusent de toutes parts. 
+
+Certains évoquent même un complot ourdi par Aqabah, chacun apportant sa propre interprétation des événements.
+
+[[Poursuivre le rangement des marchandises.->marchands-ranger]] 
+
+
+:: medaillon [Objet-clef Code-mécanique-porte] {"position":"4000,975","size":"100,100"}
+<<if $medaillon is true>>
+    Vous utilisez la clef pour ouvrir la porte verrouillée.
+<<else>>
+    La porte est verrouillée, vous avez besoin d'une clef.
+<</if>>
+
+
+
+:: objet1 [Random] {"position":"3050,1225","size":"100,100"}
+<<set $randomChoice = random(1, 3)>>
+
+<<if $randomChoice == 1>>
+Une cordes résistantes, toujours utiles en voyage pour attacher des objets ou grimper.
+<<elseif $randomChoice == 2>>
+Du tissu de lin, qui pourrait servir à réparer des vêtements ou à créer des bandages en cas de besoin.
+<<else>>
+des biscuits de voyage, pratiques pour les longs périples.
+<</if>>
+
+[[Remercier les marchands et poursuivre votre route->arrivee-blancheforet]]
+
+
+:: observermaisons {"position":"2800,1250","size":"100,100"}
+Les maisons, fabriquées avec le bois précieux de la forêt environnante, se nichent harmonieusement au sein de cette nature luxuriante.
+
+Les toits des chaumières, recouverts de mousse et de petites fleurs sauvages, s'illuminent sous l'éclat doux et chatoyant des premières étoiles qui percent le ciel crépusculaire. Des lanternes suspendues aux branches des arbres scintillent doucement, guidant les voyageurs à travers le sinueux sentier du village.
+
+Le crépitement doux du feu de bois se fait entendre au loin, et on peut distinguer des silhouettes mouvantes derrière les fenêtres éclairées des maisons, où les villageois mènent leur vie paisible, ignorant encore l’approche des aventuriers. Des rires d'enfants jouant encore à la tombée de la nuit parviennent aux oreilles du groupe, offrant une mélodie réconfortante et légère après leur périlleux voyage.
+
+1.  [[Poursuivre votre route vers Blancheforet->entrée-blancheforet]]
+2. [[Tourner votre regard vers la coline->regardercoline]] 
+
+
+:: ourson0 [contient-media] {"position":"1925,1450","size":"100,100"}
+<img src="img/ourson.png">
+La tanière révèle la présence d'un jeune ourson apeuré.
+
+[[Appater l'ourson.->ourson1]]
+[[Chasser l'ourson.->ourson2]]
+
+
+:: ourson1 {"position":"1800,1600","size":"100,100"}
+Vous avancez vers le jeune ourson avec des gestes lent et rassurant.
+Il sort de sa tannière, inquiet, vous regardant avec des yeux humides.
+
+Il se dirige vers le corps sa mère. Puis un triste grognemet sourd sort de lui.
+Il est maintenant seul et livré à lui même. 
+
+Il s'avance vers vous et pose sa tête sur votre main.
+
+[[Vous agenouiller et prenez affectueusement l'ourson dans vos bras.->ourson3]]
+
+
+:: ourson2 {"position":"2000,1600","size":"100,100"}
+Vous chassez l'ourson, qui s'enfuit dans les sombres bois non loin.
+Qui sait qui ce qui peut arriver à une bête aussi jeune, seule et livrée à elle-même...
+Vous chassez cette idée de votre esprit et continuez d'avancer.
+
+[[Poursuivre votre route.->3ARoutePrincipale]]
+
+
+:: ourson3 [contient-media Objet-clef] {"position":"1800,1725","size":"100,100"}
+<img src="img/ourson3.png">
+L'ourson semble aprécier votre geste. Il vous lèche le visage affectueusement. 
+
+Vous ne pouvez vous résoudre à le laisser ici seul.
+Après vous être relevé(e), vous lui passez autour du cou une bandelette de cuir, que vous fixez avec une épingle.
+
+<<set $ourson = true>> <span style="color: green;">//L'ourson vous suis en tant que compagnon//</span>
+<<audio "recompense" play>>\
+
+[[Poursuivre votre route.->3ARoutePrincipale]]
+
+
+:: rangermarchandises {"position":"3200,925","size":"100,100"}
+Vous vous efforcez, non sans mal, d'aider les marchands à recueillir leurs biens épars.
+
+Dans l'effervescence du rangement, les marchands partagent des récits de plus en plus troublants en provenance de Blancheforêt. 
+
+[[Porter votre attention sur les récits.->marchands-recits]]
+[[Finir d'aider les marchands.->marchands-ranger]]
+
+
+:: regardercoline {"position":"2600,1250","size":"100,100"}
+<<if $rougeot is true>>
+<<audio "rougeot" play>>\
+<img src="img/rougeot2.jpg">
+Mais au-delà des toits pittoresques et des ruelles pavées, la colline qui abrite les ruines de l’observatoire se dresse majestueusement, mais avec une aura sombre et mystérieuse. Les pierres brisées et le bois fracturé de la structure jadis imposante gisent éparpillés autour du sommet, témoins silencieux de la catastrophe récente. Des éclats de miroirs et de verre scintillent faiblement, réfléchissant la lumière de la lune, offrant un spectacle à la fois magnifique et mélancolique.
+
+Derrière vous, le chant d'un oiseau résonne, familier à vos oreilles.
+
+1.  [[Poursuivre votre route vers Blancheforet->entrée-blancheforet]]
+2. [[Observer les maison->observermaisons]] 
+
+<<else>>
+Mais au-delà des toits pittoresques et des ruelles pavées, la colline qui abrite les ruines de l’observatoire se dresse majestueusement, mais avec une aura sombre et mystérieuse. Les pierres brisées et le bois fracturé de la structure jadis imposante gisent éparpillés autour du sommet, témoins silencieux de la catastrophe récente. Des éclats de miroirs et de verre scintillent faiblement, réfléchissant la lumière de la lune, offrant un spectacle à la fois magnifique et mélancolique.
+
+1. [[Poursuivre votre route vers Blancheforet->entrée-blancheforet]]
+2. [[Observer les maison->observermaisons]] 
+<</if>>
+
+
+:: taverne-2 {"position":"3400,2325","size":"100,100"}
+<img src="img/mira.png">
+<!--Musique, ambiance et images-->
+<h2>La Taverne de la Comète</h2>
+Dès que vous entrez, une femme aux cheveux flamboyants et au tablier taché les accueille avec un large sourire. C'est Mira, la tenancière, reconnue pour son hospitalité et sa bière maison infusée d’herbes locales. Elle guide le groupe à une table ronde au coin du feu, où le crépitement apaisant des flammes et la chaleur douillette les enveloppent.
+
+Mira : "Bienvenue à la Taverne de la Comète, voyageur. Dites-moi, comment puis-je vous réconforter après une journée qui, je le devine, ne fut pas de tout repos ?"
+
+1.[[Saluer la tenancière, s'asseoire à une table et commander à manger.->taverne-3]]
+
+
+:: taverne-3 {"position":"3400,2450","size":"100,100"}
+Mira s'assied brièvement avec vous, curieuse :
+
+Mira : "Des bruits courent, des histoires de pierres tombées du ciel et de catastrophes imprévisibles. Blancheforêt a toujours été un lieu d'émerveillement céleste, mais ces temps-ci, il semble que les étoiles elles-mêmes nous défient."
+
+Vous répondez, une pointe d’inquiétude dans la voix :
+
+"Il est vrai, Mira. Je en saurai que dire à ce sujet. Moi même intrigué, je recherche des réponses à ces évènements. Cependant, le chemin est difficil à trouver. C'est pourquoi j'ai décider d'aller visiter l'observatoire.
+
+Mira hoche la tête, son regard se perdant dans les flammes dansantes devant elle.
+
+Mira : "Les astres ont souvent guidé nos pas dans le passé, mais jamais ils ne se sont montrés aussi turbulents. Que vos rêves cette nuit vous apportent des conseils et une paix éphémère, au milieu de cette tempête céleste. Je retourne en cuisine vous apporter votre repas."
+
+//Mira quitte la pièce.//
+
+1.[[Observer la pièce.->taverne-4]]
+
+
+:: taverne-4 {"position":"3400,2600","size":"100,100"}
+La taverne est peu fréquentée ce soir. Il faut dire que les récents évènements ont certainement mit un terme à de nombreux voyages...
+
+Vous pouvez voir :
+
+1. [[Un vieux monsieur qui semble éméché, seul à une table.->taverne-a-5]]
+2. Un homme robuste accoudé au bar.
+3.Une femme assise prêt du feu.
+4.[[Une tapisserie accroché à un mur, aller voir.->taverne-d-5]]
+
+
+:: taverne-a-5 {"position":"3100,2800","size":"100,100"}
+<img src="img/ivrogneblf.png">
+<!--Musique, ambiance et images-->
+
+
+:: taverne-d-5 [contient-media] {"position":"3700,2800","size":"100,100"}
+<img src="img/tapisserieblf.webp">
+<!--Musique, ambiance et images-->
+<h2>La tapisserie de la taverne</h2>
+
+1.[[Retourner à votre place.->taverne-4]]
