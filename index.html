@@ -110,8 +110,8 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
     color: blue;
 }
 
-.char-elenor {
-    color: light-blue;
+.char-elinor {
+    color: pink;
 }
 
 .char-mira {
@@ -124,7 +124,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
     display: inline-block;
     /* Ajoutez ici d'autres styles si nécessaire */
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Titre" color="yellow"></tw-tag><tw-tag name="Terminé" color="green"></tw-tag><tw-tag name="A-retravailler" color="red"></tw-tag><tw-tag name="Mise-en-page+code-a-faire" color="yellow"></tw-tag><tw-tag name="En-attente" color="orange"></tw-tag><tw-tag name="Fin-de-partie" color="purple"></tw-tag><tw-tag name="Bon-choix" color="green"></tw-tag><tw-tag name="Choix-neutre" color="purple"></tw-tag><tw-tag name="Mauvais-choix" color="red"></tw-tag><tw-tag name="Tactique" color="blue"></tw-tag><tw-tag name="Dégats" color="orange"></tw-tag><tw-tag name="Ok" color="green"></tw-tag><tw-tag name="Non" color="red"></tw-tag><tw-tag name="Peut-être" color="blue"></tw-tag><tw-tag name="Butin" color="yellow"></tw-tag><tw-tag name="Random" color="purple"></tw-tag><tw-tag name="Plateau-rotatif" color="orange"></tw-tag><tw-tag name="Code-mécanique-porte" color="red"></tw-tag><tw-tag name="data" color="blue"></tw-tag><tw-tag name="Music" color="blue"></tw-tag><tw-tag name="Bruitage" color="yellow"></tw-tag><tw-tag name="Objet-clef" color="red"></tw-tag><tw-tag name="contient-media" color="orange"></tw-tag><tw-passagedata pid="1" name=" lancer une diversion" tags="Random" position="5175,6725" size="100,100">(if: $randomChoice is 1)[
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Titre" color="yellow"></tw-tag><tw-tag name="Terminé" color="green"></tw-tag><tw-tag name="A-retravailler" color="red"></tw-tag><tw-tag name="Mise-en-page+code-a-faire" color="yellow"></tw-tag><tw-tag name="En-attente" color="orange"></tw-tag><tw-tag name="Fin-de-partie" color="purple"></tw-tag><tw-tag name="Bon-choix" color="green"></tw-tag><tw-tag name="Choix-neutre" color="purple"></tw-tag><tw-tag name="Mauvais-choix" color="red"></tw-tag><tw-tag name="Tactique" color="blue"></tw-tag><tw-tag name="Dégats" color="orange"></tw-tag><tw-tag name="Ok" color="green"></tw-tag><tw-tag name="Non" color="red"></tw-tag><tw-tag name="Peut-être" color="blue"></tw-tag><tw-tag name="Butin" color="yellow"></tw-tag><tw-tag name="Random" color="purple"></tw-tag><tw-tag name="Plateau-rotatif" color="orange"></tw-tag><tw-tag name="Code-mécanique-porte" color="red"></tw-tag><tw-tag name="data" color="blue"></tw-tag><tw-tag name="Music" color="blue"></tw-tag><tw-tag name="Bruitage" color="yellow"></tw-tag><tw-tag name="Objet-clef" color="red"></tw-tag><tw-tag name="contient-media" color="orange"></tw-tag><tw-tag name="Mécanique-de-jeu" color="purple"></tw-tag><tw-passagedata pid="1" name=" lancer une diversion" tags="Random" position="5175,6725" size="100,100">(if: $randomChoice is 1)[
     (go-to: &quot;AttaqueRetardee&quot;)
 ](else:)[
     (go-to: &quot;PasDupeMonstre&quot;)
@@ -670,21 +670,20 @@ Leurs attaques coordonnées semblent porter leurs fruits. La fissure dans le cri
 
 [[Se préparer à éviter l&#39;onde de choc-&gt;EviterOnde]]
 [[Tenter une ultime attaque pour finir le combat-&gt;UltimeAttaque]] 
-[[Utiliser un sort protecteur pour encaisser l&#39;onde de choc-&gt;SortProtecteur]]</tw-passagedata><tw-passagedata pid="70" name="Elinor Perenelle : partie 1" tags="Terminé" position="1925,1975" size="100,100">Elinor Perenelle
+[[Utiliser un sort protecteur pour encaisser l&#39;onde de choc-&gt;SortProtecteur]]</tw-passagedata><tw-passagedata pid="70" name="Elinor Perenelle : partie 1" tags="Terminé" position="1900,1900" size="100,100">Elinor Perenelle
 &lt;img src=&quot;img/elinor1.jpg&quot;&gt;
 
 Vous vous approchez d&#39;une dame d&#39;un certain âge. Elle est belle et élégante, son regard perçant semble lire au plus profond de votre âme, tandis que son visage doux dégage une aura de sagesse et de bienveillance.
 
-&lt;&lt;if $medaillon is true&gt;&gt;
+&lt;&lt;if $inventaire.includes(&quot;Médaillon&quot;)&gt;&gt;
 &lt;&lt;elinor&gt;&gt;&quot;Bonjour, voyageur, et bienvenue à Blancheforêt. Je ressens que vous détenez un objet spécial qui me semble familier...&quot;
 
-1. [[Sortir le médaillon de votre poche.-&gt;Elinor-B-1]]
-
+    &lt;&lt;link &quot;Sortir le médaillon de votre poche.&quot;&gt;&gt;
+        &lt;&lt;run $inventaire.delete(&quot;Médaillon&quot;)&gt;&gt;
+        &lt;&lt;goto &quot;Elinor-B-1&quot;&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;elinor&gt;&gt;&quot;Bonjour, voyageur. Soyez le bienvenu à Blancheforêt. Seriez-vous des nôtres ce soir pour écouter mon histoire ?&quot;
-
-
-1. [[Participer à l&#39;évènement.-&gt;Elinor-H-1]]
+ &lt;&lt;elinor&gt;&gt;&quot;Bonjour, voyageur. Soyez le bienvenu à Blancheforêt. Seriez-vous des nôtres ce soir pour écouter mon histoire ?&quot;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="Encaisser" tags="Mise-en-page+code-a-faire" position="3850,6950" size="100,100">Encaisser
 
 Le groupe se resserre, prêt à affronter la charge électrique de la créature. (text-colour:green)[$nommvb] à atténuer autant que possible l’impact de l’attaque imminente, mais ils savent que ce sera une entreprise dangereuse.
@@ -1857,6 +1856,9 @@ Le regard du vieil homme s&#39;assombrit, une larme perlant à l&#39;angle de so
 
 &quot;Vous avez raison, je vous suis reconnaissant d&#39;avoir pris un moment pour m&#39;écouter. Qu&#39;est-ce que la tristesse d&#39;un vieil homme face à un monde qui semble perdre la raison ? Je vous souhaite plein succès dans vos entreprises.&quot;
 
+&lt;&lt;set $karma -= 5&gt;&gt;
+&lt;span style=&quot;color: red;&quot;&gt;Votre réputation est maintenant de $karma.&lt;/span&gt;
+
 [[Rejoindre les autres.-&gt;marchands-choix2]]</tw-passagedata><tw-passagedata pid="211" name="marchands-ancien-aider2" tags="" position="3825,850" size="100,100">Le vieux marchand lève les yeux, et bien qu&#39;empreints de tristesse, une lueur d&#39;espoir semble renaître. 
 
 &lt;&lt;marchand&gt;&gt;
@@ -1869,12 +1871,13 @@ Le regard du vieil homme s&#39;assombrit, une larme perlant à l&#39;angle de so
  
 Vous fouillez aux alentours de la zone sinistrée, scrutant chaque détail. votre attention est attirée par un léger scintillement émanant d&#39;un petit buisson. En s&#39;approchant, vous découvrez qu&#39;un médaillon y est suspendu par sa chaîne.
 
-&lt;&lt;set $medaillon = true&gt;&gt;&lt;span style=&quot;color: green;&quot;&gt;//Vous obtenez le médaillon//&lt;/span&gt;
+&lt;&lt;link &quot;Ramasser le médaillon&quot;&gt;&gt;
+    &lt;&lt;run $inventaire.push(&quot;Médaillon&quot;)&gt;&gt;
+    &lt;&lt;goto &quot;marchands-ancien-aider3&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
 &lt;&lt;audio &quot;recompense&quot; play&gt;&gt;\
 
-
-[[Observer le médaillon.-&gt;marchands-ancien-aider3]]
-    
 &lt;&lt;else&gt;&gt;
 
  &lt;span style=&quot;color: red;&quot;&gt;Votre choix vous a mené à une issue moins chanceuse.&lt;/span&gt;
@@ -1947,10 +1950,12 @@ Il marque une pause, un sourire fatigué mais sincère se dessinant sur son visa
 
 Remerciant Alden pour son hospitalité, vous quittez sa maison pour vous diriger vers la taverne.
 
-&lt;&lt;set $clefobs = true&gt;&gt;&lt;span style=&quot;color: green;&quot;&gt;//Vous obtenez la clef de l&#39;observatoire.//&lt;/span&gt;
-&lt;&lt;audio &quot;recompense&quot; play&gt;&gt;\
+&lt;&lt;link &quot;Ranger la clef rouillée. Et aller à la taverne.&quot;&gt;&gt;
+    &lt;&lt;run $inventaire.push(&quot;Clef rouillée&quot;)&gt;&gt;
+    &lt;&lt;goto &quot;Taverne 1&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 
-[[Aller à la taverne-&gt;Taverne 1]]</tw-passagedata><tw-passagedata pid="223" name="StoryInit" tags="data" position="2650,150" size="100,100">&lt;&lt;set $sante to 10&gt;&gt;
+&lt;&lt;audio &quot;recompense&quot; play&gt;&gt;\</tw-passagedata><tw-passagedata pid="223" name="StoryInit" tags="data" position="2650,150" size="100,100">&lt;&lt;set $sante to 10&gt;&gt;
 &lt;&lt;set $karma to 0&gt;&gt;
 &lt;&lt;widget &quot;stats&quot;&gt;&gt;
 &lt;span class=&quot;encadrement-texte&quot;&gt;&lt;&lt;print &quot;Fiche personnage :&quot;&gt;&gt;
@@ -1958,6 +1963,8 @@ Remerciant Alden pour son hospitalité, vous quittez sa maison pour vous diriger
 &lt;&lt;print &quot;Votre réputation est de $karma&quot;&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;set $inventaire = []&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;bgm0&quot; &quot;aud/297_marchands.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;bgm1&quot; &quot;aud/235_rainy.mp3&quot;&gt;&gt;
@@ -1975,49 +1982,63 @@ Remerciant Alden pour son hospitalité, vous quittez sa maison pour vous diriger
 &lt;&lt;cacheaudio &quot;tavernblf&quot; &quot;aud/taverneblf.mp3&quot;&gt;&gt;
 
 &lt;&lt;widget &quot;hero&quot;&gt;&gt;
-&lt;span class=&quot;char-héro&quot;&gt;Vous: &lt;/span&gt;
+&lt;span class=&quot;char-héro&quot;&gt;Vous : &lt;/span&gt;
 &lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget &quot;marchand&quot;&gt;&gt;
-&lt;span class=&quot;char-marchand&quot;&gt;Marchand: &lt;/span&gt;
+&lt;span class=&quot;char-marchand&quot;&gt;Marchand : &lt;/span&gt;
 &lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget &quot;alden&quot;&gt;&gt;
-&lt;span class=&quot;char-alden&quot;&gt;Alden: &lt;/span&gt;
+&lt;span class=&quot;char-alden&quot;&gt;Alden : &lt;/span&gt;
 &lt;&lt;/widget&gt;&gt;
 
-&lt;&lt;widget &quot;elenor&quot;&gt;&gt;
-&lt;span class=&quot;char-elenor&quot;&gt;Elenor: &lt;/span&gt;
+&lt;&lt;widget &quot;elinor&quot;&gt;&gt;
+&lt;span class=&quot;char-elinor&quot;&gt;Elinor : &lt;/span&gt;
 &lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget &quot;mira&quot;&gt;&gt;
-&lt;span class=&quot;char-mira&quot;&gt;Mira: &lt;/span&gt;
+&lt;span class=&quot;char-mira&quot;&gt;Mira : &lt;/span&gt;
 &lt;&lt;/widget&gt;&gt;
 </tw-passagedata><tw-passagedata pid="224" name="StoryBanner" tags="data" position="2750,150" size="100,100">&lt;img src=&quot;img/hero.webp&quot; width=&quot;100%&quot;&gt;
-&lt;&lt;stats&gt;&gt;</tw-passagedata><tw-passagedata pid="225" name="marchands-choix2" tags="" position="3425,1025" size="100,100">[[Regarder autour des chariots.-&gt;marchands-observation]]
+&lt;&lt;stats&gt;&gt;
+
+Votre inventaire contient :
+&lt;&lt;if $inventaire.length &gt; 0&gt;&gt;
+    &lt;&lt;for _obj range $inventaire&gt;&gt;
+        - &lt;&lt;print _obj&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+&lt;&lt;else&gt;&gt;
+    Rien. Vous n&#39;avez aucun objet dans votre inventaire.
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="225" name="marchands-choix2" tags="" position="3425,1025" size="100,100">[[Regarder autour des chariots.-&gt;marchands-observation]]
 [[Aider à ranger les marchandises.-&gt;rangermarchandises]]
 [[Poursuivre votre route.-&gt;arrivee-blancheforet]]
 </tw-passagedata><tw-passagedata pid="226" name="marchands-choix3" tags="" position="3275,1225" size="100,100">[[Aider à ranger les marchandises.-&gt;rangermarchandises]]
-[[Poursuivre votre route.-&gt;arrivee-blancheforet]]</tw-passagedata><tw-passagedata pid="227" name="objet1" tags="Random" position="3050,1225" size="100,100">&lt;&lt;set $randomChoice = random(1, 3)&gt;&gt;
+[[Poursuivre votre route.-&gt;arrivee-blancheforet]]</tw-passagedata><tw-passagedata pid="227" name="objet1" tags="Random" position="2875,950" size="100,100">&lt;&lt;set $randomChoice = random(1, 3)&gt;&gt;
 
 &lt;&lt;if $randomChoice == 1&gt;&gt;
-Une cordes résistantes, toujours utiles en voyage pour attacher des objets ou grimper.
-&lt;&lt;elseif $randomChoice == 2&gt;&gt;
-Du tissu de lin, qui pourrait servir à réparer des vêtements ou à créer des bandages en cas de besoin.
-&lt;&lt;else&gt;&gt;
-des biscuits de voyage, pratiques pour les longs périples.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;link &quot;Prendre une cordes résistantes, toujours utiles en voyage pour attacher des objets ou grimper. Puis poursuivre votre route&quot;&gt;&gt;
+    &lt;&lt;run $inventaire.push(&quot;Corde&quot;)&gt;&gt;
+    &lt;&lt;goto &quot;arrivee-blancheforet&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 
-[[Remercier les marchands et poursuivre votre route-&gt;arrivee-blancheforet]]</tw-passagedata><tw-passagedata pid="228" name="medaillon" tags="Objet-clef Code-mécanique-porte" position="4000,975" size="100,100">&lt;&lt;if $medaillon is true&gt;&gt;
-    Vous utilisez la clef pour ouvrir la porte verrouillée.
+&lt;&lt;elseif $randomChoice == 2&gt;&gt;
+&lt;&lt;link &quot;Prendre du tissu de lin, qui pourrait servir à réparer des vêtements ou à créer des bandages en cas de besoin. Puis poursuivre votre route&quot;&gt;&gt;
+    &lt;&lt;run $inventaire.push(&quot;Tissus de lin&quot;)&gt;&gt;
+    &lt;&lt;goto &quot;arrivee-blancheforet&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-    La porte est verrouillée, vous avez besoin d&#39;une clef.
-&lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="229" name="combat1-1" tags="" position="2150,750" size="100,100">Comment allez-vous procéder pour affronter la créature ?
+&lt;&lt;link &quot;Prendre des biscuits de voyage, pratiques pour les longs périples. Puis poursuivre votre route&quot;&gt;&gt;
+    &lt;&lt;run $inventaire.push(&quot;Biscuits de voyage&quot;)&gt;&gt;
+    &lt;&lt;goto &quot;arrivee-blancheforet&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="228" name="combat1-1" tags="" position="2150,750" size="100,100">Comment allez-vous procéder pour affronter la créature ?
 
 [[Tenter d&#39;aipaiser la créature.-&gt;combat1-2a]]
 [[Combattre la créature avec votre dague.-&gt;combat1-2b]]
-[[Tenter de fuir.-&gt;combat1-3b]]</tw-passagedata><tw-passagedata pid="230" name="combat1-0" tags="contient-media" position="2150,625" size="100,100">&lt;&lt;audio &quot;vent&quot;  volume 0.5 stop&gt;&gt;\
+[[Tenter de fuir.-&gt;combat1-3b]]</tw-passagedata><tw-passagedata pid="229" name="combat1-0" tags="contient-media" position="2150,625" size="100,100">&lt;&lt;audio &quot;vent&quot;  volume 0.5 stop&gt;&gt;\
 &lt;&lt;audio &quot;combat&quot; loop volume 0.5 play&gt;&gt;\
 &lt;&lt;audio &quot;bete&quot; play&gt;&gt;\
 &lt;!--Musique, ambiance et images--&gt;
@@ -2028,21 +2049,21 @@ Cependant, l’exploration est interrompue par le grognement d’une créature, 
 
 Il s&#39;agit d&#39;un ours massif !
 
-1. [[Affronter la créature.-&gt;combat1-1]]</tw-passagedata><tw-passagedata pid="231" name="combat1-2a" tags="" position="1925,950" size="100,100">Vous préférez tenter d&#39;apaiser la créature. Un choix audacieux.
+1. [[Affronter la créature.-&gt;combat1-1]]</tw-passagedata><tw-passagedata pid="230" name="combat1-2a" tags="" position="1925,950" size="100,100">Vous préférez tenter d&#39;apaiser la créature. Un choix audacieux.
 
 Vous vous approchez de la créature, qui vous scrute  d&#39;un air menaçant.
 
-[[Continuer d&#39;approcher-&gt;combat1-3a]]</tw-passagedata><tw-passagedata pid="232" name="combat1-3a" tags="" position="1925,1075" size="100,100">&lt;&lt;audio &quot;bete&quot; play&gt;&gt;\
+[[Continuer d&#39;approcher-&gt;combat1-3a]]</tw-passagedata><tw-passagedata pid="231" name="combat1-3a" tags="" position="1925,1075" size="100,100">&lt;&lt;audio &quot;bete&quot; play&gt;&gt;\
 &lt;!--Musique, ambiance et images--&gt;
 
 En vous voyant approcher, la créature grogne de nouveau.
 Elle se met sur ses pattes arrière pour se donner un air encore plus impressionnant et menaçant.
 
 [[Poursuivre votre manoeuvre d&#39;apaisement.-&gt;Combat1-4a]]
-[[Se résigner et changer de tactique.-&gt;combat1-1]]</tw-passagedata><tw-passagedata pid="233" name="Combat1-4a" tags="" position="1925,1200" size="100,100">Au moment ou la créature s&#39;est mise debout, vous apercevez un fragment de métal noir enfoncé dans sa chair.
+[[Se résigner et changer de tactique.-&gt;combat1-1]]</tw-passagedata><tw-passagedata pid="232" name="Combat1-4a" tags="" position="1925,1200" size="100,100">Au moment ou la créature s&#39;est mise debout, vous apercevez un fragment de métal noir enfoncé dans sa chair.
 
 [[Baisser les yeux et appocher la créature en tendant la main.-&gt;combat1-5a]]
-[[C&#39;est trop dangereux, changer d&#39;approche.-&gt;combat1-1]]</tw-passagedata><tw-passagedata pid="234" name="combat1-5a" tags="" position="1925,1325" size="100,100">&lt;&lt;audio &quot;bete2&quot; play&gt;&gt;\
+[[C&#39;est trop dangereux, changer d&#39;approche.-&gt;combat1-1]]</tw-passagedata><tw-passagedata pid="233" name="combat1-5a" tags="" position="1925,1325" size="100,100">&lt;&lt;audio &quot;bete2&quot; play&gt;&gt;\
 &lt;&lt;audio &quot;coeur&quot; play&gt;&gt;\
 &lt;&lt;audio &quot;combat&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;bgm0&quot; loop volume 0.5 play&gt;&gt;\
@@ -2054,7 +2075,7 @@ A ce moment, elle comprend que vous n&#39;êtes pas une menace.
 
 Elle s&#39;allonge calmement et dans un dernier soupir pointe son regarde vers une tanière cachée juste derrière elle.
 
-[[Regarder de plus prêt la tannière.-&gt;ourson0]]</tw-passagedata><tw-passagedata pid="235" name="ourson1" tags="" position="1800,1600" size="100,100">Vous avancez vers le jeune ourson avec des gestes lent et rassurant.
+[[Regarder de plus prêt la tannière.-&gt;ourson0]]</tw-passagedata><tw-passagedata pid="234" name="ourson1" tags="" position="1800,1600" size="100,100">Vous avancez vers le jeune ourson avec des gestes lent et rassurant.
 Il sort de sa tannière, inquiet, vous regardant avec des yeux humides.
 
 Il se dirige vers le corps sa mère. Puis un triste grognemet sourd sort de lui.
@@ -2062,11 +2083,14 @@ Il est maintenant seul et livré à lui même.
 
 Il s&#39;avance vers vous et pose sa tête sur votre main.
 
-[[Vous agenouiller et prenez affectueusement l&#39;ourson dans vos bras.-&gt;ourson3]]</tw-passagedata><tw-passagedata pid="236" name="ourson2" tags="" position="2000,1600" size="100,100">Vous chassez l&#39;ourson, qui s&#39;enfuit dans les sombres bois non loin.
+[[Vous agenouiller et prenez affectueusement l&#39;ourson dans vos bras.-&gt;ourson3]]</tw-passagedata><tw-passagedata pid="235" name="ourson2" tags="" position="2000,1600" size="100,100">Vous chassez l&#39;ourson, qui s&#39;enfuit dans les sombres bois non loin.
 Qui sait qui ce qui peut arriver à une bête aussi jeune, seule et livrée à elle-même...
 Vous chassez cette idée de votre esprit et continuez d&#39;avancer.
 
-[[Poursuivre votre route.-&gt;3ARoutePrincipale]]</tw-passagedata><tw-passagedata pid="237" name="ourson3" tags="contient-media Objet-clef" position="1800,1725" size="100,100">&lt;img src=&quot;img/ourson3.png&quot;&gt;
+&lt;&lt;set $karma -= 5&gt;&gt;
+&lt;span style=&quot;color: red;&quot;&gt;Votre réputation est maintenant de $karma.&lt;/span&gt;
+
+[[Poursuivre votre route.-&gt;3ARoutePrincipale]]</tw-passagedata><tw-passagedata pid="236" name="ourson3" tags="contient-media Objet-clef" position="1800,1725" size="100,100">&lt;img src=&quot;img/ourson3.png&quot;&gt;
 L&#39;ourson semble aprécier votre geste. Il vous lèche le visage affectueusement. 
 
 Vous ne pouvez vous résoudre à le laisser ici seul.
@@ -2075,11 +2099,14 @@ Après vous être relevé(e), vous lui passez autour du cou une bandelette de cu
 &lt;&lt;set $ourson = true&gt;&gt; &lt;span style=&quot;color: green;&quot;&gt;//L&#39;ourson vous suis en tant que compagnon//&lt;/span&gt;
 &lt;&lt;audio &quot;recompense&quot; play&gt;&gt;\
 
-[[Poursuivre votre route.-&gt;3ARoutePrincipale]]</tw-passagedata><tw-passagedata pid="238" name="combat1-2b" tags="" position="2150,900" size="100,100">Vous dégainez votre dague et vous vous jetez vers la créature, arme en avant, poussant un hurlement terrifiant.
+&lt;&lt;set $karma += 5&gt;&gt;
+&lt;span style=&quot;color: green;&quot;&gt;Votre réputation est maintenant de $karma.&lt;/span&gt;
 
-[[Tenter de blesser la créature (résolution aléatoire).-&gt;combat1-2c]]</tw-passagedata><tw-passagedata pid="239" name="combat1-3b" tags="" position="2375,900" size="100,100">Face à cette imposante créature menaçante, vous décidez que la fuite est plus sage.
+[[Poursuivre votre route.-&gt;3ARoutePrincipale]]</tw-passagedata><tw-passagedata pid="237" name="combat1-2b" tags="" position="2150,900" size="100,100">Vous dégainez votre dague et vous vous jetez vers la créature, arme en avant, poussant un hurlement terrifiant.
 
-[[Test de fuite (résolution aléatoire).-&gt;combat1-4b]]</tw-passagedata><tw-passagedata pid="240" name="combat1-4b" tags="Random" position="2375,1025" size="100,100">&lt;&lt;set $randomChoice = random(1, 2)&gt;&gt;
+[[Tenter de blesser la créature (résolution aléatoire).-&gt;combat1-2c]]</tw-passagedata><tw-passagedata pid="238" name="combat1-3b" tags="" position="2375,900" size="100,100">Face à cette imposante créature menaçante, vous décidez que la fuite est plus sage.
+
+[[Test de fuite (résolution aléatoire).-&gt;combat1-4b]]</tw-passagedata><tw-passagedata pid="239" name="combat1-4b" tags="Random" position="2375,1025" size="100,100">&lt;&lt;set $randomChoice = random(1, 2)&gt;&gt;
 
 &lt;&lt;if $randomChoice == 1&gt;&gt;
  &lt;span style=&quot;color: green;&quot;&gt;Votre choix vous a mené à une issue favorable.&lt;/span&gt;
@@ -2100,7 +2127,7 @@ La créature est face à vous, s&#39;apprêtant à vous tomber dessus et à vous
 
 [[Tenter d&#39;esquiver (résolution aléatoire).-&gt;combat1-5b]]
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="241" name="combat1-5b" tags="Random" position="2375,1150" size="100,100">&lt;&lt;audio &quot;combat&quot; stop&gt;&gt;\
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="240" name="combat1-5b" tags="Random" position="2375,1150" size="100,100">&lt;&lt;audio &quot;combat&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;bgm0&quot; volume 0.5 play&gt;&gt;\
 &lt;!--Musique, ambiance et images--&gt;
 
@@ -2128,10 +2155,10 @@ Au début, une douleur intense vous traverse, votre sang chaud se répand sur vo
 
 [[Vous êtes mort(e)-&gt;Page de garde]]
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="242" name="3ARoutePrincipalePrelude" tags="" position="2500,900" size="100,100">Vous avez réussir à fuir de justesse. Vous entendez au loin les grognements de la bête. 
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="241" name="3ARoutePrincipalePrelude" tags="" position="2500,900" size="100,100">Vous avez réussir à fuir de justesse. Vous entendez au loin les grognements de la bête. 
 Vous décidez finalement de poursuivre votre route, en espérant qu&#39;elle sera plus sûr par la suite.
 
-[[Continuer.-&gt;3ARoutePrincipale]]</tw-passagedata><tw-passagedata pid="243" name="combat1-2c" tags="Random" position="2150,1025" size="100,100">&lt;&lt;set $randomChoice = random(1, 2)&gt;&gt;
+[[Continuer.-&gt;3ARoutePrincipale]]</tw-passagedata><tw-passagedata pid="242" name="combat1-2c" tags="Random" position="2150,1025" size="100,100">&lt;&lt;set $randomChoice = random(1, 2)&gt;&gt;
 
 &lt;&lt;if $randomChoice == 1&gt;&gt;
  &lt;span style=&quot;color: green;&quot;&gt;Votre choix vous a mené à une issue favorable.&lt;/span&gt;
@@ -2152,7 +2179,7 @@ Il faut vous rendre à l&#39;évidence, cette bête est beaucoup plus forte que 
 &lt;span style=&quot;color: red;&quot;&gt;Votre santé est maintenant de $sante.&lt;/span&gt;
 
 [[Tenter de fuir (résolution aléatoire)-&gt;combat1-2-3]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="244" name="combat1-2-3" tags="Random" position="2050,1200" size="100,100">&lt;&lt;set $randomChoice = random(1, 2)&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="243" name="combat1-2-3" tags="Random" position="2050,1200" size="100,100">&lt;&lt;set $randomChoice = random(1, 2)&gt;&gt;
 
 &lt;&lt;if $randomChoice == 1&gt;&gt;
  &lt;span style=&quot;color: green;&quot;&gt;Votre choix vous a mené à une issue favorable.&lt;/span&gt;
@@ -2175,7 +2202,7 @@ Au début, une douleur intense vous traverse, votre sang chaud se répand sur vo
 &lt;span style=&quot;color: red;&quot;&gt;Vous subissez une blessure critique&lt;/span&gt;
 
 [[Vous êtes mort(e)-&gt;Page de garde]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="245" name="combat1-2-4" tags="Random" position="2250,1200" size="100,100">&lt;&lt;set $randomChoice = random(1, 2)&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="244" name="combat1-2-4" tags="Random" position="2250,1200" size="100,100">&lt;&lt;set $randomChoice = random(1, 2)&gt;&gt;
 
 &lt;&lt;if $randomChoice == 1&gt;&gt;
  &lt;span style=&quot;color: green;&quot;&gt;Votre choix vous a mené à une issue favorable.&lt;/span&gt;
@@ -2196,7 +2223,7 @@ Il faut vous rendre à l&#39;évidence, cette bête est beaucoup plus forte que 
 &lt;span style=&quot;color: red;&quot;&gt;Votre santé est maintenant de $sante.&lt;/span&gt;
 
 [[Tenter de fuir (résolution aléatoire)-&gt;combat1-2-3]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="246" name="combat1-2-5" tags="" position="2250,1325" size="100,100">&lt;&lt;audio &quot;combat&quot;  volume 0.5 stop&gt;&gt;\
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="245" name="combat1-2-5" tags="" position="2250,1325" size="100,100">&lt;&lt;audio &quot;combat&quot;  volume 0.5 stop&gt;&gt;\
 &lt;&lt;audio &quot;bgm0&quot; loop volume 0.5 play&gt;&gt;\
 &lt;!--Musique, ambiance et images--&gt;
 
@@ -2205,48 +2232,51 @@ Le froid est mordant et ce vent glacial.
 
 En observant autour de vous, vous apercevez une petite tanière.
 
-[[Regarder de plus prêt la tannière.-&gt;ourson0]]</tw-passagedata><tw-passagedata pid="247" name="ourson0" tags="contient-media" position="1925,1450" size="100,100">&lt;img src=&quot;img/ourson.png&quot;&gt;
+[[Regarder de plus prêt la tannière.-&gt;ourson0]]</tw-passagedata><tw-passagedata pid="246" name="ourson0" tags="contient-media" position="1925,1450" size="100,100">&lt;img src=&quot;img/ourson.png&quot;&gt;
 La tanière révèle la présence d&#39;un jeune ourson apeuré.
 
 [[Appater l&#39;ourson.-&gt;ourson1]]
-[[Chasser l&#39;ourson.-&gt;ourson2]]</tw-passagedata><tw-passagedata pid="248" name="foret1" tags="" position="2900,500" size="100,100">En scrutant les alentours, vous contemplez l&#39;élégance des arbres majestueux, leurs cimes s&#39;élevant avec grâce vers les cieux infinis. La mousse qui tapisse les pierres exhale un parfum délicat, enveloppant vos sens d&#39;une douceur réconfortante. Les nuances apaisantes de vert et de marron se fondent harmonieusement, offrant à votre esprit tourmenté un refuge dans cette nature immuable.
+[[Chasser l&#39;ourson.-&gt;ourson2]]</tw-passagedata><tw-passagedata pid="247" name="foret1" tags="" position="2900,500" size="100,100">En scrutant les alentours, vous contemplez l&#39;élégance des arbres majestueux, leurs cimes s&#39;élevant avec grâce vers les cieux infinis. La mousse qui tapisse les pierres exhale un parfum délicat, enveloppant vos sens d&#39;une douceur réconfortante. Les nuances apaisantes de vert et de marron se fondent harmonieusement, offrant à votre esprit tourmenté un refuge dans cette nature immuable.
 
 Soudain, un frémissement se fait entendre dans le petit fourré voisin, brisant le silence qui régnait jusque-là...
 
 1. [[Aller voir le buisson.-&gt;foret2]]
 2. [[Poursuivre votre chemin.-&gt;3ARoutePrincipale]]
-3. [[Explorer le cratère.-&gt;cratere]]</tw-passagedata><tw-passagedata pid="249" name="foret2" tags="" position="3100,500" size="100,100">&lt;img src=&quot;img/rougeot.webp&quot;&gt;
+3. [[Explorer le cratère.-&gt;cratere]]</tw-passagedata><tw-passagedata pid="248" name="foret2" tags="" position="3100,500" size="100,100">&lt;img src=&quot;img/rougeot.webp&quot;&gt;
 Vous approchez discrètement du buisson, curieux de découvrir l&#39;origine du bruit. À votre grande surprise, vous apercevez un petit rouge-gorge, ses plumes chatoyantes éclairées par les rayons tamisés du soleil. Il semble jeune et peu farouche, ses yeux vifs vous fixant avec curiosité. D&#39;un mouvement délicat, il penche la tête sur le côté, comme s&#39;il cherchait à percer le mystère de votre présence. Une étrange connexion s&#39;établit entre vous, brisant la barrière habituelle entre l&#39;homme et la nature.
 
 1. [[Tendre la main.-&gt;foret 3a]]
 2. [[Lui tendre des miettes de pains.-&gt;foret3b]]
 3. [[Poursuivre votre chemin.-&gt;3ARoutePrincipale]]
 4. [[Explorer le cratère.-&gt;cratere]]
-</tw-passagedata><tw-passagedata pid="250" name="foret 3a" tags="" position="3250,575" size="100,100">Vous tendez la main, le petit passereau monte dessus à votre grande surprise. Il vous fixe de son regard perçant...
+</tw-passagedata><tw-passagedata pid="249" name="foret 3a" tags="" position="3250,575" size="100,100">Vous tendez la main, le petit passereau monte dessus à votre grande surprise. Il vous fixe de son regard perçant...
 
 2. [[Lui tendre des miettes de pains.-&gt;foret3b]]
 3. [[Poursuivre votre chemin.-&gt;3ARoutePrincipale]]
-4. [[Explorer le cratère.-&gt;cratere]]</tw-passagedata><tw-passagedata pid="251" name="foret3b" tags="contient-media" position="3250,400" size="100,100">Il semble apprécier votre geste, picorant quelques morceaux de pain avant de s&#39;envoler sur une branche voisine. Son chant joyeux résonne dans l&#39;air, laissant dans votre cœur une trace de légèreté. Quelle drôle de rencontre, pensez-vous, alors que vous observez le rouge-gorge s&#39;éloigner dans les hauteurs de la forêt.
+4. [[Explorer le cratère.-&gt;cratere]]</tw-passagedata><tw-passagedata pid="250" name="foret3b" tags="contient-media" position="3250,400" size="100,100">Il semble apprécier votre geste, picorant quelques morceaux de pain avant de s&#39;envoler sur une branche voisine. Son chant joyeux résonne dans l&#39;air, laissant dans votre cœur une trace de légèreté. Quelle drôle de rencontre, pensez-vous, alors que vous observez le rouge-gorge s&#39;éloigner dans les hauteurs de la forêt.
 
 &lt;&lt;set $rougeot = true&gt;&gt;&lt;span style=&quot;color: green;&quot;&gt;//Vous vous sentez observé...//&lt;/span&gt;
 &lt;&lt;audio &quot;recompense&quot; play&gt;&gt;\
 &lt;&lt;audio &quot;rougeot&quot; play&gt;&gt;\
 
-3. [[Poursuivre votre chemin.-&gt;3ARoutePrincipale]]
-4. [[Explorer le cratère.-&gt;cratere]]</tw-passagedata><tw-passagedata pid="252" name="Elinor-B-1" tags="" position="1725,1975" size="100,100">Émue, Elinore fixe le médaillon longuement. Le temps semble suspendu, figeant cet instant chargé d&#39;émotions. Une larme solitaire roule le long de sa joue, reflétant la tristesse et la nostalgie qui l&#39;habitent.
+&lt;&lt;set $karma += 5&gt;&gt;
+&lt;span style=&quot;color: green;&quot;&gt;Votre réputation est maintenant de $karma.&lt;/span&gt;
 
-1.[[Lui tendre le médaillon.-&gt;Elinor-B-2]]</tw-passagedata><tw-passagedata pid="253" name="Elinor-B-2" tags="" position="1725,2100" size="100,100">La vieille dame tend la main et saisit délicatement le médaillon...
+3. [[Poursuivre votre chemin.-&gt;3ARoutePrincipale]]
+4. [[Explorer le cratère.-&gt;cratere]]</tw-passagedata><tw-passagedata pid="251" name="Elinor-B-1" tags="" position="1725,1975" size="100,100">Émue, Elinore fixe le médaillon longuement. Le temps semble suspendu, figeant cet instant chargé d&#39;émotions. Une larme solitaire roule le long de sa joue, reflétant la tristesse et la nostalgie qui l&#39;habitent.
+
+1.[[Poursuivre-&gt;Elinor-B-2]]</tw-passagedata><tw-passagedata pid="252" name="Elinor-B-2" tags="" position="1725,2100" size="100,100">La vieille dame tend la main et saisit délicatement le médaillon...
 
 &lt;&lt;elinor&gt;&gt;&quot;C&#39;est à peine croyable...&quot;
 
 Un sanglot lui échappe, brisant brièvement le calme qui régnait.
 
 1. [[S&#39;asseoir prêt d&#39;elle.-&gt;Elinor-B-3]]
-2. [[Partir et la laisser seule.-&gt;1-Les habitants]]</tw-passagedata><tw-passagedata pid="254" name="Elinor-B-3" tags="" position="1725,2225" size="100,100">Elinor sort un mouchoir en soie et essuie ses larmes.
+2. [[Partir et la laisser seule.-&gt;1-Les habitants]]</tw-passagedata><tw-passagedata pid="253" name="Elinor-B-3" tags="" position="1725,2225" size="100,100">Elinor sort un mouchoir en soie et essuie ses larmes.
 
 &lt;&lt;elinor&gt;&gt;&quot;Ce médaillon... Je l&#39;ai offert à Gustav, mon défunt époux. Il devait le protéger lors de son long voyage. C&#39;était il y a quatre ans. Il n&#39;est jamais revenu depuis. Où l&#39;avez-vous trouvé ?&quot;
 
-1. [[Tout lui dire sur les marchands et votre étrange rencontre.-&gt;Elinor-B-4a]]</tw-passagedata><tw-passagedata pid="255" name="Elinor-B-4a" tags="" position="1725,2350" size="100,100">&lt;&lt;elinor&gt;&gt;&quot;Ainsi, vous me dites qu&#39;un marchand l&#39;a acheté à une personne peu recommandable ? Et que vous avez aperçu un vieil homme parmi eux ?&quot;
+1. [[Tout lui dire sur les marchands et votre étrange rencontre.-&gt;Elinor-B-4a]]</tw-passagedata><tw-passagedata pid="254" name="Elinor-B-4a" tags="" position="1725,2350" size="100,100">&lt;&lt;elinor&gt;&gt;&quot;Ainsi, vous me dites qu&#39;un marchand l&#39;a acheté à une personne peu recommandable ? Et que vous avez aperçu un vieil homme parmi eux ?&quot;
 
 Elle met sa main sur son cœur, serrant son mouchoir...
 
@@ -2254,7 +2284,7 @@ Elle met sa main sur son cœur, serrant son mouchoir...
 
 De nouvelles larmes coulent le long de son doux visage.
 
-1. [[Suite.-&gt;Elinor-B-5a]]</tw-passagedata><tw-passagedata pid="256" name="Elinor-B-5a" tags="" position="1725,2475" size="100,100">&lt;&lt;if $rougeot is true&gt;&gt;
+1. [[Suite.-&gt;Elinor-B-5a]]</tw-passagedata><tw-passagedata pid="255" name="Elinor-B-5a" tags="" position="1725,2475" size="100,100">&lt;&lt;if $rougeot is true&gt;&gt;
 Elle soupire, puis semble reprendre ses esprits.
 
 &lt;&lt;elinor&gt;&gt;&quot;Je vous remercie du fond du coeur de m&#39;avoir rapporté ce médaillon&quot;
@@ -2272,15 +2302,15 @@ Elle soupire, puis semble reprendre ses esprits.
 &lt;&lt;elinor&gt;&gt;&quot;Je vous remercie du fond du coeur de m&#39;avoir rapporté ce médaillon&quot;
 
 1. [[Poursuivre.-&gt;Elinor-B-6]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="257" name="Elinor-H-1" tags="" position="1925,2100" size="100,100">&lt;&lt;audio &quot;marcher&quot;  play&gt;&gt;\
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="256" name="Elinor-H-1" tags="" position="1925,2100" size="100,100">&lt;&lt;audio &quot;marcher&quot;  play&gt;&gt;\
 &lt;!--Musique, ambiance et images--&gt;
 Le soir avance lentement, enveloppant le marché d&#39;une aura dorée alors que vous suivez Elinor à travers ses allées animées. Ensemble, vous remontez un petit chemin bordé de buissons fleuris, laissant derrière vous l&#39;agitation du marché.
 
 Progressivement, le soleil se couche derrière les montagnes, peignant le ciel de teintes chaudes et chatoyantes. Le crépuscule éclaire votre chemin d&#39;une lueur douce et apaisante, tandis que les ombres s&#39;allongent lentement autour de vous, créant un tableau enchanteur de tranquillité et de sérénité.
 
-1. [[Suivre Elinor.-&gt;Elinor-H-2]]</tw-passagedata><tw-passagedata pid="258" name="Elinor-B-6" tags="" position="1775,2650" size="100,100">Elinor : &quot;Accepteriez-vous de venir ce soir écouter l&#39;histoire que je raconte aux petits ? Cela pourrait vous interesser...&quot;
+1. [[Suivre Elinor.-&gt;Elinor-H-2]]</tw-passagedata><tw-passagedata pid="257" name="Elinor-B-6" tags="" position="1775,2650" size="100,100">Elinor : &quot;Accepteriez-vous de venir ce soir écouter l&#39;histoire que je raconte aux petits ? Cela pourrait vous interesser...&quot;
 
-1. [[Participer à l&#39;évènement.-&gt;Elinor-H-1]]</tw-passagedata><tw-passagedata pid="259" name="Elinor-H-2" tags="" position="1925,2225" size="100,100">&lt;&lt;audio &quot;bgm1&quot;  stop&gt;&gt;\
+1. [[Participer à l&#39;évènement.-&gt;Elinor-H-1]]</tw-passagedata><tw-passagedata pid="258" name="Elinor-H-2" tags="" position="1925,2225" size="100,100">&lt;&lt;audio &quot;bgm1&quot;  stop&gt;&gt;\
 &lt;&lt;audio &quot;fire&quot;  loop volume 0.5 play&gt;&gt;\
 &lt;&lt;audio &quot;piano&quot; loop play&gt;&gt;\
 &lt;!--Musique, ambiance et images--&gt;
@@ -2291,7 +2321,7 @@ Autour du feu, plusieurs enfants et quelques parents sont présents, leurs visag
 
 Elle vous invite à vous joindre à eux et à vous asseoir au bord du feu, où la chaleur bienveillante et la camaraderie créent une atmosphère chaleureuse et accueillante.
 
-1. [[S&#39;asseoir au bord du feu.-&gt;Elinor-H-3]]</tw-passagedata><tw-passagedata pid="260" name="Elinor-H-3" tags="" position="1925,2350" size="100,100">&lt;&lt;audio &quot;marcher&quot;  stop&gt;&gt;\
+1. [[S&#39;asseoir au bord du feu.-&gt;Elinor-H-3]]</tw-passagedata><tw-passagedata pid="259" name="Elinor-H-3" tags="" position="1925,2350" size="100,100">&lt;&lt;audio &quot;marcher&quot;  stop&gt;&gt;\
 &lt;&lt;audio &quot;wind&quot; loop play&gt;&gt;\
 &lt;img src=&quot;img/elinor.png&quot;&gt;
 &lt;!--Musique, ambiance et images--&gt;
@@ -2300,21 +2330,21 @@ Vous prenez place au bord du feu, laissant la chaleur réconfortante envelopper 
 
 Émerveillé par ce spectacle grandiose, vous baissez votre tête vers Elinor, qui sort alors un livre de son sac. Elle l&#39;ouvre avec précaution et commence à lire d&#39;une voix douce et envoûtante, captivant l&#39;attention de tous les présents. Les mots du livre semblent prendre vie, transportant les auditeurs dans des mondes imaginaires et des histoires fascinantes. Vous vous laissez emporter par la magie de l&#39;instant, bercé par la douce mélodie des mots et la lueur du feu dansant sous les étoiles.
 
-1. [[Ecouter l&#39;histoire.-&gt;Elinor-H-4]]</tw-passagedata><tw-passagedata pid="261" name="Elinor-H-4" tags="" position="1925,2475" size="100,100">Les visages des enfants s’illuminent de fascination. Les plus petits se blottissent contre les plus grands, cherchant du réconfort.
+1. [[Ecouter l&#39;histoire.-&gt;Elinor-H-4]]</tw-passagedata><tw-passagedata pid="260" name="Elinor-H-4" tags="" position="1925,2475" size="100,100">Les visages des enfants s’illuminent de fascination. Les plus petits se blottissent contre les plus grands, cherchant du réconfort.
 
 &lt;&lt;elinor&gt;&gt;(avec un doux sourire): &quot;Il était une fois, dans un royaume lointain, un érudit du nom de Theodorus qui avait dédié sa vie à étudier les étoiles. Chaque nuit, il montait dans cet observatoire&quot; – elle pointe du doigt la structure sur la colinne, proche du village – &quot;pour dialoguer avec le cosmos.&quot;
 
 Les enfants lèvent tous la tête, regardant le vieil édifice avec émerveillement, imaginant Theodorus se tenant là, une silhouette solitaire contre le ciel nocturne.
 
-1. [[Ecouter la suite.-&gt;Elinor-H-5]]</tw-passagedata><tw-passagedata pid="262" name="Elinor-H-5" tags="" position="1925,2600" size="100,100">&lt;&lt;elinor&gt;&gt;(sa voix s&#39;abaissant presque à un murmure): &quot;Une nuit, une étoile plus brillante et plus scintillante que toutes les autres traversa le ciel. Elle s’arrêta juste au-dessus de l&#39;observatoire, sa lumière se déversant comme une rivière céleste, illuminant la nuit comme si le jour s&#39;était invité dans le royaume de la lune.&quot;
+1. [[Ecouter la suite.-&gt;Elinor-H-5]]</tw-passagedata><tw-passagedata pid="261" name="Elinor-H-5" tags="" position="1925,2600" size="100,100">&lt;&lt;elinor&gt;&gt;(sa voix s&#39;abaissant presque à un murmure): &quot;Une nuit, une étoile plus brillante et plus scintillante que toutes les autres traversa le ciel. Elle s’arrêta juste au-dessus de l&#39;observatoire, sa lumière se déversant comme une rivière céleste, illuminant la nuit comme si le jour s&#39;était invité dans le royaume de la lune.&quot;
 
 Un murmure d’excitation parcourt les enfants. Ils se mettent à murmurer entre eux, imaginant l&#39;éclat spectaculaire et magique de cette étoile. Les plus petits serrent leurs petites mains, captivés et à peine capables de contenir leur émerveillement.
 
-1. [[Ecouter la suite.-&gt;Elinor-H-6]]</tw-passagedata><tw-passagedata pid="263" name="Elinor-H-6" tags="" position="1925,2725" size="100,100">&lt;&lt;elinor&gt;&gt;(une pointe de tristesse dans sa voix): &quot;Mais, mes chers, toutes les lumières, même les plus brillantes, cachent des ombres. L&#39;étoile a parlé à Theodorus, lui promettant des connaissances infinies et le pouvoir de façonner le futur.&quot;
+1. [[Ecouter la suite.-&gt;Elinor-H-6]]</tw-passagedata><tw-passagedata pid="262" name="Elinor-H-6" tags="" position="1925,2725" size="100,100">&lt;&lt;elinor&gt;&gt;(une pointe de tristesse dans sa voix): &quot;Mais, mes chers, toutes les lumières, même les plus brillantes, cachent des ombres. L&#39;étoile a parlé à Theodorus, lui promettant des connaissances infinies et le pouvoir de façonner le futur.&quot;
 
 Les enfants deviennent soudainement silencieux, la joie initiale se transformant en une tension palpable. Ils s&#39;accrochent à ses paroles, se balançant légèrement sur leurs petits pieds, incertains de ce que l’étoile pourrait demander ensuite.
 
-1. [[Ecouter la suite.-&gt;Elinor-H-7]]</tw-passagedata><tw-passagedata pid="264" name="Elinor-H-7" tags="" position="1925,2850" size="100,100">&lt;&lt;elinor&gt;&gt;(après un silence) : &quot;Theodorus prit la décision d&#39;écouter l&#39;étoile et de se lancer dans ce voyage, malgré les mises en garde de sa femme. Consciente qu&#39;elle ne pourrait le dissuader, elle finit par céder, bien que cela lui coûtât. Son amour pour lui était profond, et elle savait que s&#39;opposer à son désir... l&#39;attristerai pour toujours. Il était passionné par les astres, c&#39;était toute sa vie.&quot;
+1. [[Ecouter la suite.-&gt;Elinor-H-7]]</tw-passagedata><tw-passagedata pid="263" name="Elinor-H-7" tags="" position="1925,2850" size="100,100">&lt;&lt;elinor&gt;&gt;(après un silence) : &quot;Theodorus prit la décision d&#39;écouter l&#39;étoile et de se lancer dans ce voyage, malgré les mises en garde de sa femme. Consciente qu&#39;elle ne pourrait le dissuader, elle finit par céder, bien que cela lui coûtât. Son amour pour lui était profond, et elle savait que s&#39;opposer à son désir... l&#39;attristerai pour toujours. Il était passionné par les astres, c&#39;était toute sa vie.&quot;
 
 &lt;&lt;elinor&gt;&gt;(une larme à l&#39;oeil) : &quot;Pour s&#39;assurer que tout aille bien pour lui, sa femme lui fit façonner un médaillon. Un magnifique bijou gravé de leurs deux initiales entrelacées, portant la mention &quot;Ina préserve vos cœurs&quot;. C&#39;était son témoignage d&#39;amour.&quot;
 
@@ -2325,21 +2355,21 @@ Elinor vous regarde,  les yeux empli de tristesse, mais de reconnaissance.
 
 1. [[Ecouter la suite.-&gt;Elinor-H-8]]
 
-</tw-passagedata><tw-passagedata pid="265" name="Elinor-H-8" tags="" position="1925,2975" size="100,100">&lt;&lt;elinor&gt;&gt;(refermant le livre avec un soupir) : &quot;Theodorus, ne revint jamais à Blancheforêt...&quot;
+</tw-passagedata><tw-passagedata pid="264" name="Elinor-H-8" tags="" position="1925,2975" size="100,100">&lt;&lt;elinor&gt;&gt;(refermant le livre avec un soupir) : &quot;Theodorus, ne revint jamais à Blancheforêt...&quot;
 
 Un silence pesant s&#39;installe au milieu de l&#39;assemblée. Tous semblent accablés, leurs visages empreints de tristesse. Quelques reniflements étouffés se font entendre parmi les plus petits.
 
 &lt;&lt;elinor&gt;&gt;&quot;Il se fait tard, mes petits. Retournons au village avant qu&#39;Alden ne s&#39;inquiète. Voyageur, vous devriez passer voir le maire, je pense qu&#39;il sera curieux de vous rencontrer.&quot;
 
 1. [[Rentrer au village avec le groupe.-&gt;Alden-A-0]]
-</tw-passagedata><tw-passagedata pid="266" name="taverne-2" tags="" position="3150,1975" size="100,100">&lt;img src=&quot;img/mira.webp&quot;&gt;
+</tw-passagedata><tw-passagedata pid="265" name="taverne-2" tags="" position="3150,1975" size="100,100">&lt;img src=&quot;img/mira.webp&quot;&gt;
 &lt;!--Musique, ambiance et images--&gt;
 &lt;h2&gt;La Taverne de la Comète&lt;/h2&gt;
 Dès que vous entrez, une femme aux cheveux flamboyants et au tablier taché les accueille avec un large sourire. C&#39;est Mira, la tenancière, reconnue pour son hospitalité et sa bière maison infusée d’herbes locales. Elle guide le groupe à une table ronde au coin du feu, où le crépitement apaisant des flammes et la chaleur douillette les enveloppent.
 
 Mira : &quot;Bienvenue à la Taverne de la Comète, voyageur. Dites-moi, comment puis-je vous réconforter après une journée qui, je le devine, ne fut pas de tout repos ?&quot;
 
-1.[[Saluer la tenancière, s&#39;asseoire à une table et commander à manger.-&gt;taverne-3]]</tw-passagedata><tw-passagedata pid="267" name="taverne-3" tags="" position="3150,2100" size="100,100">Mira s&#39;assied brièvement avec vous, curieuse :
+1.[[Saluer la tenancière, s&#39;asseoire à une table et commander à manger.-&gt;taverne-3]]</tw-passagedata><tw-passagedata pid="266" name="taverne-3" tags="" position="3150,2100" size="100,100">Mira s&#39;assied brièvement avec vous, curieuse :
 
 Mira : &quot;Des bruits courent, des histoires de pierres tombées du ciel et de catastrophes imprévisibles. Blancheforêt a toujours été un lieu d&#39;émerveillement céleste, mais ces temps-ci, il semble que les étoiles elles-mêmes nous défient.&quot;
 
@@ -2353,30 +2383,28 @@ Mira : &quot;Les astres ont souvent guidé nos pas dans le passé, mais jamais i
 
 //Mira quitte la pièce.//
 
-1.[[Observer la pièce.-&gt;taverne-4]]</tw-passagedata><tw-passagedata pid="268" name="taverne-4" tags="" position="3150,2250" size="100,100">La taverne est peu fréquentée ce soir. Il faut dire que les récents évènements ont certainement mit un terme à de nombreux voyages...
+1.[[Observer la pièce.-&gt;taverne-4]]</tw-passagedata><tw-passagedata pid="267" name="taverne-4" tags="" position="3150,2250" size="100,100">La taverne est peu fréquentée ce soir. Il faut dire que les récents évènements ont certainement mit un terme à de nombreux voyages...
 
 Vous pouvez voir :
 
 1. [[Un vieux monsieur qui semble éméché, seul à une table.-&gt;taverne-a-5]]
 2. Un homme robuste accoudé au bar.
 3.Une femme assise prêt du feu.
-4.[[Une tapisserie accroché à un mur, aller voir.-&gt;taverne-d-5]]</tw-passagedata><tw-passagedata pid="269" name="taverne-a-5" tags="contient-media" position="2850,2450" size="100,100">&lt;img src=&quot;img/ivrogneblf.png&quot;&gt;
+4.[[Une tapisserie accroché à un mur, aller voir.-&gt;taverne-d-5]]</tw-passagedata><tw-passagedata pid="268" name="taverne-a-5" tags="contient-media" position="2850,2450" size="100,100">&lt;img src=&quot;img/ivrogneblf.png&quot;&gt;
 &lt;&lt;audio &quot;ivrogneblf&quot;&gt;&gt;\
-&lt;!--Musique, ambiance et images--&gt;</tw-passagedata><tw-passagedata pid="270" name="taverne-d-5" tags="contient-media" position="3450,2450" size="100,100">&lt;img src=&quot;img/tapisserieblf.webp&quot;&gt;
+&lt;!--Musique, ambiance et images--&gt;</tw-passagedata><tw-passagedata pid="269" name="taverne-d-5" tags="contient-media" position="3450,2450" size="100,100">&lt;img src=&quot;img/tapisserieblf.webp&quot;&gt;
 &lt;!--Musique, ambiance et images--&gt;
 &lt;h2&gt;La tapisserie de la taverne&lt;/h2&gt;
 
-1.[[Retourner à votre place.-&gt;taverne-4]]</tw-passagedata><tw-passagedata pid="271" name="tests" tags="" position="2350,150" size="100,100">&lt;&lt;hero&gt;&gt;
-&lt;&lt;alden&gt;&gt;
-&lt;&lt;mira&gt;&gt;
-&lt;&lt;elenor&gt;&gt;
-&lt;&lt;marchand&gt;&gt;
-
-&lt;&lt;set $sante -= 1&gt;&gt;
+1.[[Retourner à votre place.-&gt;taverne-4]]</tw-passagedata><tw-passagedata pid="270" name="Stats + Textes" tags="Mécanique-de-jeu" position="2175,150" size="100,100">&lt;&lt;set $sante -= 1&gt;&gt;
 &lt;span style=&quot;color: red;&quot;&gt;Votre santé est maintenant de $sante.&lt;/span&gt;
-
 &lt;&lt;set $sante += 1&gt;&gt;
 &lt;span style=&quot;color: green;&quot;&gt;Votre santé est maintenant de $sante.&lt;/span&gt;
+
+&lt;&lt;set $karma += 5&gt;&gt;
+&lt;span style=&quot;color: green;&quot;&gt;Votre réputation est maintenant de $karma.&lt;/span&gt;
+&lt;&lt;set $karma 6= 5&gt;&gt;
+&lt;span style=&quot;color: red;&quot;&gt;Votre réputation est maintenant de $karma.&lt;/span&gt;
 
 &lt;span style=&quot;color: red;&quot;&gt;Alex: &lt;/span&gt;
 &lt;span style=&quot;color: blue;&quot;&gt;Jamie: &lt;/span&gt;
@@ -2384,6 +2412,48 @@ Vous pouvez voir :
 &lt;span class=&quot;encadrement-texte&quot;&gt;
     Ceci est un texte encadré.
 &lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="271" name="Inventaire" tags="Mécanique-de-jeu" position="2050,150" size="100,100">Fonction inventaire : 
+
+&lt;&lt;set $inventaire = []&gt;&gt;
+
+Afficher l&#39;inventaire :
+
+Votre inventaire contient :
+&lt;&lt;if $inventaire.length &gt; 0&gt;&gt;
+    &lt;&lt;for _obj range $inventaire&gt;&gt;
+        - &lt;&lt;print _obj&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+&lt;&lt;else&gt;&gt;
+    Rien. Vous n&#39;avez aucun objet dans votre inventaire.
+&lt;&lt;/if&gt;&gt;
+
+Ajouter objet inventaire :
+
+&lt;&lt;link &quot;Ramasser clef rouillée&quot;&gt;&gt;
+    &lt;&lt;run $inventaire.push(&quot;Clef rouillée&quot;)&gt;&gt;
+    &lt;&lt;goto &quot;nom passage suivant&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+Retirer objet inventaire :
+
+Vous utilisez la clé rouillée pour ouvrir la porte.
+&lt;&lt;link &quot;Utiliser la clé&quot;&gt;&gt;
+    &lt;&lt;run $inventaire.delete(&quot;Clé rouillée&quot;)&gt;&gt;
+    &lt;&lt;goto &quot;SalleSecrète&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+
+Tester présence objet inventaire :
+
+&lt;&lt;if $inventaire.includes(&quot;Clé rouillée&quot;)&gt;&gt;
+    Vous pouvez utiliser la clé rouillée ici.
+    &lt;&lt;link &quot;Utiliser la clé&quot;&gt;&gt;
+        &lt;&lt;run $inventaire.delete(&quot;Clé rouillée&quot;)&gt;&gt;
+        &lt;&lt;goto &quot;SalleSecrète&quot;&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+&lt;&lt;else&gt;&gt;
+    Il vous semble que vous avez besoin d&#39;une clé pour ouvrir cette porte.
+&lt;&lt;/if&gt;&gt;
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
